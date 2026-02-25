@@ -534,17 +534,29 @@ ESLint is configured in `eslint.config.js`:
 
 **Location:** `src/components/AdminPanel.jsx` + `src/App.jsx`
 
-**Current Status:** ⚠️ Login does NOT persist across page refresh (authentication is memory-only)
+**Current Status:** ✅ Login persists across page refresh (Feb 26, 2026)
 
 **How it Works:**
-- Password: `admin2026` (hardcoded for now)
+- Password stored in environment variable: `VITE_ADMIN_PASSWORD` (default: `admin2026`)
 - State managed in App.jsx: `isAdminAuthenticated` (boolean)
+- **localStorage Persistence**: Auth state automatically saved to `edvise_admin_authenticated` key
+- On page load: useEffect hook restores auth state from localStorage
+- On auth change: useEffect hook updates localStorage immediately
 - AdminPanel component receives `isAuthenticated` prop from parent
 - When authenticated, shows dashboard with tabs: Offers, Summary, History, Email
 
-**Known Issue:**
-- On page refresh, `isAdminAuthenticated` state is lost → user must log in again
-- **Fix needed:** Persist auth state to localStorage on login, load on mount
+**Authentication Flow:**
+1. User enters password in AdminPanel login form
+2. Password checked against `import.meta.env.VITE_ADMIN_PASSWORD`
+3. On successful login: `setIsAdminAuthenticated(true)` called
+4. useEffect in App.jsx automatically saves to localStorage
+5. On page refresh: useEffect loads from localStorage and restores state
+6. User remains logged in across page refreshes ✅
+
+**Configuration:**
+- `.env` file stores `VITE_ADMIN_PASSWORD=admin2026`
+- `.env.example` provides template for developers
+- `.gitignore` prevents .env from being committed (security)
 
 **Components in Admin Dashboard:**
 1. **Offers Tab** - Prepare and manage client offers
@@ -560,11 +572,13 @@ ESLint is configured in `eslint.config.js`:
 - `selectedCourses`: Array of courses selected via "Add to Offer"
 - `onClearSelection`: Callback to clear selected courses
 
-**TODO for Auth Persistence:**
-1. Save `isAdminAuthenticated` to localStorage on login
-2. Load localStorage value on App.jsx mount
-3. Consider adding token/session expiration time
-4. Move hardcoded password to environment variable or backend
+**Implementation Details (Feb 26, 2026):**
+- `src/App.jsx` lines 34-44: Two useEffect hooks
+  - Hook 1: Load from localStorage on mount
+  - Hook 2: Save to localStorage on isAdminAuthenticated change
+- `src/components/AdminPanel.jsx` line 71: Uses `import.meta.env.VITE_ADMIN_PASSWORD`
+- Storage key: `edvise_admin_authenticated` (string "true"/"false")
+- Build verified: Production build succeeds with env variable integration
 
 ## Data Reports System
 

@@ -31,6 +31,19 @@ function App() {
   const [isCompareDrawerOpen, setIsCompareDrawerOpen] = React.useState(false);
   const [isWishlistDrawerOpen, setIsWishlistDrawerOpen] = React.useState(false);
 
+  // Persist admin authentication to localStorage
+  React.useEffect(() => {
+    const savedAuthState = localStorage.getItem('edvise_admin_authenticated');
+    if (savedAuthState === 'true') {
+      setIsAdminAuthenticated(true);
+    }
+  }, []);
+
+  // Save admin authentication state when it changes
+  React.useEffect(() => {
+    localStorage.setItem('edvise_admin_authenticated', isAdminAuthenticated.toString());
+  }, [isAdminAuthenticated]);
+
   // Debug: Log data to console
   React.useEffect(() => {
     if (data && data.length > 0) {
