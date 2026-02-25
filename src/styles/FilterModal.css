@@ -1,0 +1,155 @@
+/* Backdrop overlay */
+.filter-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Bottom sheet modal */
+.filter-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 85vh;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+
+/* Open state */
+.filter-modal.open {
+  transform: translateY(0);
+}
+
+/* Header */
+.filter-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e8ddd4;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Handle (drag indicator) */
+.filter-modal-handle {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  background-color: #ddd;
+  border-radius: 2px;
+}
+
+/* Title */
+.filter-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #C7613C;
+  margin: 0;
+  text-align: center;
+  flex: 1;
+}
+
+/* Close button */
+.filter-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin-left: auto;
+  transition: color 0.2s ease;
+}
+
+.filter-modal-close:hover {
+  color: #C7613C;
+}
+
+/* Content (scrollable) */
+.filter-modal-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+  min-height: 0;
+}
+
+/* FilterPanel inside modal */
+.filter-modal-content .filter-sidebar {
+  width: 100% !important;
+  max-height: none !important;
+  position: static !important;
+  padding: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  top: auto !important;
+  sticky: none !important;
+}
+
+.filter-modal-content .filter-section {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e8ddd4;
+}
+
+.filter-modal-content .filter-section:last-child {
+  margin-bottom: 24px;
+  border-bottom: none;
+}
+
+/* Scrollbar styling */
+.filter-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filter-modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.filter-modal-content::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.filter-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #C7613C;
+}
+
+/* Desktop: hide modal */
+@media (min-width: 769px) {
+  .filter-modal,
+  .filter-modal-backdrop {
+    display: none;
+  }
+}

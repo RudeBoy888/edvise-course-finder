@@ -1,0 +1,270 @@
+{
+  "summary": {
+    "providers_tested": 20,
+    "descriptions_found": 0,
+    "success_rate": "0.0%"
+  },
+  "results": [],
+  "all_providers": [
+    {
+      "provider_code": "00026A",
+      "name": "The University of Sydney",
+      "website": "http://sydney.edu.au",
+      "course_count": 666,
+      "courses": [
+        "Doctor of Philosophy in Education",
+        "Bachelor of Agricultural Economics",
+        "Bachelor of Science in Agriculture",
+        "Doctor of Philosophy in Agriculture",
+        "Bachelor of Veterinary Science"
+      ]
+    },
+    {
+      "provider_code": "00098G",
+      "name": "UNSW Sydney",
+      "website": "www.unsw.edu.au",
+      "course_count": 661,
+      "courses": [
+        "Standard Foundation Program",
+        "Master of Health Administration (Research)",
+        "Tailored Term exchange",
+        "Master of Laws",
+        "Master of Public Health (Research)"
+      ]
+    },
+    {
+      "provider_code": "00008C",
+      "name": "Monash University",
+      "website": "www.monash.edu.au",
+      "course_count": 534,
+      "courses": [
+        "Bachelor of Economics",
+        "Master of Business Administration",
+        "Master of Reproductive Sciences",
+        "Master of Science (Research)",
+        "Bachelor of Engineering (Honours)"
+      ]
+    },
+    {
+      "provider_code": "00099F",
+      "name": "University of Technology Sydney (UTS)",
+      "website": "www.uts.edu.au",
+      "course_count": 524,
+      "courses": [
+        "Master of Project Management",
+        "Graduate Diploma in Business Administration",
+        "Master of Science in Computing Sciences (Research)",
+        "Master of Laws",
+        "Master of Laws (Research)"
+      ]
+    },
+    {
+      "provider_code": "04249J",
+      "name": "Adelaide University",
+      "website": "",
+      "course_count": 490,
+      "courses": [
+        "ELICOS - Academic English (GEAP and PEP)",
+        "Associate Degree in Arts Studies",
+        "Associate Degree in Arts Studies",
+        "Associate Degree in Building Studies",
+        "Associate Degree in Business Studies"
+      ]
+    },
+    {
+      "provider_code": "00122A",
+      "name": "RMIT University (RMIT)",
+      "website": "www.rmit.edu.au",
+      "course_count": 486,
+      "courses": [
+        "Bachelor of Arts (Fine Art) (Honours)",
+        "Bachelor of Arts (Photography)",
+        "Bachelor of Fashion (Design) (Honours)",
+        "Bachelor of Textiles (Design)",
+        "Bachelor of Fashion (Enterprise)"
+      ]
+    },
+    {
+      "provider_code": "00002J",
+      "name": "Macquarie University",
+      "website": "www.mq.edu.au",
+      "course_count": 455,
+      "courses": [
+        "Bachelor of Arts",
+        "Bachelor of Arts - Psychology",
+        "Bachelor of Economics",
+        "Bachelor of Science",
+        "Bachelor of Arts with the degree of Bachelor of Laws"
+      ]
+    },
+    {
+      "provider_code": "00109J",
+      "name": "The University of Newcastle (UoN), The University of Newcastle Language Centre, Sydney",
+      "website": "www.newcastle.edu.au",
+      "course_count": 452,
+      "courses": [
+        "Bachelor of Mathematics (Honours)",
+        "Bachelor of Science (Honours)",
+        "Doctor of Philosophy (Medicine)",
+        "Doctor of Philosophy (Mechanical Engineering)",
+        "Doctor of Philosophy (Electrical Engineering)"
+      ]
+    },
+    {
+      "provider_code": "00116K",
+      "name": "The University of Melbourne (UniMelb)",
+      "website": "http://www.unimelb.edu.au/",
+      "course_count": 432,
+      "courses": [
+        "Master of Education",
+        "Bachelor of Commerce",
+        "Bachelor of Science",
+        "Bachelor of Arts",
+        "Master of Urban Planning"
+      ]
+    },
+    {
+      "provider_code": "00114A",
+      "name": "Flinders University",
+      "website": "http://www.flinders.edu.au/",
+      "course_count": 431,
+      "courses": [
+        "Study Abroad Program (A)",
+        "Bachelor of Commerce",
+        "Bachelor of Arts",
+        "Master of Science Mathematics/Statistics)",
+        "Master of Education"
+      ]
+    },
+    {
+      "provider_code": "00120C",
+      "name": "Australian National University",
+      "website": "http://www.anu.edu.au/",
+      "course_count": 424,
+      "courses": [
+        "Bachelor of Science (Lab + Non-lab Based) (Hons)",
+        "Bachelor of Science (Lab + Non-lab Based)",
+        "Bachelor of Arts (Honours)",
+        "Bachelor of Commerce (Honours)",
+        "Bachelor of Commerce"
+      ]
+    },
+    {
+      "provider_code": "00111D",
+      "name": "Swinburne University of Technology",
+      "website": "https://www.swinburne.edu.au/international",
+      "course_count": 411,
+      "courses": [
+        "Master of Information Technology",
+        "Master of Science (Research)",
+        "Bachelor of Education Studies",
+        "Bachelor of Laws/Bachelor of Criminal Justice and Criminology",
+        "Master of Teaching (Secondary)"
+      ]
+    },
+    {
+      "provider_code": "00025B",
+      "name": "The University of Queensland",
+      "website": "www.uq.edu.au",
+      "course_count": 388,
+      "courses": [
+        "Bachelor of Arts",
+        "Bachelor of Commerce",
+        "Bachelor of Economics",
+        "Bachelor of Information Technology",
+        "Bachelor of Urban Planning"
+      ]
+    },
+    {
+      "provider_code": "00301J",
+      "name": "Curtin University",
+      "website": "www.curtin.edu.au",
+      "course_count": 353,
+      "courses": [
+        "Bachelor of Science (Health Sciences)",
+        "Bachelor of Science (Health Promotion)",
+        "Bachelor of Applied Science (Architectural Science)",
+        "Bachelor of Science (Applied Geology)",
+        "Bachelor of Science (Nutrition and Food Science)"
+      ]
+    },
+    {
+      "provider_code": "00102E",
+      "name": "University of Wollongong",
+      "website": "www.uow.edu.au",
+      "course_count": 345,
+      "courses": [
+        "Bachelor of Arts (Honours)",
+        "Bachelor of Arts",
+        "Doctor of Philosophy",
+        "Doctor of Philosophy",
+        "Doctor of Philosophy"
+      ]
+    },
+    {
+      "provider_code": "00121B",
+      "name": "University of South Australia (UniSA)",
+      "website": "www.unisa.edu.au",
+      "course_count": 344,
+      "courses": [
+        "Bachelor of Social Work",
+        "Graduate Diploma in Urban and Regional Planning",
+        "Bachelor of Social Science (Human Services)",
+        "Bachelor of Podiatry",
+        "Bachelor of Health Science (Public Health)"
+      ]
+    },
+    {
+      "provider_code": "00123M",
+      "name": "The University of Adelaide (Adelaide)",
+      "website": "http://www.adelaide.edu.au",
+      "course_count": 341,
+      "courses": [
+        "Doctor of Philosophy (Sciences)",
+        "Doctor of Philosophy (Music)",
+        "Doctor of Philosophy (Medicine & Surgery)",
+        "Master of Clinical Science",
+        "Master of Computer Science"
+      ]
+    },
+    {
+      "provider_code": "00126G",
+      "name": "The University of Western Australia",
+      "website": "http://www.uwa.edu.au/",
+      "course_count": 339,
+      "courses": [
+        "Bachelor of Arts",
+        "Bachelor of Commerce",
+        "Bachelor of Engineering",
+        "Master of Education (Coursework and Dissertation)",
+        "Master of Public Health"
+      ]
+    },
+    {
+      "provider_code": "00917K",
+      "name": "Western Sydney University",
+      "website": "www.westernsydney.edu.au",
+      "course_count": 313,
+      "courses": [
+        "Graduate Diploma in Start Up Scale Up",
+        "Graduate Certificate in Start Up Scale Up",
+        "Bachelor of Speech Pathology",
+        "Bachelor of Speech Pathology (Honours)",
+        "Bachelor of Construction Management (Honours)"
+      ]
+    },
+    {
+      "provider_code": "00233E",
+      "name": "Griffith University",
+      "website": "www.griffith.edu.au",
+      "course_count": 290,
+      "courses": [
+        "Bachelor of Arts",
+        "Master of Public Health",
+        "Bachelor of Nursing",
+        "Bachelor of Biomedical Science",
+        "Bachelor of Information Technology"
+      ]
+    }
+  ]
+}

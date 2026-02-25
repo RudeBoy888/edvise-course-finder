@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "total_tested": 10,
+    "found": 0,
+    "not_found": 0,
+    "errors": 10,
+    "success_rate": "0.0%"
+  },
+  "results": {
+    "found": [],
+    "not_found": [],
+    "errors": [
+      {
+        "code": "078241E",
+        "status": "timeout"
+      },
+      {
+        "code": "089976G",
+        "status": "timeout"
+      },
+      {
+        "code": "091155E",
+        "status": "timeout"
+      },
+      {
+        "code": "094149A",
+        "status": "timeout"
+      },
+      {
+        "code": "094153E",
+        "status": "timeout"
+      },
+      {
+        "code": "097541B",
+        "status": "timeout"
+      },
+      {
+        "code": "097543M",
+        "status": "timeout"
+      },
+      {
+        "code": "097544K",
+        "status": "timeout"
+      },
+      {
+        "code": "097545J",
+        "status": "timeout"
+      },
+      {
+        "code": "097546G",
+        "status": "timeout"
+      }
+    ]
+  }
+}

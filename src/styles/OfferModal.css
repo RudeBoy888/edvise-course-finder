@@ -1,0 +1,426 @@
+/* Offer Modal Overlay */
+.offer-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Offer Modal Content */
+.offer-modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease-in-out;
+}
+
+/* Modal Header */
+.offer-modal-header {
+  position: sticky;
+  top: 0;
+  padding: 24px;
+  border-bottom: 1px solid #e8ddd4;
+  background-color: #faf6f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.offer-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #2c2c2c;
+  font-weight: 700;
+}
+
+.offer-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.offer-modal-close:hover {
+  background-color: rgba(199, 97, 60, 0.1);
+  color: #C7613C;
+}
+
+/* Tabs */
+.offer-tabs {
+  display: flex;
+  border-bottom: 1px solid #e8ddd4;
+  background-color: #faf6f1;
+}
+
+.offer-tab {
+  flex: 1;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.offer-tab.active {
+  color: #C7613C;
+  border-bottom-color: #C7613C;
+}
+
+.offer-tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Modal Body */
+.offer-modal-body {
+  padding: 24px;
+}
+
+/* Section */
+.offer-section {
+  margin-bottom: 28px;
+}
+
+.offer-section h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+/* Form Group */
+.offer-form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.offer-form-group input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.offer-form-group input:focus {
+  outline: none;
+  border-color: #C7613C;
+  box-shadow: 0 0 0 2px rgba(199, 97, 60, 0.1);
+}
+
+/* Form Row (for side-by-side inputs) */
+.offer-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .offer-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Courses List */
+.offer-courses-list {
+  background-color: #faf6f1;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.offer-course-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border-left: 3px solid #C7613C;
+}
+
+.offer-course-item:last-child {
+  margin-bottom: 0;
+}
+
+.offer-course-item h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #C7613C;
+}
+
+.offer-course-item .institution-name {
+  margin: 0 0 2px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+}
+
+.offer-course-item .course-level {
+  margin: 0;
+  font-size: 11px;
+  color: #999;
+}
+
+.course-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.course-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #C7613C;
+  text-align: right;
+  min-width: 100px;
+}
+
+/* Total */
+.offer-total {
+  background-color: #C7613C;
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Email Textarea */
+.offer-email-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  color: #333;
+  line-height: 1.5;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.offer-email-textarea:focus {
+  outline: none;
+  border-color: #C7613C;
+  box-shadow: 0 0 0 2px rgba(199, 97, 60, 0.1);
+}
+
+.offer-hint {
+  margin: 8px 0 0 0;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Action Buttons */
+.offer-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.offer-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.offer-btn-copy {
+  background-color: #e8ddd4;
+  color: #2c2c2c;
+}
+
+.offer-btn-copy:hover {
+  background-color: #d5cdc3;
+}
+
+.offer-btn-save {
+  background-color: #C7613C;
+  color: white;
+}
+
+.offer-btn-save:hover:not(:disabled) {
+  background-color: #A84B2A;
+}
+
+.offer-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Success Message */
+.offer-success-message {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Saved Offers Section */
+.offer-saved-section {
+  padding: 24px;
+}
+
+.offer-saved-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.offer-saved-item {
+  background-color: #faf6f1;
+  border: 1px solid #e8ddd4;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.saved-offer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.saved-offer-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #C7613C;
+}
+
+.saved-offer-date {
+  font-size: 11px;
+  color: #999;
+}
+
+.saved-offer-email {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  color: #666;
+  word-break: break-all;
+}
+
+.saved-offer-courses {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  color: #999;
+}
+
+.saved-offer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.saved-offer-btn {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saved-offer-btn:hover {
+  background-color: #C7613C;
+  color: white;
+  border-color: #C7613C;
+}
+
+.saved-offer-btn.delete:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .offer-modal-content {
+    max-height: 95vh;
+  }
+
+  .offer-modal-header {
+    padding: 16px;
+  }
+
+  .offer-modal-body {
+    padding: 16px;
+  }
+
+  .offer-actions {
+    flex-direction: column;
+  }
+
+  .offer-email-textarea {
+    font-size: 12px;
+    rows: 8;
+  }
+}

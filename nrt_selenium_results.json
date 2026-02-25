@@ -1,0 +1,48 @@
+{
+  "found": [
+    {
+      "course_name": "Diploma of Community Services",
+      "provider": "Canberra Institute of Technology",
+      "found_name": "CHC52025 Diploma of Community Services",
+      "url": "https://training.gov.au/training/details/CHC52025",
+      "similarity": 0.8656716417910447,
+      "description": "This qualification reflects the role of community service workers involved in the delivery, management and coordination of person-centred services to individuals, groups, and communities.At this level, workers have specialised skills in community services and work autonomously within their scope of practice under broad directions from senior management.Workers support people to make change in their lives to improve personal and social wellbeing and may also have responsibility for the supervisio"
+    },
+    {
+      "course_name": "Diploma of Building and Construction (Building)",
+      "provider": "Gordon Institute of TAFE",
+      "found_name": "CPC50220 Diploma of Building and Construction (Building)",
+      "url": "https://training.gov.au/training/details/CPC50220",
+      "similarity": 0.912621359223301,
+      "description": "This qualification reflects the role of building professionals who apply knowledge of structural principles, risk and financial management, estimating, preparing and administering building and construction contracts, selecting contractors, overseeing the work and its quality and managing construction work in building projects including residential and commercial with the following limitations:Residential construction limited to National Construction Code Class 1 and 10 buildings to a maximum of "
+    },
+    {
+      "course_name": "Certificate III in Early Childhood Education and Care",
+      "provider": "Gordon Institute of TAFE",
+      "found_name": "CHC30125 Certificate III in Early Childhood Education and Care",
+      "url": "https://training.gov.au/training/details/CHC30125",
+      "similarity": 0.9217391304347826,
+      "description": "This qualification reflects the role of educators in early childhood education and care who work in regulated children’s education and care services in Australia. They support children’s wellbeing, and development in the context of an approved learning framework. Educators use a range of well-developed skills and knowledge using discretion and judgment when carrying out their work in the context of established policies and procedures. They may work independently or under the guidance of others, "
+    }
+  ],
+  "not_found": [
+    "ACT Year 12 Certificate",
+    "Bachelor of Arts",
+    "Bachelor of Arts - Psychology",
+    "Bachelor of Urban and Regional Planning",
+    "Bachelor of Economics",
+    "Bachelor of Nursing",
+    "Bachelor of Arts",
+    "Master of Philosophy (Lab Based)",
+    "Doctor of Philosophy (Lab Based Science)",
+    "Bachelor of Economics",
+    "Master of Business Administration",
+    "Pathway English - Intermediate - Advanced",
+    "ELICOS - General English - non AQF award",
+    "Master of Project Innovation",
+    "Graduate Certificate in Data Analytics",
+    "Primary R-6",
+    "Junior Secondary 7-10"
+  ],
+  "errors": []
+}

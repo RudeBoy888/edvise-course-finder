@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRICOS Data Update Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .stat-change {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .stat-change.positive {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .stat-change.negative {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        .change-list {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .change-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: white;
+            border-left: 3px solid #667eea;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .change-item.added {
+            border-left-color: #28a745;
+        }
+
+        .change-item.removed {
+            border-left-color: #dc3545;
+        }
+
+        .change-item.modified {
+            border-left-color: #ffc107;
+        }
+
+        .change-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .change-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .change-detail {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #999;
+            padding: 20px;
+            font-style: italic;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #ddd;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 13px;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge.modified {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .hidden-course {
+            display: none !important;
+        }
+
+        .show-more-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            width: 100%;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .show-more-btn:hover {
+            background: #764ba2;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 CRICOS Data Update Report</h1>
+            <p>Generated on 25 Feb 2026, 11:00:16</p>
+        </div>
+
+        <div class="content">
+            <!-- Summary Statistics -->
+            <div class="section">
+                <h2 class="section-title">Summary</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Institutions</div>
+                        <div class="stat-value">1536</div>
+                        <div class="stat-change positive">
+                            +0 from 1536
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Total Courses</div>
+                        <div class="stat-value">25,928</div>
+                        <div class="stat-change positive">
+                            +771 from 25,157
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">New Courses Added</div>
+                        <div class="stat-value">771</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Courses Modified</div>
+                        <div class="stat-value">11</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Added Institutions -->
+            
+
+            <!-- Removed Institutions -->
+            
+
+            <!-- Added Courses -->
+            <div class="section">
+                <h2 class="section-title">🆕 New Courses (771)</h2>
+                <div class="change-list">
+<div class="change-item added">
+            <div class="change-title"><strong>#1</strong> Diploma of Early Childhood Education and Care</div>
+            <div class="change-detail">Canberra Institute of Technology (Code: 118566D)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#2</strong> Bachelor of International Studies</div>
+            <div class="change-detail">Macquarie University (Code: 118457J)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#3</strong> Bachelor of Business</div>
+            <div class="change-detail">University of New England (Code: 097601F)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#4</strong> Graduate Certificate in Health Administration</div>
+            <div class="change-detail">Australian Catholic University (Code: 084322J)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#5</strong> Bachelor of Commerce and Bachelor of Actuarial Science</div>
+            <div class="change-detail">Monash University (Code: 097258E)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#6</strong> Master of Public Policy</div>
+            <div class="change-detail">Monash University (Code: 105166E)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#7</strong> Bachelor of Business and Bachelor of International Business</div>
+            <div class="change-detail">Monash University (Code: 105167D)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#8</strong> Bachelor of International Business and Bachelor of Arts</div>
+            <div class="change-detail">Monash University (Code: 105168C)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#9</strong> Master of Philosophy (Southeast - Monash)</div>
+            <div class="change-detail">Monash University (Code: 111356D)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#10</strong> Master of Philosophy (Southeast - Monash)</div>
+            <div class="change-detail">Monash University (Code: 111357C)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#11</strong> Master of Philosophy (Southeast - Monash)</div>
+            <div class="change-detail">Monash University (Code: 111358B)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#12</strong> Master of Philosophy (Southeast - Monash)</div>
+            <div class="change-detail">Monash University (Code: 111359A)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#13</strong> Doctor of Philosophy (Southeast - Monash)</div>
+            <div class="change-detail">Monash University (Code: 111364D)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#14</strong> Master of Philosophy (Southeast - Monash)</div>
+            <div class="change-detail">Monash University (Code: 111402C)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#15</strong> Master of Advanced Engineering</div>
+            <div class="change-detail">Monash University (Code: 114826K)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#16</strong> Diploma of Early Childhood Education and Care</div>
+            <div class="change-detail">Gordon Institute of TAFE (Code: 118567C)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#17</strong> Diploma of Community Services</div>
+            <div class="change-detail">Gordon Institute of TAFE (Code: 118872E)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#18</strong> Certificate II in Creative Industries</div>
+            <div class="change-detail">TAFE International Western Australia (Code: 105767B)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#19</strong> Advanced Diploma of Creative Product Development</div>
+            <div class="change-detail">TAFE International Western Australia (Code: 118929D)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#20</strong> Certificate IV in Design</div>
+            <div class="change-detail">TAFE International Western Australia (Code: 119034B)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#21</strong> Diploma of Photography and Digital Imaging</div>
+            <div class="change-detail">TAFE International Western Australia (Code: 119063H)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#22</strong> Bachelor of Applied Science (Exercise Physiology)</div>
+            <div class="change-detail">The University of Sydney (Code: 088106G)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#23</strong> Graduate Diploma in Computing</div>
+            <div class="change-detail">The University of Sydney (Code: 096317G)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#24</strong> Bachelor of Education (Early Childhood)</div>
+            <div class="change-detail">The University of Sydney (Code: 103482J)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#25</strong> Bachelor of Education (Health and Physical Education)</div>
+            <div class="change-detail">The University of Sydney (Code: 103483H)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#26</strong> Bachelor of Arts and Bachelor of Advanced Studies (Media and Communications)</div>
+            <div class="change-detail">The University of Sydney (Code: 114097E)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#27</strong> Bachelor of Advanced Studies (Media and Communications) (Honours)</div>
+            <div class="change-detail">The University of Sydney (Code: 114098D)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#28</strong> Master of Pharmacy</div>
+            <div class="change-detail">The University of Sydney (Code: 116243F)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#29</strong> Graduate Certificate in Educational Studies</div>
+            <div class="change-detail">The University of Sydney (Code: 118432G)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#30</strong> Diploma of Community Services</div>
+            <div class="change-detail">ELC Career College (Code: 118874C)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#31</strong> Certificate IV in Training and Assessment</div>
+            <div class="change-detail">Phoenix Academy (Code: 112147E)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#32</strong> Certificate III in Hospitality</div>
+            <div class="change-detail">TAFE South Australia (Code: 114650G)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#33</strong> Certificate IV in Hospitality</div>
+            <div class="change-detail">TAFE South Australia (Code: 114651F)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#34</strong> Diploma of Hospitality Management</div>
+            <div class="change-detail">TAFE South Australia (Code: 114652E)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#35</strong> Advanced Diploma of Hospitality Management</div>
+            <div class="change-detail">TAFE South Australia (Code: 114653D)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#36</strong> Certificate III in Events</div>
+            <div class="change-detail">TAFE South Australia (Code: 114654C)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#37</strong> Certificate III in Tourism</div>
+            <div class="change-detail">TAFE South Australia (Code: 114656A)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#38</strong> Diploma of Travel and Tourism Management</div>
+            <div class="change-detail">TAFE South Australia (Code: 114657M)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#39</strong> Certificate III in Horticulture</div>
+            <div class="change-detail">TAFE South Australia (Code: 117361C)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#40</strong> Diploma of Early Childhood Education and Care</div>
+            <div class="change-detail">TAFE South Australia (Code: 118570H)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#41</strong> Diploma of Community Services</div>
+            <div class="change-detail">TAFE South Australia (Code: 118875B)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#42</strong> Postgraduate International Placement Program</div>
+            <div class="change-detail">UNSW Sydney (Code: 051438C)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#43</strong> Postgraduate International Placement Program</div>
+            <div class="change-detail">UNSW Sydney (Code: 051439B)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#44</strong> Professional Practicum</div>
+            <div class="change-detail">UNSW Sydney (Code: 085756G)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#45</strong> Professional Practicum</div>
+            <div class="change-detail">UNSW Sydney (Code: 085757G)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#46</strong> Professional Practicum</div>
+            <div class="change-detail">UNSW Sydney (Code: 085758F)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#47</strong> Professional Practicum</div>
+            <div class="change-detail">UNSW Sydney (Code: 085759E)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#48</strong> Professional Practicum</div>
+            <div class="change-detail">UNSW Sydney (Code: 085760A)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#49</strong> Master of Industrial Research</div>
+            <div class="change-detail">UNSW Sydney (Code: 108474B)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#50</strong> Bachelor of Fine Arts</div>
+            <div class="change-detail">UNSW Sydney (Code: 110652D)</div>
+        </div><div class="change-item added">
+            <div class="change-title"><strong>#51</strong> Bachelor of Advanced Science (Honours)/Bachelor of Fine Arts</div>
+            <div class="change-detail">UNSW Sydney (Code: 110670B)</div>
+        </div>
+<div id="pagination-container" style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 8px;"></div>
+                </div>
+            </div>
+
+            <!-- Removed Courses -->
+            
+
+            <!-- Modified Courses -->
+            <div class="section">
+                <h2 class="section-title">✏️ Modified Courses (11)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Institution</th>
+                            <th>Changes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+            <td>Bachelor of Biotechnology (Honours)</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Bachelor of Biotechnology (Honours)  → Bachelor of Biotechnology (Honours)</div></td>
+        </tr><tr>
+            <td>Bachelor of Engineering (Electrical and Electronic) (Honours)</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Bachelor of Engineering (Electrical and Electronic) (Honours)   → Bachelor of Engineering (Electrical and Electronic) (Honours)</div></td>
+        </tr><tr>
+            <td>Bachelor of Engineering (Environmental) (Honours)</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Bachelor of Engineering (Environmental) (Honours)   → Bachelor of Engineering (Environmental) (Honours)</div></td>
+        </tr><tr>
+            <td>Bachelor of Engineering Technology (Chemical)</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Bachelor of Engineering Technology (Chemical)  → Bachelor of Engineering Technology (Chemical)</div></td>
+        </tr><tr>
+            <td>Bachelor of Engineering Technology (Civil)</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Bachelor of Engineering Technology (Civil)  → Bachelor of Engineering Technology (Civil)</div></td>
+        </tr><tr>
+            <td>Bachelor of Engineering Technology (Environmental)</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Bachelor of Engineering Technology (Environmental)  → Bachelor of Engineering Technology (Environmental)</div></td>
+        </tr><tr>
+            <td>Bachelor of Engineering Technology (Mechanical)</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Bachelor of Engineering Technology (Mechanical)  → Bachelor of Engineering Technology (Mechanical)</div></td>
+        </tr><tr>
+            <td>Graduate Certificate in Immersive Media Technologies</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Graduate Certificate in Immersive Media Technologies  → Graduate Certificate in Immersive Media Technologies</div></td>
+        </tr><tr>
+            <td>Graduate Diploma in  Immersive Media Technologies</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Graduate Diploma in  Immersive Media Technologies  → Graduate Diploma in  Immersive Media Technologies</div></td>
+        </tr><tr>
+            <td>Graduate Diploma in Procurement and Supply Chain Management</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Graduate Diploma in Procurement and Supply Chain Management  → Graduate Diploma in Procurement and Supply Chain Management</div></td>
+        </tr><tr>
+            <td>Master of Procurement and Supply Chain Management</td>
+            <td>Adelaide University</td>
+            <td><div style="margin-bottom: 4px;"><span class="badge modified">courseName</span>: Master of Procurement and Supply Chain Management  → Master of Procurement and Supply Chain Management</div></td>
+        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Report generated on 25 Feb 2026, 11:00:16</p>
+            <p>EDVISE Course Finder - CRICOS Data Management System</p>
+        </div>
+    </div>
+
+    <script>
+        let allCourses = [];
+        let currentPage = 1;
+        const coursesPerPage = 50;
+
+        async function initPagination() {
+            try {
+                console.log('📍 Initializing pagination...');
+                const response = await fetch('/data_reports/update_report_20260225_110016.json');
+                console.log('📡 Fetch status:', response.status);
+
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                console.log('📊 Total courses in JSON:', data.changes.added_courses.length);
+
+                allCourses = data.changes.added_courses.slice(51); // Skip first 51 (already shown in HTML)
+                console.log('📦 Courses loaded for pagination:', allCourses.length);
+
+                if (allCourses.length > 0) {
+                    renderPagination();
+                    console.log('✅ Pagination rendered');
+                } else {
+                    console.warn('⚠️ No courses to paginate');
+                }
+            } catch (error) {
+                console.error('❌ Error loading courses:', error);
+                const container = document.getElementById('pagination-container');
+                if (container) {
+                    container.innerHTML = '<p style="color: #dc3545;">Error loading courses: ' + error.message + '</p>';
+                }
+            }
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(allCourses.length / coursesPerPage);
+            const container = document.getElementById('pagination-container');
+
+            if (!container) return;
+
+            let html = '<div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; align-items: center;">';
+
+            // Previous button
+            if (currentPage > 1) {
+                html += `<button onclick="goToPage(${currentPage - 1})" style="padding: 8px 12px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer;">← Previous</button>`;
+            }
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === currentPage) {
+                    html += `<button style="padding: 8px 12px; background: #764ba2; color: white; border: none; border-radius: 4px; font-weight: 600; cursor: default;">${i}</button>`;
+                } else if (
+                    i === 1 ||
+                    i === totalPages ||
+                    (i >= currentPage - 2 && i <= currentPage + 2)
+                ) {
+                    html += `<button onclick="goToPage(${i})" style="padding: 8px 12px; background: #e0e0e0; color: #333; border: none; border-radius: 4px; cursor: pointer;">${i}</button>`;
+                } else if (i === currentPage - 3 || i === currentPage + 3) {
+                    html += '<span style="color: #999;">...</span>';
+                }
+            }
+
+            // Next button
+            if (currentPage < totalPages) {
+                html += `<button onclick="goToPage(${currentPage + 1})" style="padding: 8px 12px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer;">Next →</button>`;
+            }
+
+            html += `<span style="color: #999; font-size: 12px; margin-left: 10px;">Page ${currentPage} of ${totalPages}</span>`;
+            html += '</div>';
+
+            container.innerHTML = html;
+            displayPageCourses();
+        }
+
+        function displayPageCourses() {
+            const changeList = document.querySelector('.change-list');
+            if (!changeList) {
+                console.error('❌ changeList not found');
+                return;
+            }
+
+            console.log('🔄 Displaying page', currentPage);
+
+            // Hide/show static courses based on page number
+            const staticCourses = changeList.querySelectorAll('.change-item:not(.pagination-course)');
+            if (currentPage === 1) {
+                staticCourses.forEach(item => item.style.display = 'flex');
+                console.log('✅ Showing static courses');
+            } else {
+                staticCourses.forEach(item => item.style.display = 'none');
+                console.log('✅ Hiding static courses (page > 1)');
+            }
+
+            // Remove all pagination courses from previous page
+            const existingPagination = changeList.querySelectorAll('.pagination-course');
+            console.log('Removing', existingPagination.length, 'existing items');
+            existingPagination.forEach(item => item.remove());
+
+            // Calculate which courses to show
+            const startIndex = (currentPage - 1) * coursesPerPage;
+            const endIndex = startIndex + coursesPerPage;
+            const pageCoursesToShow = allCourses.slice(startIndex, endIndex);
+
+            console.log(`Showing courses ${startIndex}-${endIndex - 1} (${pageCoursesToShow.length} items)`);
+
+            // Find the pagination container to insert before it
+            const paginationContainer = document.getElementById('pagination-container');
+            if (!paginationContainer) {
+                console.error('❌ paginationContainer not found');
+                return;
+            }
+
+            // Add course items with numbering
+            pageCoursesToShow.forEach((course, index) => {
+                const courseNumber = 52 + startIndex + index; // Starting from 52 (after static courses 1-51)
+                const item = document.createElement('div');
+                item.className = 'change-item added pagination-course'; // Use pagination-course to track these
+                item.innerHTML = `
+                    <div class="change-title"><strong>#${courseNumber}</strong> ${course.course}</div>
+                    <div class="change-detail">${course.institution} (Code: ${course.code})</div>
+                `;
+                changeList.insertBefore(item, paginationContainer);
+            });
+            console.log('✅ Inserted', pageCoursesToShow.length, 'courses');
+        }
+
+        function goToPage(pageNum) {
+            currentPage = pageNum;
+            renderPagination();
+            // Scroll to courses section
+            document.querySelector('.change-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initPagination);
+    </script>
+</body>
+</html>

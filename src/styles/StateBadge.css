@@ -1,0 +1,31 @@
+.state-badge {
+  padding: 8px 14px;
+  border: 2px solid #e8ddd4;
+  border-radius: 20px;
+  background-color: #fef8f4;
+  color: #2c2c2c;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.state-badge:hover {
+  border-color: #C7613C;
+  background-color: #fef0eb;
+  color: #C7613C;
+}
+
+.state-badge.selected {
+  background: linear-gradient(135deg, #C7613C 0%, #A84B2A 100%);
+  color: white;
+  border-color: #C7613C;
+  box-shadow: 0 4px 12px rgba(199, 97, 60, 0.3);
+}
+
+.state-badge.selected:hover {
+  background: linear-gradient(135deg, #A84B2A 0%, #934025 100%);
+  border-color: #A84B2A;
+}

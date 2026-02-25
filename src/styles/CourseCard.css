@@ -1,0 +1,385 @@
+.course-card {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  border: 1px solid #e8ddd4;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #C7613C;
+  transform: translateY(-1px);
+}
+
+/* Main container: Logo | Info | Price */
+.card-container {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+/* Logo Placeholder */
+.logo-placeholder {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-initials {
+  font-size: 26px;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  letter-spacing: -1px;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Course Info (middle section) */
+.course-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.course-title {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  color: #C7613C;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.course-details {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #2c2c2c;
+  flex-wrap: wrap;
+}
+
+.course-level {
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.course-duration {
+  font-size: 13px;
+  color: #2c2c2c;
+}
+
+.delivery-method {
+  font-size: 13px;
+  color: #2c2c2c;
+}
+
+/* Institution info */
+.institution-info {
+  margin-top: 6px;
+}
+
+.institution-name {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  color: #666666;
+}
+
+.location-info {
+  margin: 3px 0 0 0;
+  font-size: 13px;
+  color: #999999;
+}
+
+.location-and-regional {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.regional-badge {
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: rgba(199, 97, 60, 0.08);
+  white-space: nowrap;
+  position: relative;
+  cursor: help;
+}
+
+.regional-badge:hover {
+  background-color: rgba(199, 97, 60, 0.12);
+}
+
+/* Tooltip for Category 2 */
+.regional-badge[data-category="2"]::after {
+  content: "Category 2: Located in Cities and Major Regional Centres Area.";
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c2c2c;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: normal;
+  width: 220px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  line-height: 1.3;
+}
+
+/* Tooltip for Category 3 */
+.regional-badge[data-category="3"]::after {
+  content: "Category 3: Located in Regional Centres and other Regional Area";
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c2c2c;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: normal;
+  width: 220px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  line-height: 1.3;
+}
+
+/* Show tooltip on hover */
+.regional-badge:hover::after {
+  opacity: 1;
+}
+
+/* Arrow pointer for tooltip */
+.regional-badge[data-category="2"]::before,
+.regional-badge[data-category="3"]::before {
+  content: '';
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #2c2c2c;
+  opacity: 0;
+  z-index: 1000;
+  transition: opacity 0.2s ease;
+}
+
+.regional-badge:hover::before {
+  opacity: 1;
+}
+
+/* Price section (right side, top) */
+.price-section {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+
+.price-label {
+  font-size: 11px;
+  color: #999;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.price-value {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+}
+
+.price-unit {
+  font-size: 11px;
+  color: #999;
+}
+
+/* Footer: Compare (left) | Actions (right) */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+  gap: 12px;
+}
+
+/* Compare Checkbox */
+.compare-checkbox-bottom {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #2c2c2c;
+  font-weight: 500;
+  user-select: none;
+  margin: 0;
+}
+
+.compare-checkbox-bottom input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #C7613C;
+}
+
+/* Footer Actions (horizontal) */
+.footer-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.action-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.wishlist-btn-footer {
+  background-color: #f5f5f5;
+  color: #2c2c2c;
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.wishlist-btn-footer:hover {
+  background-color: #efefef;
+  border-color: #E74C3C;
+}
+
+.wishlist-btn-footer.active {
+  background-color: #fce4ec;
+  border-color: #E74C3C;
+  color: #E74C3C;
+}
+
+.enquire-btn-footer {
+  background-color: #f5f5f5;
+  color: #2c2c2c;
+  border: 1px solid #e0e0e0;
+}
+
+.enquire-btn-footer:hover {
+  background-color: #efefef;
+  border-color: #d0d0d0;
+}
+
+.apply-btn-footer {
+  background-color: #C7613C;
+  color: white;
+  border: none;
+}
+
+.apply-btn-footer:hover {
+  background-color: #A84B2A;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .course-card {
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+
+  .card-container {
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .logo-placeholder {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-initials {
+    font-size: 22px;
+  }
+
+  .course-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .course-details {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .price-section {
+    gap: 0;
+  }
+
+  .price-value {
+    font-size: 16px;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+
+  .footer-actions {
+    gap: 6px;
+    width: 100%;
+  }
+
+  .action-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+    flex: 1;
+  }
+}

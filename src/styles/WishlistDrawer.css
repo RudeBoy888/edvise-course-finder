@@ -1,0 +1,334 @@
+/* Overlay */
+.wishlist-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 900;
+  animation: fadeIn 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Drawer */
+.wishlist-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 420px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 901;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.wishlist-drawer.open {
+  transform: translateX(0);
+}
+
+/* Header */
+.wishlist-drawer-header {
+  padding: 20px;
+  border-bottom: 1px solid #e8ddd4;
+  background-color: #faf6f1;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wishlist-drawer-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.wishlist-drawer-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.wishlist-drawer-close:hover {
+  background-color: rgba(199, 97, 60, 0.1);
+  color: #C7613C;
+}
+
+/* Body */
+.wishlist-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wishlist-drawer-empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.wishlist-drawer-empty p {
+  margin: 0 0 12px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.wishlist-drawer-empty p.hint {
+  font-size: 12px;
+  color: #bbb;
+}
+
+/* Wishlist Courses Items */
+.wishlist-courses-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Course Row */
+.wishlist-course-row {
+  padding: 12px;
+  background-color: #faf6f1;
+  border-radius: 8px;
+  border-left: 4px solid #E74C3C;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.wishlist-course-row:hover {
+  background-color: #f0ebe5;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.1);
+}
+
+/* Course Details */
+.wishlist-course-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wishlist-course-details .course-main h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #C7613C;
+  line-height: 1.3;
+}
+
+.wishlist-course-details .course-main .institution {
+  margin: 0;
+  font-size: 11px;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Course Specs */
+.wishlist-course-details .course-specs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 11px;
+}
+
+.wishlist-course-details .spec-item {
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #333;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wishlist-course-details .spec-item:first-child {
+  color: #2c2c2c;
+  font-weight: 700;
+}
+
+/* Remove Button */
+.remove-wishlist-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #E74C3C;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.remove-wishlist-btn:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+  transform: scale(1.1);
+}
+
+/* Total */
+.wishlist-drawer-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.total-amount {
+  font-size: 18px;
+}
+
+/* Info Message */
+.wishlist-drawer-info {
+  background-color: #fce4ec;
+  border-left: 4px solid #E74C3C;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.wishlist-drawer-info p {
+  margin: 0;
+  font-size: 12px;
+  color: #2c2c2c;
+  line-height: 1.5;
+}
+
+/* Actions */
+.wishlist-drawer-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.clear-wishlist-btn {
+  flex: 1;
+  padding: 12px;
+  background-color: #f5f5f5;
+  color: #2c2c2c;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-wishlist-btn:hover {
+  background-color: #efefef;
+}
+
+.close-drawer-btn {
+  flex: 1;
+  padding: 12px;
+  background-color: #ffffff;
+  color: #E74C3C;
+  border: 1px solid #E74C3C;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-drawer-btn:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #C0392B;
+  border-color: #C0392B;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .wishlist-drawer {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wishlist-drawer {
+    width: 100%;
+  }
+
+  .wishlist-course-row {
+    padding: 10px;
+  }
+
+  .wishlist-course-details .course-main h4 {
+    font-size: 12px;
+  }
+
+  .wishlist-course-details .course-specs {
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  .wishlist-course-details .spec-item {
+    padding: 3px 6px;
+  }
+}
+
+/* Scrollbar styling */
+.wishlist-drawer-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.wishlist-drawer-body::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+.wishlist-drawer-body::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 3px;
+}
+
+.wishlist-drawer-body::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc;
+}

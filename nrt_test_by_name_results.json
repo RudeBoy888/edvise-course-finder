@@ -1,0 +1,73 @@
+{
+  "summary": {
+    "total_tested": 15,
+    "matched": 0,
+    "no_results": 0,
+    "errors": 15,
+    "success_rate": "0.0%"
+  },
+  "matched_courses": [],
+  "no_results": [],
+  "errors": [
+    {
+      "name": "ACT Year 12 Certificate",
+      "error": "timeout"
+    },
+    {
+      "name": "Diploma of Community Services",
+      "error": "timeout"
+    },
+    {
+      "name": "Certificate IV in Mental Health",
+      "error": "timeout"
+    },
+    {
+      "name": "Certificate III in Hairdressing",
+      "error": "timeout"
+    },
+    {
+      "name": "Certificate III in Barbering",
+      "error": "timeout"
+    },
+    {
+      "name": "English for Study and Life (Elementary)",
+      "error": "timeout"
+    },
+    {
+      "name": "English for Study and Life (Pre-Intermediate)",
+      "error": "timeout"
+    },
+    {
+      "name": "English for Study and Life (Intermediate)",
+      "error": "timeout"
+    },
+    {
+      "name": "English for Study and Life (Upper-Intermediate)",
+      "error": "timeout"
+    },
+    {
+      "name": "English for Study and Life (Advanced)",
+      "error": "timeout"
+    },
+    {
+      "name": "English for Study and Life (Academic)",
+      "error": "timeout"
+    },
+    {
+      "name": "English for Study and Life (Preparation for IELTS 7)",
+      "error": "timeout"
+    },
+    {
+      "name": "Preparation for the Pearson Test of English Academic",
+      "error": "timeout"
+    },
+    {
+      "name": "Certificate IV in Leadership and Management",
+      "error": "timeout"
+    },
+    {
+      "name": "Diploma of Leadership and Management",
+      "error": "timeout"
+    }
+  ]
+}

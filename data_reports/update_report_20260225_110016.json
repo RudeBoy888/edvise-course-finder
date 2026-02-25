@@ -1,0 +1,3996 @@
+{
+  "timestamp": "2026-02-25T11:00:16.514401",
+  "summary": {
+    "old_institutions": 1536,
+    "new_institutions": 1536,
+    "old_total_courses": 25157,
+    "new_total_courses": 25928
+  },
+  "changes": {
+    "added_institutions": [],
+    "removed_institutions": [],
+    "added_courses": [
+      {
+        "institution": "Canberra Institute of Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118566D"
+      },
+      {
+        "institution": "Macquarie University",
+        "course": "Bachelor of International Studies",
+        "code": "118457J"
+      },
+      {
+        "institution": "University of New England",
+        "course": "Bachelor of Business",
+        "code": "097601F"
+      },
+      {
+        "institution": "Australian Catholic University",
+        "course": "Graduate Certificate in Health Administration",
+        "code": "084322J"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Bachelor of Commerce and Bachelor of Actuarial Science",
+        "code": "097258E"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Master of Public Policy",
+        "code": "105166E"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Bachelor of Business and Bachelor of International Business",
+        "code": "105167D"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Bachelor of International Business and Bachelor of Arts",
+        "code": "105168C"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Master of Philosophy (Southeast - Monash)",
+        "code": "111356D"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Master of Philosophy (Southeast - Monash)",
+        "code": "111357C"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Master of Philosophy (Southeast - Monash)",
+        "code": "111358B"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Master of Philosophy (Southeast - Monash)",
+        "code": "111359A"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Doctor of Philosophy (Southeast - Monash)",
+        "code": "111364D"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Master of Philosophy (Southeast - Monash)",
+        "code": "111402C"
+      },
+      {
+        "institution": "Monash University",
+        "course": "Master of Advanced Engineering",
+        "code": "114826K"
+      },
+      {
+        "institution": "Gordon Institute of TAFE",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118567C"
+      },
+      {
+        "institution": "Gordon Institute of TAFE",
+        "course": "Diploma of Community Services",
+        "code": "118872E"
+      },
+      {
+        "institution": "TAFE International Western Australia",
+        "course": "Certificate II in Creative Industries",
+        "code": "105767B"
+      },
+      {
+        "institution": "TAFE International Western Australia",
+        "course": "Advanced Diploma of Creative Product Development",
+        "code": "118929D"
+      },
+      {
+        "institution": "TAFE International Western Australia",
+        "course": "Certificate IV in Design",
+        "code": "119034B"
+      },
+      {
+        "institution": "TAFE International Western Australia",
+        "course": "Diploma of Photography and Digital Imaging",
+        "code": "119063H"
+      },
+      {
+        "institution": "The University of Sydney",
+        "course": "Bachelor of Applied Science (Exercise Physiology)",
+        "code": "088106G"
+      },
+      {
+        "institution": "The University of Sydney",
+        "course": "Graduate Diploma in Computing",
+        "code": "096317G"
+      },
+      {
+        "institution": "The University of Sydney",
+        "course": "Bachelor of Education (Early Childhood)",
+        "code": "103482J"
+      },
+      {
+        "institution": "The University of Sydney",
+        "course": "Bachelor of Education (Health and Physical Education)",
+        "code": "103483H"
+      },
+      {
+        "institution": "The University of Sydney",
+        "course": "Bachelor of Arts and Bachelor of Advanced Studies (Media and Communications)",
+        "code": "114097E"
+      },
+      {
+        "institution": "The University of Sydney",
+        "course": "Bachelor of Advanced Studies (Media and Communications) (Honours)",
+        "code": "114098D"
+      },
+      {
+        "institution": "The University of Sydney",
+        "course": "Master of Pharmacy",
+        "code": "116243F"
+      },
+      {
+        "institution": "The University of Sydney",
+        "course": "Graduate Certificate in Educational Studies",
+        "code": "118432G"
+      },
+      {
+        "institution": "ELC Career College",
+        "course": "Diploma of Community Services",
+        "code": "118874C"
+      },
+      {
+        "institution": "Phoenix Academy",
+        "course": "Certificate IV in Training and Assessment",
+        "code": "112147E"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Certificate III in Hospitality",
+        "code": "114650G"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Certificate IV in Hospitality",
+        "code": "114651F"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Diploma of Hospitality Management",
+        "code": "114652E"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "114653D"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Certificate III in Events",
+        "code": "114654C"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Certificate III in Tourism",
+        "code": "114656A"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Diploma of Travel and Tourism Management",
+        "code": "114657M"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Certificate III in Horticulture",
+        "code": "117361C"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118570H"
+      },
+      {
+        "institution": "TAFE South Australia",
+        "course": "Diploma of Community Services",
+        "code": "118875B"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Postgraduate International Placement Program",
+        "code": "051438C"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Postgraduate International Placement Program",
+        "code": "051439B"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Professional Practicum",
+        "code": "085756G"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Professional Practicum",
+        "code": "085757G"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Professional Practicum",
+        "code": "085758F"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Professional Practicum",
+        "code": "085759E"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Professional Practicum",
+        "code": "085760A"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Master of Industrial Research",
+        "code": "108474B"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Bachelor of Fine Arts",
+        "code": "110652D"
+      },
+      {
+        "institution": "UNSW Sydney",
+        "course": "Bachelor of Advanced Science (Honours)/Bachelor of Fine Arts",
+        "code": "110670B"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "058666A"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "085255G"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Graduate Diploma in Quantitative Finance",
+        "code": "088932F"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "088974G"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110080B"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110081A"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110082M"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110083K"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110085H"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110087F"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110089D"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110090M"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110091K"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110092J"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110094G"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110096E"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Doctor of Philosophy",
+        "code": "110461M"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Master of Strategic Communication (Extension)",
+        "code": "116218G"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Bachelor of Artificial Intelligence",
+        "code": "117552G"
+      },
+      {
+        "institution": "University of Technology Sydney (UTS)",
+        "course": "Bachelor of Information Technology",
+        "code": "117553F"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "048496G"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "066281G"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "072792M"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "072855A"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "074738A"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "087634B"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "087635A"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "087636M"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "087637K"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "087641C"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "087642B"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "087643A"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Master of Philosophy",
+        "code": "091863K"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "092063A"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "092064M"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "094535B"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "094536A"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Doctor of Philosophy",
+        "code": "094537M"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Bachelor of Business",
+        "code": "102881B"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Bachelor of Nursing",
+        "code": "113585H"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Graduate Certificate in Public Health",
+        "code": "117155J"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Bachelor of Arts in Western Civilisation - Bachelor of International Studies",
+        "code": "118189B"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Bachelor of Arts in Western Civilisation - Bachelor of Laws",
+        "code": "118191H"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Bachelor of Creative Arts - Bachelor of Laws",
+        "code": "118530E"
+      },
+      {
+        "institution": "University of Wollongong",
+        "course": "Bachelor of Creative Arts",
+        "code": "118533B"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Bachelor of Business",
+        "code": "114518M"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Bachelor of Information Technology",
+        "code": "114519K"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Bachelor of Information Technology (Business Information Systems)",
+        "code": "114537H"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Bachelor of Information Technology (Software Development)",
+        "code": "114539F"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Bachelor of Professional Accounting",
+        "code": "114540B"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Data Science",
+        "code": "118376K"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119293E"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119295C"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119297A"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119298M"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119304G"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119305F"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119306E"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119307D"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119313F"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119314E"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119315D"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119326A"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119350A"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119351M"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119352K"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119360K"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Master of Philosophy",
+        "code": "119361J"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119362H"
+      },
+      {
+        "institution": "Federation University Australia",
+        "course": "Doctor of Philosophy",
+        "code": "119402E"
+      },
+      {
+        "institution": "The University of Newcastle (UoN), The University of Newcastle Language Centre, Sydney",
+        "course": "Doctor of Philosophy (Health Economics)",
+        "code": "107760D"
+      },
+      {
+        "institution": "The University of Newcastle (UoN), The University of Newcastle Language Centre, Sydney",
+        "course": "Master of Philosophy (Health Economics)",
+        "code": "107761C"
+      },
+      {
+        "institution": "Swinburne University of Technology",
+        "course": "Master of Business Administration",
+        "code": "097341K"
+      },
+      {
+        "institution": "Swinburne University of Technology",
+        "course": "Diploma of Laboratory Technology",
+        "code": "098104D"
+      },
+      {
+        "institution": "Swinburne University of Technology",
+        "course": "Certificate IV in Laboratory Techniques",
+        "code": "099234G"
+      },
+      {
+        "institution": "Swinburne University of Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118571G"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Doctor of Philosophy",
+        "code": "006244J"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Doctor of Philosophy",
+        "code": "006256E"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Doctor of Philosophy",
+        "code": "006262G"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Doctor of Philosophy",
+        "code": "006265D"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Doctor of Philosophy",
+        "code": "016704C"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Doctor of Philosophy",
+        "code": "018829G"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Doctor of Philosophy",
+        "code": "018831B"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Master of Science",
+        "code": "026364B"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Doctor of Philosophy",
+        "code": "067835C"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Master of Science",
+        "code": "070237K"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Bachelor of Arts",
+        "code": "109270F"
+      },
+      {
+        "institution": "Deakin University (Deakin)",
+        "course": "Master of Teaching (Early Childhood)",
+        "code": "114296J"
+      },
+      {
+        "institution": "Flinders University",
+        "course": "Graduate Certificate in Visual Effects (Lighting and Environments)",
+        "code": "114041K"
+      },
+      {
+        "institution": "La Trobe University",
+        "course": "Bachelor of Biomedicine",
+        "code": "114827J"
+      },
+      {
+        "institution": "La Trobe University",
+        "course": "Bachelor of Agriculture",
+        "code": "115616A"
+      },
+      {
+        "institution": "La Trobe University",
+        "course": "Bachelor of Computer Science",
+        "code": "118149K"
+      },
+      {
+        "institution": "La Trobe University",
+        "course": "Master of Public Health",
+        "code": "119012H"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Certificate IV in Textile Design, Development and Production",
+        "code": "0100789"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Certificate IV in Laboratory Techniques",
+        "code": "0100843"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Advanced Diploma of Engineering",
+        "code": "095308E"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Diploma of Laboratory Technology",
+        "code": "098105C"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Computer Science",
+        "code": "103230G"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Computer Science",
+        "code": "110797J"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Software Engineering",
+        "code": "110799G"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Data Science",
+        "code": "110801G"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Information Technology",
+        "code": "110803E"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Biomedical Science",
+        "code": "110985E"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Computer and Network Engineering) (Honours) / Bachelor of Computer Science",
+        "code": "110988B"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Biomedical Engineering) (Honours)",
+        "code": "110990H"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Mechanical Engineering) (Honours)",
+        "code": "110991G"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Electronic and Computer Systems Engineering) (Honours)",
+        "code": "110992F"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Electrical Engineering) (Honours)",
+        "code": "110993E"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Sustainable Systems Engineering) (Honours)",
+        "code": "110994D"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Civil and Infrastructure) (Honours)",
+        "code": "110995C"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Aerospace Engineering) (Honours)",
+        "code": "110996B"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Chemical Engineering) (Honours)",
+        "code": "110997A"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Engineering (Environmental Engineering) (Honours)",
+        "code": "110998M"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Applied Science (Aviation)",
+        "code": "111188D"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Aviation (Pilot Training)",
+        "code": "111190K"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Associate Degree in Information Technology",
+        "code": "113595F"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Associate Degree in Applied Science",
+        "code": "113597D"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Master of Teaching Practice (Secondary Education)",
+        "code": "113706D"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Master of Teaching Practice (Primary Education)",
+        "code": "113707C"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Education (Primary and Early Childhood Education)",
+        "code": "113708B"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Nursing",
+        "code": "114027H"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Pharmacy (Honours)",
+        "code": "114028G"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Advanced Diploma of Building Design (Architectural)",
+        "code": "114568A"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of International Studies",
+        "code": "116297C"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Master of Engineering (Electrical and Electronic Engineering)",
+        "code": "116507J"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Master of Engineering (Telecommunication and Network Engineering)",
+        "code": "116508H"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Master of Engineering (Electrical Engineering)",
+        "code": "116510C"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Master of Cyber Security",
+        "code": "116688K"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Bachelor of Science (Biotechnology)/Bachelor of Biomedical Science",
+        "code": "116912G"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Diploma of Fashion Styling",
+        "code": "118551M"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Certificate IV in Design",
+        "code": "119035A"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Diploma of Photography and Digital Imaging",
+        "code": "119064G"
+      },
+      {
+        "institution": "RMIT University (RMIT)",
+        "course": "Advanced Diploma of Engineering Technology",
+        "code": "119171D"
+      },
+      {
+        "institution": "Victoria University",
+        "course": "Master of Applied Research",
+        "code": "099078D"
+      },
+      {
+        "institution": "Victoria University",
+        "course": "Master of Research",
+        "code": "099080K"
+      },
+      {
+        "institution": "Victoria University",
+        "course": "Master of Research Practice",
+        "code": "099082G"
+      },
+      {
+        "institution": "Victoria University",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118572F"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Laws/Bachelor of Science (Computer Science Or Information Systems)",
+        "code": "010223B"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Laws/Bachelor of Asian Studies",
+        "code": "021354M"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of International Business",
+        "code": "027642K"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Multimedia",
+        "code": "027647E"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Master of Theology",
+        "code": "034950F"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Graduate Diploma in Business Administration",
+        "code": "034960D"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Nursing Conversion",
+        "code": "055565G"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Mass Communication",
+        "code": "055604F"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Arts in Community Development",
+        "code": "072165E"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Science",
+        "code": "079334C"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Science",
+        "code": "079342C"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Science",
+        "code": "079343B"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Arts",
+        "code": "079364G"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Arts with Honours",
+        "code": "084944A"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Science with Honours",
+        "code": "084946K"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Science with Honours",
+        "code": "084954K"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Science / Doctor of Veterinary Medicine",
+        "code": "108256A"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Engineering Honours",
+        "code": "110888F"
+      },
+      {
+        "institution": "Murdoch University",
+        "course": "Bachelor of Engineering Technology",
+        "code": "110889E"
+      },
+      {
+        "institution": "Mercury Colleges Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118876A"
+      },
+      {
+        "institution": "Stott's Colleges, Australian Surf Industry Training School, Front Cooking School, Melbourne Language Centre, Affectors Academy",
+        "course": "Diploma of Community Services",
+        "code": "114155M"
+      },
+      {
+        "institution": "Stott's Colleges, Australian Surf Industry Training School, Front Cooking School, Melbourne Language Centre, Affectors Academy",
+        "course": "Graduate Certificate of Health and Community",
+        "code": "116768K"
+      },
+      {
+        "institution": "Stott's Colleges, Australian Surf Industry Training School, Front Cooking School, Melbourne Language Centre, Affectors Academy",
+        "course": "Diploma of Community Services",
+        "code": "119026B"
+      },
+      {
+        "institution": "Cairns Business College Limited, Cairns College of Education",
+        "course": "Diploma of Community Services",
+        "code": "118877M"
+      },
+      {
+        "institution": "Griffith University",
+        "course": "Bachelor of Commerce",
+        "code": "115630C"
+      },
+      {
+        "institution": "Navitas English",
+        "course": "IELTS Preparation",
+        "code": "047698F"
+      },
+      {
+        "institution": "Navitas English",
+        "course": "Business English",
+        "code": "055579B"
+      },
+      {
+        "institution": "Navitas English",
+        "course": "General English 2",
+        "code": "077035G"
+      },
+      {
+        "institution": "Navitas English",
+        "course": "General English 3",
+        "code": "077036G"
+      },
+      {
+        "institution": "Navitas English",
+        "course": "IELTS Preparation (Evening)",
+        "code": "084191D"
+      },
+      {
+        "institution": "Chopperline Flight Training, Coastline Flight Training, Airways Aviation",
+        "course": "Diploma of Aviation (Commercial Pilot Licence  Aeroplane)",
+        "code": "0101166"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Bachelor of Education Primary",
+        "code": "113099M"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Bachelor of Education Secondary",
+        "code": "113101M"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Bachelor of Educational Studies",
+        "code": "113896D"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Bachelor of Social Work",
+        "code": "114022B"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Master of Information Technology (Software Engineering)",
+        "code": "116324E"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Master of Data Science",
+        "code": "116326C"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Master of Information Technology (Cyber Security)",
+        "code": "116327B"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Master of Information Technology (Information Systems)",
+        "code": "116328A"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Bachelor of Medical Laboratory Science Honours",
+        "code": "116458B"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Bachelor of Engineering Honours",
+        "code": "118193F"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Master of Engineering",
+        "code": "118194E"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Master of Engineering",
+        "code": "118196C"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Bachelor of Nursing",
+        "code": "118197B"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Bachelor of Health Science/Master of Occupational Therapy",
+        "code": "118219A"
+      },
+      {
+        "institution": "Charles Darwin University",
+        "course": "Diploma of Health Science",
+        "code": "118220H"
+      },
+      {
+        "institution": "TAFE NSW Technical and Further Education Commission; TAFE NSW Higher Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118573E"
+      },
+      {
+        "institution": "TAFE NSW Technical and Further Education Commission; TAFE NSW Higher Education",
+        "course": "Diploma of Community Services",
+        "code": "118878K"
+      },
+      {
+        "institution": "TAFE NSW Technical and Further Education Commission; TAFE NSW Higher Education",
+        "course": "Certificate IV in Design",
+        "code": "119036M"
+      },
+      {
+        "institution": "Melbourne Polytechnic",
+        "course": "Diploma of Community Services",
+        "code": "118683K"
+      },
+      {
+        "institution": "The University of Notre Dame Australia",
+        "course": "Bachelor of Nursing",
+        "code": "083619M"
+      },
+      {
+        "institution": "The University of Notre Dame Australia",
+        "course": "Doctor of Medicine",
+        "code": "107489C"
+      },
+      {
+        "institution": "The University of Notre Dame Australia",
+        "course": "Bachelor of Biomedical Science",
+        "code": "114389D"
+      },
+      {
+        "institution": "The University of Notre Dame Australia",
+        "course": "Master of Primary Teaching",
+        "code": "116882H"
+      },
+      {
+        "institution": "The University of Notre Dame Australia",
+        "course": "Master of Secondary Teaching",
+        "code": "116883G"
+      },
+      {
+        "institution": "The University of Notre Dame Australia",
+        "course": "Bachelor of Primary Education",
+        "code": "116884F"
+      },
+      {
+        "institution": "The University of Notre Dame Australia",
+        "course": "Bachelor of Exercise and Sport Science",
+        "code": "116913F"
+      },
+      {
+        "institution": "Bendigo TAFE; and Kangan Institute",
+        "course": "Diploma of Community Services",
+        "code": "118684J"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Master of Business Administration",
+        "code": "080919A"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Business",
+        "code": "081532A"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Master of Professional Accounting",
+        "code": "081533M"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Diploma of Business",
+        "code": "086030E"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Information Technology",
+        "code": "086031D"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Master of Engineering Management, Master of Business Administration",
+        "code": "094098G"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Master of Information Technology",
+        "code": "097605B"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Business and Enterprise",
+        "code": "111081D"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Business in Hotel Management",
+        "code": "111082C"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Diploma of Information Technology",
+        "code": "111518B"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Business (Aviation Management)",
+        "code": "115095K"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Business",
+        "code": "115141J"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Business",
+        "code": "115142H"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Graduate Diploma of Education (Early Childhood)",
+        "code": "115298K"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Master of Computing",
+        "code": "115299J"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Graduate Diploma of Business",
+        "code": "115300K"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Science",
+        "code": "117712G"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Master of Information Technology",
+        "code": "117757E"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Business",
+        "code": "117759C"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Information Technology",
+        "code": "117765E"
+      },
+      {
+        "institution": "Southern Cross University",
+        "course": "Bachelor of Psychological Science, Bachelor of Business",
+        "code": "117766D"
+      },
+      {
+        "institution": "Australian Pacific College, Southern Cross High School, English Unlimited Sydney, English Unlimited Melbourne",
+        "course": "Diploma of Interior Design",
+        "code": "0100107"
+      },
+      {
+        "institution": "Australian Pacific College, Southern Cross High School, English Unlimited Sydney, English Unlimited Melbourne",
+        "course": "Advanced Diploma of Interior Design",
+        "code": "0100109"
+      },
+      {
+        "institution": "The Illawarra Business College, Australian College of Hospitality, AUSTRALIAN COLLEGE OF COMMUNITY SERVICES,Australian College of Community Care",
+        "course": "Diploma of Community Services",
+        "code": "118685H"
+      },
+      {
+        "institution": "Hillsong International Leadership College",
+        "course": "Certificate III in Christian Leadership",
+        "code": "115266G"
+      },
+      {
+        "institution": "Bedford College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118575C"
+      },
+      {
+        "institution": "Bedford College",
+        "course": "Diploma of Community Services",
+        "code": "118686G"
+      },
+      {
+        "institution": "University of the Sunshine Coast",
+        "course": "Bachelor of Business (Honours)",
+        "code": "028849J"
+      },
+      {
+        "institution": "University of the Sunshine Coast",
+        "course": "Bachelor of Commerce (Honours)",
+        "code": "075467M"
+      },
+      {
+        "institution": "University of the Sunshine Coast",
+        "course": "Master of Education",
+        "code": "081796K"
+      },
+      {
+        "institution": "University of the Sunshine Coast",
+        "course": "Graduate Certificate in Business Research",
+        "code": "099037B"
+      },
+      {
+        "institution": "Oceania Polytechnic",
+        "course": "Advanced Diploma of Building Design (Architectural)",
+        "code": "115441H"
+      },
+      {
+        "institution": "Supreme Business College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118577A"
+      },
+      {
+        "institution": "Supreme Business College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118687F"
+      },
+      {
+        "institution": "InTech Institute of Technology",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "0100623"
+      },
+      {
+        "institution": "InTech Institute of Technology",
+        "course": "Diploma of Engineering - Technical",
+        "code": "089684J"
+      },
+      {
+        "institution": "InTech Institute of Technology",
+        "course": "Advanced Diploma of Engineering",
+        "code": "089685G"
+      },
+      {
+        "institution": "InTech Institute of Technology",
+        "course": "Graduate Diploma of Engineering",
+        "code": "119067D"
+      },
+      {
+        "institution": "InTech Institute of Technology",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119153F"
+      },
+      {
+        "institution": "VIT (Victorian Institute of Technology)",
+        "course": "Certificate III in Carpentry",
+        "code": "103321D"
+      },
+      {
+        "institution": "VIT (Victorian Institute of Technology)",
+        "course": "Master of Business Administration",
+        "code": "114579J"
+      },
+      {
+        "institution": "VIT (Victorian Institute of Technology)",
+        "course": "Graduate Diploma of Business Administration",
+        "code": "114581D"
+      },
+      {
+        "institution": "VIT (Victorian Institute of Technology)",
+        "course": "Graduate Certificate of Business Administration",
+        "code": "114582C"
+      },
+      {
+        "institution": "VIT (Victorian Institute of Technology)",
+        "course": "Master of Information Technology and Systems",
+        "code": "114822C"
+      },
+      {
+        "institution": "VIT (Victorian Institute of Technology)",
+        "course": "Graduate Diploma of Information Technology and Systems",
+        "code": "114823B"
+      },
+      {
+        "institution": "VIT (Victorian Institute of Technology)",
+        "course": "Graduate Certificate of Information Technology and Systems",
+        "code": "114824A"
+      },
+      {
+        "institution": "La Lingua Language School",
+        "course": "Realworld General English Conversation Centred (Elementary to Advanced)",
+        "code": "117545F"
+      },
+      {
+        "institution": "Sydney School of Business and Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118578M"
+      },
+      {
+        "institution": "Sydney School of Business and Technology",
+        "course": "Graduate Diploma of Engineering",
+        "code": "119068C"
+      },
+      {
+        "institution": "Unity College Australia",
+        "course": "Diploma of Community Services",
+        "code": "118688E"
+      },
+      {
+        "institution": "Baxter Institute",
+        "course": "Diploma of Engineering - Technical",
+        "code": "0100367"
+      },
+      {
+        "institution": "Baxter Institute",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "0100624"
+      },
+      {
+        "institution": "Baxter Institute",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119154E"
+      },
+      {
+        "institution": "Le Cordon Bleu Australia Pty Limited",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "111684K"
+      },
+      {
+        "institution": "Academies Australasia Institute",
+        "course": "Diploma of Community Services",
+        "code": "118689D"
+      },
+      {
+        "institution": "Box Hill Institute",
+        "course": "Certificate IV in Design",
+        "code": "119037K"
+      },
+      {
+        "institution": "AAPoly, AMI Education",
+        "course": "Diploma of Community Services",
+        "code": "118690M"
+      },
+      {
+        "institution": "Australian Child Care Career Options",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118919F"
+      },
+      {
+        "institution": "Australian National Institute of Business & Technology",
+        "course": "Certificate III in Commercial Cookery",
+        "code": "096070C"
+      },
+      {
+        "institution": "Australian National Institute of Business & Technology",
+        "course": "Certificate III in Patisserie",
+        "code": "096071B"
+      },
+      {
+        "institution": "Australian National Institute of Business & Technology",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "096072A"
+      },
+      {
+        "institution": "Australian National Institute of Business & Technology",
+        "course": "Certificate IV in Patisserie",
+        "code": "096074K"
+      },
+      {
+        "institution": "Australian National Institute of Business & Technology",
+        "course": "Diploma of Community Services",
+        "code": "118691K"
+      },
+      {
+        "institution": "Kingston International College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118579K"
+      },
+      {
+        "institution": "Kingston International College",
+        "course": "Diploma of Community Services",
+        "code": "118692J"
+      },
+      {
+        "institution": "Brisbane College of Australia ; Brisbane College of English",
+        "course": "Diploma of Community Services",
+        "code": "118693H"
+      },
+      {
+        "institution": "Brisbane College of Australia ; Brisbane College of English",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118920B"
+      },
+      {
+        "institution": "Academia International & Academia Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118580F"
+      },
+      {
+        "institution": "Academia International & Academia Australia",
+        "course": "Diploma of Community Services",
+        "code": "118694G"
+      },
+      {
+        "institution": "ECA College; The English Language School in Sydney (ELSIS)",
+        "course": "Graduate Diploma of Engineering",
+        "code": "119069B"
+      },
+      {
+        "institution": "Australia-International Institute of Workplace Training",
+        "course": "Certificate III in Individual Support",
+        "code": "114935E"
+      },
+      {
+        "institution": "Australia-International Institute of Workplace Training",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118581E"
+      },
+      {
+        "institution": "Australia-International Institute of Workplace Training",
+        "course": "Diploma of Community Services",
+        "code": "118695F"
+      },
+      {
+        "institution": "Australian University of Theology Limited",
+        "course": "Master of Theological Studies",
+        "code": "0100549"
+      },
+      {
+        "institution": "Australian University of Theology Limited",
+        "course": "Diploma of Ministry",
+        "code": "083078B"
+      },
+      {
+        "institution": "Australian University of Theology Limited",
+        "course": "Diploma of Theology",
+        "code": "083079A"
+      },
+      {
+        "institution": "Australian University of Theology Limited",
+        "course": "Bachelor of Ministry",
+        "code": "083084D"
+      },
+      {
+        "institution": "Australian University of Theology Limited",
+        "course": "Bachelor of Theology",
+        "code": "083086B"
+      },
+      {
+        "institution": "Australian University of Theology Limited",
+        "course": "Graduate Diploma of Divinity",
+        "code": "083093C"
+      },
+      {
+        "institution": "Australian University of Theology Limited",
+        "course": "Master of Divinity",
+        "code": "083099G"
+      },
+      {
+        "institution": "Abbey College Australia, Abbey Training",
+        "course": "Diploma of Community Services",
+        "code": "118696E"
+      },
+      {
+        "institution": "Pacific College of Technology",
+        "course": "Diploma of Community Services",
+        "code": "118697D"
+      },
+      {
+        "institution": "Greenwich English College, Greenwich Management College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118582D"
+      },
+      {
+        "institution": "Greenwich English College, Greenwich Management College",
+        "course": "Diploma of Community Services",
+        "code": "118698C"
+      },
+      {
+        "institution": "Imagine Education Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "119257J"
+      },
+      {
+        "institution": "Holmes Institute",
+        "course": "Bachelor of Information Systems",
+        "code": "119410E"
+      },
+      {
+        "institution": "Queensland Academy of Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118583C"
+      },
+      {
+        "institution": "Queensland Academy of Technology",
+        "course": "Diploma of Community Services",
+        "code": "118699B"
+      },
+      {
+        "institution": "University Preparation College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118584B"
+      },
+      {
+        "institution": "Queensland International Institute",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118921A"
+      },
+      {
+        "institution": "Hays International College Pty Ltd, Hays International College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118922M"
+      },
+      {
+        "institution": "EQUALS International",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118585A"
+      },
+      {
+        "institution": "EQUALS International",
+        "course": "Diploma of Community Services",
+        "code": "118700C"
+      },
+      {
+        "institution": "AVETA - Australian Vocational Education & Training Academy",
+        "course": "Diploma of Hospitality Management",
+        "code": "113862C"
+      },
+      {
+        "institution": "AVETA - Australian Vocational Education & Training Academy",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "113863B"
+      },
+      {
+        "institution": "International College of Advanced Education Pty Ltd",
+        "course": "Diploma of Remedial Massage",
+        "code": "113006K"
+      },
+      {
+        "institution": "Crown Institute of Business and Technology",
+        "course": "Diploma of Accounting",
+        "code": "111544M"
+      },
+      {
+        "institution": "Crown Institute of Business and Technology",
+        "course": "Advanced Diploma of Accounting",
+        "code": "111545K"
+      },
+      {
+        "institution": "Quality College of Australia",
+        "course": "Certificate III in Individual Support",
+        "code": "113461J"
+      },
+      {
+        "institution": "Melbourne College of Hair and Beauty; Melbourne College of Training & Assessment",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118586M"
+      },
+      {
+        "institution": "Institute of Tertiary and Higher Education Australia",
+        "course": "Diploma of Community Services",
+        "code": "119027A"
+      },
+      {
+        "institution": "Institute of Tertiary and Higher Education Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "119146E"
+      },
+      {
+        "institution": "Education Training & Employment Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118587K"
+      },
+      {
+        "institution": "Education Training & Employment Australia",
+        "course": "Diploma of Community Services",
+        "code": "118701B"
+      },
+      {
+        "institution": "Southern Cross Education Institute, North Melbourne Grammar College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118588J"
+      },
+      {
+        "institution": "Southern Cross Education Institute, North Melbourne Grammar College",
+        "course": "Diploma of Community Services",
+        "code": "118702A"
+      },
+      {
+        "institution": "Canterbury Technical Institute Pty Ltd",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "093920A"
+      },
+      {
+        "institution": "Canterbury Technical Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118703M"
+      },
+      {
+        "institution": "Melbourne College of Further Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118589H"
+      },
+      {
+        "institution": "Angad Australian Institute of Technology Pty Ltd",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "112203B"
+      },
+      {
+        "institution": "Astute Training Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118704K"
+      },
+      {
+        "institution": "RC (Rhodes College)",
+        "course": "Diploma of Community Services",
+        "code": "118705J"
+      },
+      {
+        "institution": "Australian National College Pty Ltd",
+        "course": "Advanced Diploma of Business",
+        "code": "117354B"
+      },
+      {
+        "institution": "Australian National College Pty Ltd",
+        "course": "Certificate III in Business",
+        "code": "117355A"
+      },
+      {
+        "institution": "Australian National College Pty Ltd",
+        "course": "Certificate IV in Business",
+        "code": "117356M"
+      },
+      {
+        "institution": "Queensford College, Q Learning",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118591C"
+      },
+      {
+        "institution": "New Cambridge College Sydney Inc",
+        "course": "Diploma of Community Services",
+        "code": "118706H"
+      },
+      {
+        "institution": "TAFE Queensland",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118592B"
+      },
+      {
+        "institution": "TAFE Queensland",
+        "course": "Diploma of Community Services",
+        "code": "118707G"
+      },
+      {
+        "institution": "English in Paradise; ELSTON EDUCATION & TRAINING",
+        "course": "Certificate IV in Design",
+        "code": "119038J"
+      },
+      {
+        "institution": "Melbourne City Institute of Education, Explore English",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "119258H"
+      },
+      {
+        "institution": "Melbourne City Institute of Education, Explore English",
+        "course": "Diploma of Community Services",
+        "code": "119277E"
+      },
+      {
+        "institution": "Australian Careers College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118593A"
+      },
+      {
+        "institution": "TasTAFE",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118594M"
+      },
+      {
+        "institution": "TasTAFE",
+        "course": "Diploma of Community Services",
+        "code": "118708F"
+      },
+      {
+        "institution": "Stanley College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118595K"
+      },
+      {
+        "institution": "Stanley College",
+        "course": "Diploma of Community Services",
+        "code": "118709E"
+      },
+      {
+        "institution": "Australian College of Trade Pty Ltd",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "095096A"
+      },
+      {
+        "institution": "Australian College of Trade Pty Ltd",
+        "course": "Diploma of Hospitality Management",
+        "code": "114662C"
+      },
+      {
+        "institution": "Australian College of Trade Pty Ltd",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "114663B"
+      },
+      {
+        "institution": "Australian College of Trade Pty Ltd",
+        "course": "Diploma of Accounting",
+        "code": "115253A"
+      },
+      {
+        "institution": "King's Institute of Managment and Technology",
+        "course": "Diploma of Community Services",
+        "code": "114358M"
+      },
+      {
+        "institution": "King's Institute of Managment and Technology",
+        "course": "Diploma of Community Services",
+        "code": "118711M"
+      },
+      {
+        "institution": "New England Institute of Technology Pty Ltd",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "093432F"
+      },
+      {
+        "institution": "SGSCC International",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118597H"
+      },
+      {
+        "institution": "SGSCC International",
+        "course": "Diploma of Community Services",
+        "code": "118712K"
+      },
+      {
+        "institution": "Australian Adelaide International College Pty Ltd",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "110945B"
+      },
+      {
+        "institution": "Murdoch College, The University of Adelaide College, Kaplan International College Adelaide",
+        "course": "Diploma of Business",
+        "code": "069094G"
+      },
+      {
+        "institution": "Murdoch College, The University of Adelaide College, Kaplan International College Adelaide",
+        "course": "Diploma of Information and Communication Technology",
+        "code": "069095G"
+      },
+      {
+        "institution": "Adelaide Institute of Health",
+        "course": "Diploma of Community Services",
+        "code": "118713J"
+      },
+      {
+        "institution": "International Institute of Management & American College",
+        "course": "Diploma of Hospitality Management",
+        "code": "113577H"
+      },
+      {
+        "institution": "International Institute of Management & American College",
+        "course": "Diploma of Community Services",
+        "code": "118714H"
+      },
+      {
+        "institution": "Apex Australia Vocational Education",
+        "course": "Diploma of Community Services",
+        "code": "113116D"
+      },
+      {
+        "institution": "Apex Australia Vocational Education",
+        "course": "Diploma of Community Services",
+        "code": "118715G"
+      },
+      {
+        "institution": "Australian College of Technology and Business Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118598G"
+      },
+      {
+        "institution": "Australian College of Technology and Business Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118716F"
+      },
+      {
+        "institution": "Australis Institute of Technology and Education (AITE)",
+        "course": "Certificate IV in Air Conditioning and Refrigeration Servicing",
+        "code": "117750A"
+      },
+      {
+        "institution": "Australis Institute of Technology and Education (AITE)",
+        "course": "Advanced Diploma of Air Conditioning and Refrigeration Engineering",
+        "code": "117752K"
+      },
+      {
+        "institution": "Australis Institute of Technology and Education (AITE)",
+        "course": "Diploma of Community Services",
+        "code": "118717E"
+      },
+      {
+        "institution": "West Australian Institute of Further Studies",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118599F"
+      },
+      {
+        "institution": "West Australian Institute of Further Studies",
+        "course": "Diploma of Community Services",
+        "code": "118718D"
+      },
+      {
+        "institution": "George Brown College",
+        "course": "Diploma of Community Services",
+        "code": "118719C"
+      },
+      {
+        "institution": "Central Australian College",
+        "course": "Certificate III in Individual Support",
+        "code": "113514A"
+      },
+      {
+        "institution": "Central Australian College",
+        "course": "Diploma of Community Services",
+        "code": "115538K"
+      },
+      {
+        "institution": "Central Australian College",
+        "course": "Diploma of Community Services",
+        "code": "118720K"
+      },
+      {
+        "institution": "EIM International Training Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118923K"
+      },
+      {
+        "institution": "Australian Health and Science Institute Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118600G"
+      },
+      {
+        "institution": "Australian Health and Science Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118721J"
+      },
+      {
+        "institution": "Brisbane College of Horticulture",
+        "course": "Certificate III in Horticulture",
+        "code": "113107E"
+      },
+      {
+        "institution": "Brisbane College of Horticulture",
+        "course": "Certificate IV in Horticulture",
+        "code": "113217K"
+      },
+      {
+        "institution": "Cairns College of English & Business",
+        "course": "Diploma of Community Services",
+        "code": "118722H"
+      },
+      {
+        "institution": "Cairns College of English & Business",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118924J"
+      },
+      {
+        "institution": "Australian Professional Skills Institute",
+        "course": "Diploma of Community Services",
+        "code": "118723G"
+      },
+      {
+        "institution": "Empyrean Education Institute",
+        "course": "Certificate III in Commercial Cookery",
+        "code": "094633M"
+      },
+      {
+        "institution": "Empyrean Education Institute",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "094634K"
+      },
+      {
+        "institution": "Empyrean Education Institute",
+        "course": "Diploma of Community Services",
+        "code": "118724F"
+      },
+      {
+        "institution": "Perth College of Beauty Therapy; YES College",
+        "course": "Diploma of Community Services",
+        "code": "112630E"
+      },
+      {
+        "institution": "Perth College of Beauty Therapy; YES College",
+        "course": "Diploma of Community Services",
+        "code": "118725E"
+      },
+      {
+        "institution": "Job Training Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "115248J"
+      },
+      {
+        "institution": "Job Training Institute Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118601F"
+      },
+      {
+        "institution": "Job Training Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118726D"
+      },
+      {
+        "institution": "Everest Institute of Education Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118727C"
+      },
+      {
+        "institution": "Signet Institute of Australia",
+        "course": "Diploma of Community Services",
+        "code": "118728B"
+      },
+      {
+        "institution": "Signet Institute of Australia",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119155D"
+      },
+      {
+        "institution": "Torrens University Australia; Torrens University Language Centre; Chifley Business School at Torrens University Australia CBS at Torrens University Australia Blue Mountains International Hotel Management School at Torrens University Australia BMIHMS at To",
+        "course": "Associate Degree of Interior Design (Commercial)",
+        "code": "105418A"
+      },
+      {
+        "institution": "Berkeley Business Institute Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118602E"
+      },
+      {
+        "institution": "The Australian College for International Studies (TACIS)",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118896H"
+      },
+      {
+        "institution": "Australian College of Studies Co.",
+        "course": "Certificate III in Individual Support",
+        "code": "112453F"
+      },
+      {
+        "institution": "Australian College of Studies Co.",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118603D"
+      },
+      {
+        "institution": "Australian College of Studies Co.",
+        "course": "Diploma of Community Services",
+        "code": "118729A"
+      },
+      {
+        "institution": "Max Therapy Institute, MAX English",
+        "course": "Diploma of Remedial Massage",
+        "code": "113180G"
+      },
+      {
+        "institution": "Australian Institute of Language and Further Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "109263E"
+      },
+      {
+        "institution": "Australian Institute of Language and Further Education",
+        "course": "Diploma of Community Services",
+        "code": "112494H"
+      },
+      {
+        "institution": "Lawson College Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118604C"
+      },
+      {
+        "institution": "Iona Columba College",
+        "course": "Certificate IV in Christian Ministry and Theology",
+        "code": "117093G"
+      },
+      {
+        "institution": "Iona Columba College",
+        "course": "Advanced Diploma of Christian Ministry and Theology",
+        "code": "117095E"
+      },
+      {
+        "institution": "Iona Columba College",
+        "course": "Graduate Diploma of Christian Ministry and Theology",
+        "code": "117096D"
+      },
+      {
+        "institution": "Protea College",
+        "course": "Diploma of Community Services",
+        "code": "118730H"
+      },
+      {
+        "institution": "Charter Training, Charter Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118605B"
+      },
+      {
+        "institution": "Charter Training, Charter Education",
+        "course": "Diploma of Community Services",
+        "code": "118731G"
+      },
+      {
+        "institution": "Australian College of Business Intelligence",
+        "course": "Certificate IV in Health Administration",
+        "code": "112565J"
+      },
+      {
+        "institution": "Australian College of Business Intelligence",
+        "course": "Certificate IV in Design",
+        "code": "119039H"
+      },
+      {
+        "institution": "Sydney Metro College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118606A"
+      },
+      {
+        "institution": "Sydney Metro College",
+        "course": "Diploma of Community Services",
+        "code": "118732F"
+      },
+      {
+        "institution": "Australia Institute of Business and Technology",
+        "course": "Certificate III in Air Conditioning and Refrigeration",
+        "code": "117747G"
+      },
+      {
+        "institution": "Australia Institute of Business and Technology",
+        "course": "Certificate IV in Air Conditioning and Refrigeration Servicing",
+        "code": "117751M"
+      },
+      {
+        "institution": "Australia Institute of Business and Technology",
+        "course": "Advanced Diploma of Air Conditioning and Refrigeration Engineering",
+        "code": "117753J"
+      },
+      {
+        "institution": "Australia Institute of Business and Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118607M"
+      },
+      {
+        "institution": "Australia Institute of Business and Technology",
+        "course": "Diploma of Community Services",
+        "code": "118733E"
+      },
+      {
+        "institution": "Entrepreneur Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118608K"
+      },
+      {
+        "institution": "Entrepreneur Education",
+        "course": "Certificate IV in Design",
+        "code": "119040D"
+      },
+      {
+        "institution": "Entrepreneur Education",
+        "course": "Diploma of Photography and Digital Imaging",
+        "code": "119066E"
+      },
+      {
+        "institution": "Australian Technical College Western Australia",
+        "course": "Diploma of Community Services",
+        "code": "118734D"
+      },
+      {
+        "institution": "Australian Skills Management Institute, Australian Skills Management Institute NSW",
+        "course": "Diploma of Community Services",
+        "code": "118735C"
+      },
+      {
+        "institution": "Australian Skills Management Institute, Australian Skills Management Institute NSW",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118897G"
+      },
+      {
+        "institution": "Global Business College Of Australia Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118609J"
+      },
+      {
+        "institution": "Global Business College Of Australia Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118736B"
+      },
+      {
+        "institution": "BCCI, BCC Institute",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118610E"
+      },
+      {
+        "institution": "BCCI, BCC Institute",
+        "course": "Diploma of Community Services",
+        "code": "118737A"
+      },
+      {
+        "institution": "Dalton College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118898F"
+      },
+      {
+        "institution": "Australian International College",
+        "course": "Diploma of Hospitality Management",
+        "code": "110464H"
+      },
+      {
+        "institution": "Australian International College",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "110465G"
+      },
+      {
+        "institution": "Times Academy Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118612C"
+      },
+      {
+        "institution": "Times Academy Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118739K"
+      },
+      {
+        "institution": "The Canberra Training School Pty Ltd, Canberra Business and Technology College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118613B"
+      },
+      {
+        "institution": "The Canberra Training School Pty Ltd, Canberra Business and Technology College",
+        "course": "Diploma of Community Services",
+        "code": "118740F"
+      },
+      {
+        "institution": "Macallan College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "119259G"
+      },
+      {
+        "institution": "Macallan College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "119278D"
+      },
+      {
+        "institution": "Australian Institute of Advanced Studies Pty Ltd",
+        "course": "Advanced Diploma of Engineering",
+        "code": "089996D"
+      },
+      {
+        "institution": "Australian Institute of Advanced Studies Pty Ltd",
+        "course": "Diploma of Engineering - Technical",
+        "code": "097350J"
+      },
+      {
+        "institution": "Australian Institute of Advanced Studies Pty Ltd",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "104547M"
+      },
+      {
+        "institution": "Australian Institute of Advanced Studies Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118614A"
+      },
+      {
+        "institution": "Aventia Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118741E"
+      },
+      {
+        "institution": "Step Into Training Services (SITS)",
+        "course": "Diploma of Community Services",
+        "code": "118742D"
+      },
+      {
+        "institution": "Site Institute International",
+        "course": "Certificate III in Engineering - Technical",
+        "code": "091730A"
+      },
+      {
+        "institution": "Site Institute International",
+        "course": "Diploma of Engineering - Technical",
+        "code": "091732K"
+      },
+      {
+        "institution": "Australasian International Academy Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118615M"
+      },
+      {
+        "institution": "Australasian International Academy Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118743C"
+      },
+      {
+        "institution": "AUSTRALIAN ACADEMY OF TRADES, Queensland International Institute of technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118616K"
+      },
+      {
+        "institution": "Griffin College",
+        "course": "Diploma of Community Services",
+        "code": "118744B"
+      },
+      {
+        "institution": "Australian Global College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118745A"
+      },
+      {
+        "institution": "Australian Global College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118899E"
+      },
+      {
+        "institution": "NEW ERA INSTITUTE PTY LTD",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118617J"
+      },
+      {
+        "institution": "NEW ERA INSTITUTE PTY LTD",
+        "course": "Diploma of Community Services",
+        "code": "118746M"
+      },
+      {
+        "institution": "The Centre of Excellence",
+        "course": "Diploma of Building and Construction (Building)",
+        "code": "098609A"
+      },
+      {
+        "institution": "KKTC EDUCATION PTY LTD",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118618H"
+      },
+      {
+        "institution": "Linx Institute Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118619G"
+      },
+      {
+        "institution": "Linx Institute Australia",
+        "course": "Diploma of Community Services",
+        "code": "118747K"
+      },
+      {
+        "institution": "Frontier Leadership",
+        "course": "Diploma of Community Services",
+        "code": "118748J"
+      },
+      {
+        "institution": "Skills Training Australia",
+        "course": "Diploma of Community Services",
+        "code": "118749H"
+      },
+      {
+        "institution": "Southern Cross School of Business",
+        "course": "Diploma of Community Services",
+        "code": "118750D"
+      },
+      {
+        "institution": "Mechanical Institute of Training and Technology Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118620C"
+      },
+      {
+        "institution": "Mechanical Institute of Training and Technology Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118751C"
+      },
+      {
+        "institution": "Australian Capital College, Capital College",
+        "course": "Diploma of Community Services",
+        "code": "118752B"
+      },
+      {
+        "institution": "Clinton Institute",
+        "course": "Diploma of Community Services",
+        "code": "118753A"
+      },
+      {
+        "institution": "Mastery Institute Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118900F"
+      },
+      {
+        "institution": "Elite Education Vocational Institute",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118621B"
+      },
+      {
+        "institution": "Albright Institute of Business and Language; Albright Institute of English",
+        "course": "Diploma of Community Services",
+        "code": "118754M"
+      },
+      {
+        "institution": "Trinity Institute (Australia)",
+        "course": "Diploma of Community Services",
+        "code": "112573J"
+      },
+      {
+        "institution": "Trinity Institute (Australia)",
+        "course": "Diploma of Community Services",
+        "code": "119028M"
+      },
+      {
+        "institution": "St Peters International College",
+        "course": "Certificate III in Commercial Cookery",
+        "code": "094021F"
+      },
+      {
+        "institution": "St Peters International College",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "094022E"
+      },
+      {
+        "institution": "Windsor College Australia, Smart English Melbourne",
+        "course": "Diploma of Hospitality Management",
+        "code": "102494B"
+      },
+      {
+        "institution": "Gen Institute Pty Ltd",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "114990J"
+      },
+      {
+        "institution": "Nurse Training Australia",
+        "course": "Diploma of Community Services",
+        "code": "118755K"
+      },
+      {
+        "institution": "KCA Education",
+        "course": "Diploma of Community Services",
+        "code": "118756J"
+      },
+      {
+        "institution": "KCA Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118901E"
+      },
+      {
+        "institution": "SUPERIOR TRAINING CENTRE PTY LTD",
+        "course": "Certificate III in Air Conditioning and Refrigeration",
+        "code": "117748F"
+      },
+      {
+        "institution": "SUPERIOR TRAINING CENTRE PTY LTD",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119156C"
+      },
+      {
+        "institution": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE PTY LTD",
+        "course": "Diploma of Community Services",
+        "code": "118757H"
+      },
+      {
+        "institution": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE PTY LTD",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118902D"
+      },
+      {
+        "institution": "AUSTRALIAN HEALTH AND MANAGEMENT INSTITUTE PTY LTD",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119157B"
+      },
+      {
+        "institution": "College of English Education and Training Australia",
+        "course": "Diploma of Community Services",
+        "code": "118758G"
+      },
+      {
+        "institution": "College of English Education and Training Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118903C"
+      },
+      {
+        "institution": "Zoi Education Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118622A"
+      },
+      {
+        "institution": "AAAR INSTITUTE OF BUSINESS AND TECHNOLOGY",
+        "course": "Diploma of Community Services",
+        "code": "118759F"
+      },
+      {
+        "institution": "Sydney City College of Management Pty Ltd",
+        "course": "Certificate IV in Information Technology",
+        "code": "102792C"
+      },
+      {
+        "institution": "Sydney City College of Management Pty Ltd",
+        "course": "Diploma of Project Management",
+        "code": "103567D"
+      },
+      {
+        "institution": "Sydney City College of Management Pty Ltd",
+        "course": "Advanced Diploma of Program Management",
+        "code": "103568C"
+      },
+      {
+        "institution": "Sydney City College of Management Pty Ltd",
+        "course": "Certificate IV in Leadership and Management",
+        "code": "103993H"
+      },
+      {
+        "institution": "Sydney City College of Management Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "106563F"
+      },
+      {
+        "institution": "Rosehill College",
+        "course": "Diploma of Community Services",
+        "code": "118761A"
+      },
+      {
+        "institution": "Rosehill College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118904B"
+      },
+      {
+        "institution": "NA",
+        "course": "Diploma of Community Services",
+        "code": "118762M"
+      },
+      {
+        "institution": "NA",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118905A"
+      },
+      {
+        "institution": "Mid City College",
+        "course": "Diploma of Community Services",
+        "code": "115392A"
+      },
+      {
+        "institution": "Mid City College",
+        "course": "Diploma of Community Services",
+        "code": "118763K"
+      },
+      {
+        "institution": "Brighton College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118764J"
+      },
+      {
+        "institution": "Lead College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118765H"
+      },
+      {
+        "institution": "Lead College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118906M"
+      },
+      {
+        "institution": "INT Nurse Training",
+        "course": "Diploma of Community Services",
+        "code": "118766G"
+      },
+      {
+        "institution": "Skyline International College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118623M"
+      },
+      {
+        "institution": "Skyline International College",
+        "course": "Diploma of Community Services",
+        "code": "118767F"
+      },
+      {
+        "institution": "Axis Institute",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118624K"
+      },
+      {
+        "institution": "Dolph Business School, Edna Business Institute of Melbourne",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "0101069"
+      },
+      {
+        "institution": "Dolph Business School, Edna Business Institute of Melbourne",
+        "course": "Diploma of Community Services",
+        "code": "118768E"
+      },
+      {
+        "institution": "International College of Victoria",
+        "course": "Diploma of Building and Construction (Building)",
+        "code": "098129F"
+      },
+      {
+        "institution": "Australian Training & Qualification College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118907K"
+      },
+      {
+        "institution": "Kingston Academy of Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118908J"
+      },
+      {
+        "institution": "Metro Institute",
+        "course": "Diploma of Community Services",
+        "code": "118770M"
+      },
+      {
+        "institution": "Educare College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118625J"
+      },
+      {
+        "institution": "Educare College",
+        "course": "Diploma of Community Services",
+        "code": "118771K"
+      },
+      {
+        "institution": "Harbourside Institute of Australia Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118626H"
+      },
+      {
+        "institution": "Harbourside Institute of Australia Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118772J"
+      },
+      {
+        "institution": "Alana Kaye College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118627G"
+      },
+      {
+        "institution": "Alana Kaye College",
+        "course": "Diploma of Community Services",
+        "code": "118773H"
+      },
+      {
+        "institution": "McGill Institute Australia",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119158A"
+      },
+      {
+        "institution": "AUSTRALIAN NATIONAL INSTITUTE OF EDUCATION, AUSTRALIAN ACADEMY OF ENGLISH",
+        "course": "Diploma of Community Services",
+        "code": "114576A"
+      },
+      {
+        "institution": "AUSTRALIAN NATIONAL INSTITUTE OF EDUCATION, AUSTRALIAN ACADEMY OF ENGLISH",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118628F"
+      },
+      {
+        "institution": "AUSTRALIAN NATIONAL INSTITUTE OF EDUCATION, AUSTRALIAN ACADEMY OF ENGLISH",
+        "course": "Diploma of Community Services",
+        "code": "118774G"
+      },
+      {
+        "institution": "TasCollege",
+        "course": "Diploma of Community Services",
+        "code": "114288J"
+      },
+      {
+        "institution": "Australian College of Community and Health Services",
+        "course": "Diploma of Community Services",
+        "code": "118775F"
+      },
+      {
+        "institution": "Australian College of Community and Health Services",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118909H"
+      },
+      {
+        "institution": "Kingsford International Institute",
+        "course": "Diploma of Community Services",
+        "code": "115583E"
+      },
+      {
+        "institution": "Kingsford International Institute",
+        "course": "Diploma of Community Services",
+        "code": "118776E"
+      },
+      {
+        "institution": "Western Sydney College",
+        "course": "Diploma of Community Services",
+        "code": "118777D"
+      },
+      {
+        "institution": "Wiseman & Co. Advanced Learning Institute Pty Ltd",
+        "course": "Diploma of Hospitality Management",
+        "code": "115343K"
+      },
+      {
+        "institution": "Wiseman & Co. Advanced Learning Institute Pty Ltd",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "115344J"
+      },
+      {
+        "institution": "Outsource Institute of Technology",
+        "course": "Diploma of Engineering - Technical",
+        "code": "098177J"
+      },
+      {
+        "institution": "Outsource Institute of Technology",
+        "course": "Advanced Diploma of Engineering",
+        "code": "098178G"
+      },
+      {
+        "institution": "Outsource Institute of Technology",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119159M"
+      },
+      {
+        "institution": "Smart Connection Company Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118629E"
+      },
+      {
+        "institution": "Smart Connection Company Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118779B"
+      },
+      {
+        "institution": "Ruby Institute",
+        "course": "Diploma of Community Services",
+        "code": "118780J"
+      },
+      {
+        "institution": "The Lions Institute Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118630A"
+      },
+      {
+        "institution": "SP INTERNATIONAL COLLEGE",
+        "course": "Certificate III in Individual Support",
+        "code": "114924H"
+      },
+      {
+        "institution": "Niashi School of Management and Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118631M"
+      },
+      {
+        "institution": "TrEd College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "107027M"
+      },
+      {
+        "institution": "TrEd College",
+        "course": "Diploma of Child, Youth and Family Intervention",
+        "code": "114056C"
+      },
+      {
+        "institution": "TrEd College",
+        "course": "Diploma of Hospitality Management",
+        "code": "114058A"
+      },
+      {
+        "institution": "AUSTRALIAN INSTITUTE OF BUSINESS AND TRADE PTY. LTD.",
+        "course": "Certificate III in Commercial Cookery",
+        "code": "099284J"
+      },
+      {
+        "institution": "AUSTRALIAN INSTITUTE OF BUSINESS AND TRADE PTY. LTD.",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "099285G"
+      },
+      {
+        "institution": "Australian National Academy of Education, Ridge International College",
+        "course": "Diploma of Community Services",
+        "code": "113087D"
+      },
+      {
+        "institution": "Australian National Academy of Education, Ridge International College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118633J"
+      },
+      {
+        "institution": "Australian National Academy of Education, Ridge International College",
+        "course": "Diploma of Community Services",
+        "code": "118781H"
+      },
+      {
+        "institution": "Australasia Technology Institute",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118634H"
+      },
+      {
+        "institution": "Australasia Technology Institute",
+        "course": "Diploma of Community Services",
+        "code": "118782G"
+      },
+      {
+        "institution": "Australian International Institute of Technology",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "113604K"
+      },
+      {
+        "institution": "Veritas Institute Australia",
+        "course": "Diploma of Hospitality Management",
+        "code": "114877K"
+      },
+      {
+        "institution": "Institute Of Science Management And Technology",
+        "course": "Certificate III in Air Conditioning and Refrigeration",
+        "code": "117749E"
+      },
+      {
+        "institution": "Institute Of Science Management And Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118635G"
+      },
+      {
+        "institution": "Institute Of Science Management And Technology",
+        "course": "Diploma of Community Services",
+        "code": "118783F"
+      },
+      {
+        "institution": "Training for Knowledge and Livelihood",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118636F"
+      },
+      {
+        "institution": "Vocation Education Training Australia Pty Ltd",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "112581J"
+      },
+      {
+        "institution": "United Colleges of Australia",
+        "course": "Diploma of Community Services",
+        "code": "118784E"
+      },
+      {
+        "institution": "AMA College",
+        "course": "Diploma of Community Services",
+        "code": "118785D"
+      },
+      {
+        "institution": "Sydney Metropolitan International College",
+        "course": "Diploma of Community Services",
+        "code": "118786C"
+      },
+      {
+        "institution": "Academy of Hypnotic Science; Stirling Institute; Stirling Institute of Business",
+        "course": "Diploma of Community Services",
+        "code": "116382F"
+      },
+      {
+        "institution": "Academy of Hypnotic Science; Stirling Institute; Stirling Institute of Business",
+        "course": "Diploma of Community Services",
+        "code": "118787B"
+      },
+      {
+        "institution": "Academy of Hypnotic Science; Stirling Institute; Stirling Institute of Business",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118910D"
+      },
+      {
+        "institution": "Lindisfarne Anglican Grammar School",
+        "course": "Primary (Kindergarten to Year 6)",
+        "code": "0100870"
+      },
+      {
+        "institution": "Rhodes International College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118637E"
+      },
+      {
+        "institution": "Rhodes International College",
+        "course": "Diploma of Community Services",
+        "code": "118788A"
+      },
+      {
+        "institution": "NA",
+        "course": "Diploma of Remedial Massage",
+        "code": "112424M"
+      },
+      {
+        "institution": "Cambridge English College; fluency hub",
+        "course": "English for Further Studies Preparation course",
+        "code": "116874H"
+      },
+      {
+        "institution": "iLearn OZ, MELBOURNE METRO COLLEGE",
+        "course": "Diploma of Community Services",
+        "code": "118789M"
+      },
+      {
+        "institution": "iLearn OZ, MELBOURNE METRO COLLEGE",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118911C"
+      },
+      {
+        "institution": "Aus Crest Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118638D"
+      },
+      {
+        "institution": "Aus Crest Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118790G"
+      },
+      {
+        "institution": "Canberra Institute of Education and Technology",
+        "course": "Diploma of Community Services",
+        "code": "118791F"
+      },
+      {
+        "institution": "INTERNATIONAL INSTITUTE OF EDUCATION",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118639C"
+      },
+      {
+        "institution": "INTERNATIONAL INSTITUTE OF EDUCATION",
+        "course": "Diploma of Community Services",
+        "code": "118792E"
+      },
+      {
+        "institution": "Global Institute of Training and Education Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118793D"
+      },
+      {
+        "institution": "Australian Federation College",
+        "course": "Diploma of Community Services",
+        "code": "118794C"
+      },
+      {
+        "institution": "Clayton Education Group Pty LTD",
+        "course": "Certificate III in Commercial Cookery",
+        "code": "102466F"
+      },
+      {
+        "institution": "Clayton Education Group Pty LTD",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "102467E"
+      },
+      {
+        "institution": "Astral Skills Institute of Australia and Create Learn & Educate",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118640K"
+      },
+      {
+        "institution": "ANE College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118641J"
+      },
+      {
+        "institution": "ANE College",
+        "course": "Diploma of Community Services",
+        "code": "118795B"
+      },
+      {
+        "institution": "Excel College Australia",
+        "course": "Certificate III in Commercial Cookery",
+        "code": "107127G"
+      },
+      {
+        "institution": "Excel College Australia",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "107128F"
+      },
+      {
+        "institution": "Excel College Australia",
+        "course": "Certificate IV in Leadership and Management",
+        "code": "117836F"
+      },
+      {
+        "institution": "EMBRACIA EDUCATION & DEVELOPMENT PTY LTD",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118642H"
+      },
+      {
+        "institution": "Australian Scholar's College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118912B"
+      },
+      {
+        "institution": "West Melbourne Institute of Technology",
+        "course": "Diploma of Community Services",
+        "code": "114293A"
+      },
+      {
+        "institution": "West Melbourne Institute of Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118643G"
+      },
+      {
+        "institution": "West Melbourne Institute of Technology",
+        "course": "Diploma of Community Services",
+        "code": "118796A"
+      },
+      {
+        "institution": "Global Institute Australia Pty Ltd",
+        "course": "Certificate III in Commercial Cookery",
+        "code": "102989A"
+      },
+      {
+        "institution": "Global Institute Australia Pty Ltd",
+        "course": "Certificate IV in Commercial Cookery",
+        "code": "102990H"
+      },
+      {
+        "institution": "Opulence College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118797M"
+      },
+      {
+        "institution": "Canberra College of Management and Technology",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118644F"
+      },
+      {
+        "institution": "Rockford College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118645E"
+      },
+      {
+        "institution": "Rockford College",
+        "course": "Diploma of Community Services",
+        "code": "118798K"
+      },
+      {
+        "institution": "First Aid Course Experts",
+        "course": "Diploma of Community Services",
+        "code": "118799J"
+      },
+      {
+        "institution": "Australian National Education Institute",
+        "course": "Diploma of Community Services",
+        "code": "118800K"
+      },
+      {
+        "institution": "St. Marys Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118802H"
+      },
+      {
+        "institution": "Reach Community College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "114153B"
+      },
+      {
+        "institution": "Reach Community College Pty Ltd",
+        "course": "Diploma of Accounting",
+        "code": "114547F"
+      },
+      {
+        "institution": "Reach Community College Pty Ltd",
+        "course": "Advanced Diploma of Accounting",
+        "code": "114548E"
+      },
+      {
+        "institution": "Reach Community College Pty Ltd",
+        "course": "Diploma of Hospitality Management",
+        "code": "114549D"
+      },
+      {
+        "institution": "Reach Community College Pty Ltd",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "114550M"
+      },
+      {
+        "institution": "Reach Community College Pty Ltd",
+        "course": "Diploma of Logistics",
+        "code": "117272D"
+      },
+      {
+        "institution": "Prime Education Group Pty Ltd",
+        "course": "Diploma of Hospitality Management",
+        "code": "114502H"
+      },
+      {
+        "institution": "Australian Sovereign College",
+        "course": "Diploma of Community Services",
+        "code": "118804F"
+      },
+      {
+        "institution": "Kingsway College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118805E"
+      },
+      {
+        "institution": "Shafston International College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118647C"
+      },
+      {
+        "institution": "Shafston International College",
+        "course": "Diploma of Community Services",
+        "code": "118806D"
+      },
+      {
+        "institution": "Contempo College",
+        "course": "Diploma of Community Services",
+        "code": "118807C"
+      },
+      {
+        "institution": "SIGNATURE TRAINING PTY. LTD.",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118648B"
+      },
+      {
+        "institution": "SIGNATURE TRAINING PTY. LTD.",
+        "course": "Diploma of Community Services",
+        "code": "118808B"
+      },
+      {
+        "institution": "Massey College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118649A"
+      },
+      {
+        "institution": "Imperial Institute of Sydney",
+        "course": "Diploma of Community Services",
+        "code": "114722G"
+      },
+      {
+        "institution": "Imperial Institute of Sydney",
+        "course": "Diploma of Community Services",
+        "code": "118809A"
+      },
+      {
+        "institution": "The Bright College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118810H"
+      },
+      {
+        "institution": "PENFOLD COLLEGE",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118650H"
+      },
+      {
+        "institution": "State Institute of Training",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "108265M"
+      },
+      {
+        "institution": "State Institute of Training",
+        "course": "Graduate Diploma of Engineering",
+        "code": "119070J"
+      },
+      {
+        "institution": "State Institute of Training",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119160G"
+      },
+      {
+        "institution": "Riverdale Institute Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118651G"
+      },
+      {
+        "institution": "Riverdale Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118812F"
+      },
+      {
+        "institution": "Sunbeam International College",
+        "course": "Diploma of Community Services",
+        "code": "118813E"
+      },
+      {
+        "institution": "Merit Institute of Business",
+        "course": "Diploma of Remedial Massage",
+        "code": "112600M"
+      },
+      {
+        "institution": "Australian Health and Horticulture Institute Pty Ltd",
+        "course": "Certificate III in Horticulture",
+        "code": "113692E"
+      },
+      {
+        "institution": "Australian Health and Horticulture Institute Pty Ltd",
+        "course": "Certificate IV in Horticulture",
+        "code": "113693D"
+      },
+      {
+        "institution": "Australian Health and Horticulture Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118814D"
+      },
+      {
+        "institution": "Wisdom International College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118815C"
+      },
+      {
+        "institution": "Pioneer College Pty Ltd",
+        "course": "Advanced Diploma of Hospitality Management",
+        "code": "111120B"
+      },
+      {
+        "institution": "Starford College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118652F"
+      },
+      {
+        "institution": "Brilliant Institute of Business and Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118913A"
+      },
+      {
+        "institution": "Swanston Institute",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118653E"
+      },
+      {
+        "institution": "ADVANCE INSTITUTE AUSTRALIA PTY LTD",
+        "course": "Diploma of Community Services",
+        "code": "118816B"
+      },
+      {
+        "institution": "Novus Education",
+        "course": "Diploma of Community Services",
+        "code": "118817A"
+      },
+      {
+        "institution": "Concord Institute",
+        "course": "Diploma of Community Services",
+        "code": "116060B"
+      },
+      {
+        "institution": "Concord Institute",
+        "course": "Diploma of Community Services",
+        "code": "118818M"
+      },
+      {
+        "institution": "MELBOURNE INSTITUTE OF TRAINING AND EDUCATION",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118654D"
+      },
+      {
+        "institution": "MELBOURNE INSTITUTE OF TRAINING AND EDUCATION",
+        "course": "Diploma of Community Services",
+        "code": "118819K"
+      },
+      {
+        "institution": "Federation Academy",
+        "course": "Diploma of Community Services",
+        "code": "118820F"
+      },
+      {
+        "institution": "AUSTRALIAN LEADING INSTITUTE OF TECHNOLOGY",
+        "course": "Diploma of Community Services",
+        "code": "118821E"
+      },
+      {
+        "institution": "AUSTRALIAN INSTITUTE OF DIGITAL TECHNOLOGY PTY LTD",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "119147D"
+      },
+      {
+        "institution": "Australian International College of Skills & Education Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118655C"
+      },
+      {
+        "institution": "Australian International College of Skills & Education Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118822D"
+      },
+      {
+        "institution": "Brooklyn International College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118656B"
+      },
+      {
+        "institution": "Brooklyn International College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118823C"
+      },
+      {
+        "institution": "Innovative College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118824B"
+      },
+      {
+        "institution": "Australian College of Vocational Education and Training Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118657A"
+      },
+      {
+        "institution": "Australian College of Vocational Education and Training Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118825A"
+      },
+      {
+        "institution": "Edunex Training",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118658M"
+      },
+      {
+        "institution": "Australian Virtus Institute",
+        "course": "Diploma of Community Services",
+        "code": "118826M"
+      },
+      {
+        "institution": "Australian Educare College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118659K"
+      },
+      {
+        "institution": "Australian Educare College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118828J"
+      },
+      {
+        "institution": "AUIPT GROUP PTY LTD",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118660F"
+      },
+      {
+        "institution": "AUIPT GROUP PTY LTD",
+        "course": "Diploma of Community Services",
+        "code": "118829H"
+      },
+      {
+        "institution": "Australian Vocational Training Academy Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118661E"
+      },
+      {
+        "institution": "Australian Vocational Training Academy Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118830D"
+      },
+      {
+        "institution": "Kingsford Education Group Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118831C"
+      },
+      {
+        "institution": "Vigil International College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118832B"
+      },
+      {
+        "institution": "Allied Institute",
+        "course": "Diploma of Community Services",
+        "code": "118833A"
+      },
+      {
+        "institution": "Allied Institute",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118915K"
+      },
+      {
+        "institution": "Solis College, Athena College Australia",
+        "course": "Diploma of Community Services",
+        "code": "118834M"
+      },
+      {
+        "institution": "Solis College, Athena College Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118916J"
+      },
+      {
+        "institution": "Institute of Management and Trade",
+        "course": "Certificate III in Engineering - Fabrication Trade",
+        "code": "119161F"
+      },
+      {
+        "institution": "Auscare Staffing Agency Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118835K"
+      },
+      {
+        "institution": "Anderson College",
+        "course": "Diploma of Community Services",
+        "code": "118836J"
+      },
+      {
+        "institution": "Alma Mater College Australia Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118917H"
+      },
+      {
+        "institution": "Alma Mater College Australia Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "119029K"
+      },
+      {
+        "institution": "Auscanus Institute of Australia",
+        "course": "Diploma of Community Services",
+        "code": "118837H"
+      },
+      {
+        "institution": "WHITEHOUSE INTERNATIONAL COLLEGE PTY LTD",
+        "course": "Diploma of Community Services",
+        "code": "119030F"
+      },
+      {
+        "institution": "Southern Institute of Early Learning and Leadership Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118918G"
+      },
+      {
+        "institution": "D P TRAINING PTY LTD",
+        "course": "Diploma of Community Services",
+        "code": "118838G"
+      },
+      {
+        "institution": "Invicta Technical College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118662D"
+      },
+      {
+        "institution": "Thames International College Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118663C"
+      },
+      {
+        "institution": "Thames International College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118839F"
+      },
+      {
+        "institution": "Global Healthcare Management College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118840B"
+      },
+      {
+        "institution": "A GRADE EDUCATION AND TRAINING PTY LIMITED",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118664B"
+      },
+      {
+        "institution": "States College Australia",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "119260C"
+      },
+      {
+        "institution": "EUREKA INSTITUTE OF MANAGEMENT",
+        "course": "Diploma of Community Services",
+        "code": "118841A"
+      },
+      {
+        "institution": "Elizabeth Institute of Australia",
+        "course": "Diploma of Community Services",
+        "code": "118842M"
+      },
+      {
+        "institution": "Silverline College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118666M"
+      },
+      {
+        "institution": "Silverline College",
+        "course": "Diploma of Community Services",
+        "code": "118843K"
+      },
+      {
+        "institution": "Austin Institute of Trades",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118667K"
+      },
+      {
+        "institution": "Austin Institute of Trades",
+        "course": "Diploma of Community Services",
+        "code": "118844J"
+      },
+      {
+        "institution": "VIITE",
+        "course": "Diploma of Community Services",
+        "code": "118846G"
+      },
+      {
+        "institution": "Australian Childcare Academy",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118669H"
+      },
+      {
+        "institution": "Epicure Skills Training Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "119261B"
+      },
+      {
+        "institution": "Epicure Skills Training Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "119275G"
+      },
+      {
+        "institution": "Global College of Management",
+        "course": "Diploma of Community Services",
+        "code": "118847F"
+      },
+      {
+        "institution": "Infinity Business College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118848E"
+      },
+      {
+        "institution": "Hopkins International College",
+        "course": "Diploma of Community Services",
+        "code": "119031E"
+      },
+      {
+        "institution": "Australis Vocational College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118849D"
+      },
+      {
+        "institution": "Apex Training Institute",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118670D"
+      },
+      {
+        "institution": "Apex Training Institute",
+        "course": "Diploma of Community Services",
+        "code": "118850M"
+      },
+      {
+        "institution": "The Performance College",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118671C"
+      },
+      {
+        "institution": "Unified WA",
+        "course": "Diploma of Community Services",
+        "code": "113950C"
+      },
+      {
+        "institution": "Making Education Pty Ltd AFT Making Education Trust",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118672B"
+      },
+      {
+        "institution": "Fusion College of Technology Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118852J"
+      },
+      {
+        "institution": "Aimers College of Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118673A"
+      },
+      {
+        "institution": "Edinburgh Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "115338G"
+      },
+      {
+        "institution": "Australian Institute of Tertiary Education",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118674M"
+      },
+      {
+        "institution": "AUCTUS Consulting Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118854G"
+      },
+      {
+        "institution": "Australian Nursing and Training Services",
+        "course": "Diploma of Community Services",
+        "code": "118855F"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Bachelor of Business",
+        "code": "115682B"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Master of Philosophy",
+        "code": "115977J"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Master of Philosophy (Medical Science)",
+        "code": "115987G"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Master of Philosophy (Medical Science)",
+        "code": "115989E"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Master of Philosophy",
+        "code": "115995G"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Master of Philosophy",
+        "code": "116001B"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Master of Philosophy (Medical Science)",
+        "code": "116003M"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Master of Philosophy",
+        "code": "116007G"
+      },
+      {
+        "institution": "Adelaide University",
+        "course": "Master of Philosophy",
+        "code": "116009E"
+      },
+      {
+        "institution": "Opal College",
+        "course": "Diploma of Community Services",
+        "code": "118856E"
+      },
+      {
+        "institution": "ONEPATH COLLEGE",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118676J"
+      },
+      {
+        "institution": "ONEPATH COLLEGE",
+        "course": "Diploma of Community Services",
+        "code": "118857D"
+      },
+      {
+        "institution": "International Apex Institute Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118858C"
+      },
+      {
+        "institution": "Australian College of Technical Studies Pty. Ltd.",
+        "course": "Diploma of Community Services",
+        "code": "118859B"
+      },
+      {
+        "institution": "CW EDUCATION GROUP PTY LTD",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118677H"
+      },
+      {
+        "institution": "Grampians College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118860J"
+      },
+      {
+        "institution": "Lakewood Institute",
+        "course": "Diploma of Community Services",
+        "code": "118861H"
+      },
+      {
+        "institution": "AICE Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118862G"
+      },
+      {
+        "institution": "Vocational Augment Training",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118678G"
+      },
+      {
+        "institution": "Sage College of Australlia",
+        "course": "Diploma of Community Services",
+        "code": "118863F"
+      },
+      {
+        "institution": "Sydney Islamic College, UMA College",
+        "course": "Diploma of Community Services",
+        "code": "118864E"
+      },
+      {
+        "institution": "Fabinox welding Academy",
+        "course": "English",
+        "code": "117353C"
+      },
+      {
+        "institution": "Montford International College",
+        "course": "Diploma of Community Services",
+        "code": "118865D"
+      },
+      {
+        "institution": "AICHM",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118679F"
+      },
+      {
+        "institution": "AICHM",
+        "course": "Diploma of Community Services",
+        "code": "118866C"
+      },
+      {
+        "institution": "Hampton College Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118867B"
+      },
+      {
+        "institution": "Victorian Skillls College",
+        "course": "Diploma of Community Services",
+        "code": "118868A"
+      },
+      {
+        "institution": "Imperial Institute QLD Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118680B"
+      },
+      {
+        "institution": "Risen Star College of Technology & Business Pty Ltd",
+        "course": "Diploma of Community Services",
+        "code": "118869M"
+      },
+      {
+        "institution": "Enhance Training",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118681A"
+      },
+      {
+        "institution": "Early Education Institute Pty Ltd",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "118682M"
+      },
+      {
+        "institution": "N/A",
+        "course": "Diploma of Community Services",
+        "code": "118870G"
+      },
+      {
+        "institution": "Pivot Education Pty Ltd",
+        "course": "IELTS Elementary",
+        "code": "118091A"
+      },
+      {
+        "institution": "Pivot Education Pty Ltd",
+        "course": "IELTS Advanced",
+        "code": "118092M"
+      },
+      {
+        "institution": "Pivot Education Pty Ltd",
+        "course": "Elementary General English",
+        "code": "118093K"
+      },
+      {
+        "institution": "Pivot Education Pty Ltd",
+        "course": "Pre-Intermediate General English",
+        "code": "118094J"
+      },
+      {
+        "institution": "Pivot Education Pty Ltd",
+        "course": "Intermediate General English",
+        "code": "118095H"
+      },
+      {
+        "institution": "Pivot Education Pty Ltd",
+        "course": "Advanced General English",
+        "code": "118097F"
+      },
+      {
+        "institution": "Pivot Education Pty Ltd",
+        "course": "PTE Elementary",
+        "code": "118098E"
+      },
+      {
+        "institution": "Pivot Education Pty Ltd",
+        "course": "PTE Advanced",
+        "code": "118099D"
+      },
+      {
+        "institution": "Iris Trained",
+        "course": "Provide responsible service of alcohol",
+        "code": "118116H"
+      },
+      {
+        "institution": "INSTITUTE OF MANAGEMENT LEARNING PTY LTD",
+        "course": "Diploma of Community Services",
+        "code": "118871F"
+      },
+      {
+        "institution": "Aroha College",
+        "course": "Diploma of Community Services",
+        "code": "119032D"
+      },
+      {
+        "institution": "N/A",
+        "course": "Diploma of Early Childhood Education and Care",
+        "code": "119148C"
+      },
+      {
+        "institution": "N/A",
+        "course": "Diploma of Community Services",
+        "code": "119033C"
+      }
+    ],
+    "removed_courses": [],
+    "modified_courses": [
+      {
+        "institution": "Adelaide University",
+        "course_code": "115680D",
+        "course_name": "Bachelor of Biotechnology (Honours)",
+        "changes": {
+          "courseName": {
+            "old": "Bachelor of Biotechnology (Honours) ",
+            "new": "Bachelor of Biotechnology (Honours)"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115700E",
+        "course_name": "Bachelor of Engineering (Electrical and Electronic) (Honours)",
+        "changes": {
+          "courseName": {
+            "old": "Bachelor of Engineering (Electrical and Electronic) (Honours)  ",
+            "new": "Bachelor of Engineering (Electrical and Electronic) (Honours)"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115701D",
+        "course_name": "Bachelor of Engineering (Environmental) (Honours)",
+        "changes": {
+          "courseName": {
+            "old": "Bachelor of Engineering (Environmental) (Honours)  ",
+            "new": "Bachelor of Engineering (Environmental) (Honours)"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115704A",
+        "course_name": "Bachelor of Engineering Technology (Chemical)",
+        "changes": {
+          "courseName": {
+            "old": "Bachelor of Engineering Technology (Chemical) ",
+            "new": "Bachelor of Engineering Technology (Chemical)"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115705M",
+        "course_name": "Bachelor of Engineering Technology (Civil)",
+        "changes": {
+          "courseName": {
+            "old": "Bachelor of Engineering Technology (Civil) ",
+            "new": "Bachelor of Engineering Technology (Civil)"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115707J",
+        "course_name": "Bachelor of Engineering Technology (Environmental)",
+        "changes": {
+          "courseName": {
+            "old": "Bachelor of Engineering Technology (Environmental) ",
+            "new": "Bachelor of Engineering Technology (Environmental)"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115708H",
+        "course_name": "Bachelor of Engineering Technology (Mechanical)",
+        "changes": {
+          "courseName": {
+            "old": "Bachelor of Engineering Technology (Mechanical) ",
+            "new": "Bachelor of Engineering Technology (Mechanical)"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115815E",
+        "course_name": "Graduate Certificate in Immersive Media Technologies",
+        "changes": {
+          "courseName": {
+            "old": "Graduate Certificate in Immersive Media Technologies ",
+            "new": "Graduate Certificate in Immersive Media Technologies"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115832D",
+        "course_name": "Graduate Diploma in  Immersive Media Technologies",
+        "changes": {
+          "courseName": {
+            "old": "Graduate Diploma in  Immersive Media Technologies ",
+            "new": "Graduate Diploma in  Immersive Media Technologies"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115876C",
+        "course_name": "Graduate Diploma in Procurement and Supply Chain Management",
+        "changes": {
+          "courseName": {
+            "old": "Graduate Diploma in Procurement and Supply Chain Management ",
+            "new": "Graduate Diploma in Procurement and Supply Chain Management"
+          }
+        }
+      },
+      {
+        "institution": "Adelaide University",
+        "course_code": "115940M",
+        "course_name": "Master of Procurement and Supply Chain Management",
+        "changes": {
+          "courseName": {
+            "old": "Master of Procurement and Supply Chain Management ",
+            "new": "Master of Procurement and Supply Chain Management"
+          }
+        }
+      }
+    ],
+    "modified_institutions": []
+  },
+  "status": "success"
+}

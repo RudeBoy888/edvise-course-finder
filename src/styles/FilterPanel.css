@@ -1,0 +1,267 @@
+.filter-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(199, 97, 60, 0.08);
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
+.filter-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #C7613C;
+  margin: 0;
+}
+
+.clear-filters-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #C7613C 0%, #A84B2A 100%);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.clear-filters-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(199, 97, 60, 0.3);
+}
+
+.filter-section {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e8ddd4;
+}
+
+.filter-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #2c2c2c;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.checkbox-label:hover {
+  color: #C7613C;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #C7613C;
+  flex-shrink: 0;
+}
+
+.checkbox-label.checkbox-large {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 2px solid #e8ddd4;
+  border-radius: 6px;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+  background-color: #fefbf7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.filter-select:hover {
+  border-color: #C7613C;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #C7613C;
+  box-shadow: 0 0 0 3px rgba(199, 97, 60, 0.1);
+  background-color: #ffffff;
+}
+
+.fee-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.fee-input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 2px solid #e8ddd4;
+  border-radius: 6px;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+  background-color: #fefbf7;
+  transition: all 0.3s ease;
+}
+
+.fee-input::placeholder {
+  color: #999;
+}
+
+.fee-input:focus {
+  outline: none;
+  border-color: #C7613C;
+  box-shadow: 0 0 0 3px rgba(199, 97, 60, 0.1);
+  background-color: #ffffff;
+}
+
+.fee-dash {
+  color: #999;
+  font-weight: 500;
+}
+
+/* City Groups - Expandable */
+.city-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.city-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.city-expand-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  margin-right: 2px;
+}
+
+.city-expand-btn:hover {
+  color: #C7613C;
+}
+
+.expand-arrow {
+  font-size: 12px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.expand-arrow.expanded {
+  transform: rotate(90deg);
+}
+
+.checkbox-label.city-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin: 0;
+  flex: 1;
+}
+
+.city-name {
+  color: #C7613C;
+  font-weight: 700;
+}
+
+.city-suburbs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 28px;
+  margin-top: 4px;
+  padding: 4px 0 8px 0;
+  border-left: 2px solid #e8ddd4;
+  padding-left: 12px;
+}
+
+.checkbox-label.suburb-label {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+.checkbox-label.suburb-label:hover {
+  color: #C7613C;
+}
+
+.filter-note {
+  font-size: 12px;
+  color: #999;
+  margin: 8px 0 0 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.filter-note-link {
+  color: #C7613C;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.filter-note-link:hover {
+  color: #A84B2A;
+  text-decoration: underline;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .filter-sidebar {
+    position: static;
+    max-height: none;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
