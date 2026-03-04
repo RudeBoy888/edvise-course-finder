@@ -12,95 +12,93 @@ export const CITY_MAPPING = {
     state: 'NSW',
     name: 'Sydney',
     postcodeRanges: [
-      [2000, 2799],  // Entire NSW postcode range
-      [2800, 2999]   // ACT region (Canberra area)
+      [2000, 2299]   // Greater Sydney metropolitan area
     ]
   },
   Newcastle: {
     state: 'NSW',
     name: 'Newcastle',
     postcodeRanges: [
-      [2000, 2799],  // NSW coverage (Newcastle is part of NSW postal system)
-      [2800, 2999]   // ACT region (Canberra area)
+      [2287, 2328],  // Newcastle, Lake Macquarie, Hunter
+      [2338, 2380]   // Maitland, Singleton, Raymond Terrace
     ]
   },
   Wollongong: {
     state: 'NSW',
     name: 'Wollongong',
     postcodeRanges: [
-      [2000, 2799],  // NSW coverage (Wollongong is part of NSW postal system)
-      [2800, 2999]   // ACT region (Canberra area)
+      [2500, 2530]   // Wollongong, Illawarra, Shellharbour
     ]
   },
   'Byron Bay': {
     state: 'NSW',
     name: 'Byron Bay',
     postcodeRanges: [
-      [2000, 2799],  // NSW coverage (Byron Bay is part of NSW postal system)
-      [2800, 2999]   // ACT region (Canberra area)
+      [2480, 2495]   // Byron Bay, Tweed Heads, Northern Rivers
     ]
   },
   Melbourne: {
     state: 'VIC',
     name: 'Melbourne',
     postcodeRanges: [
-      [3000, 3999]   // Entire VIC postcode range (covers all major cities in Victoria)
+      [3000, 3999]   // Greater Melbourne metropolitan area (all VIC suburbs)
     ]
   },
   'Gold Coast': {
     state: 'QLD',
     name: 'Gold Coast',
     postcodeRanges: [
-      [4000, 4999]   // Entire QLD postcode range (covers all major cities in Queensland)
+      [4200, 4230]   // Gold Coast, Surfers Paradise region
     ]
   },
   Brisbane: {
     state: 'QLD',
     name: 'Brisbane',
     postcodeRanges: [
-      [4000, 4999]   // QLD coverage (Brisbane is part of QLD postal system)
+      [4000, 4199]   // Brisbane metropolitan area (excludes Gold Coast)
     ]
   },
   Cairns: {
     state: 'QLD',
     name: 'Cairns',
     postcodeRanges: [
-      [4000, 4999]   // QLD coverage (Cairns is part of QLD postal system)
+      [4800, 4899]   // Cairns and tropical north Queensland
     ]
   },
   Perth: {
     state: 'WA',
     name: 'Perth',
     postcodeRanges: [
-      [6000, 6999]   // Entire WA postcode range (covers all major cities in Western Australia)
+      [6000, 6299]   // Perth metropolitan area and surrounding suburbs
     ]
   },
   Adelaide: {
     state: 'SA',
     name: 'Adelaide',
     postcodeRanges: [
-      [5000, 5999]   // Entire SA postcode range (covers all major cities in South Australia)
+      [5000, 5199]   // Adelaide metropolitan area
     ]
   },
   Hobart: {
     state: 'TAS',
     name: 'Hobart',
     postcodeRanges: [
-      [7000, 7999]   // Entire TAS postcode range (covers all major cities in Tasmania)
+      [7000, 7299]   // Hobart and Tasmania region
     ]
   },
   Canberra: {
     state: 'ACT',
     name: 'Canberra',
     postcodeRanges: [
-      [2600, 2699]   // Entire ACT postcode range (Canberra and surrounding ACT region)
+      [2600, 2618],  // Canberra ACT region
+      [2900, 2920]   // Extended ACT postcodes if needed
     ]
   },
   Darwin: {
     state: 'NT',
     name: 'Darwin',
     postcodeRanges: [
-      [800, 899]     // Entire NT postcode range (Darwin and greater Darwin area, NT postcodes 0800-0899)
+      [800, 900]     // Darwin and greater Darwin area (NT postcodes 0800-0899)
     ]
   }
 };
