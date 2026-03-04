@@ -19,7 +19,7 @@ export const CITY_MAPPING = {
     state: 'NSW',
     name: 'Newcastle',
     postcodeRanges: [
-      [2287, 2298]  // Newcastle and Lake Macquarie area
+      [2287, 2310]  // Newcastle and Lake Macquarie area
     ]
   },
   Wollongong: {
