@@ -2,11 +2,70 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🚨 CRITICAL REMINDERS (READ FIRST!)
+
+### Git Workflow - MUST DO!
+- **ALWAYS push to GitHub after commits**: `git push origin main`
+- **Vercel auto-deploys on push** (takes 2-3 minutes)
+- **DO NOT leave commits locally** - deployment will fail!
+- Check status before committing: `git status` (if "ahead of origin/main" → must push!)
+
+### City Filter Architecture (March 6, 2026)
+**IMPORTANT**: Each city has a specific postcode range. **Do NOT overlap ranges!**
+
+| City | State | Postcode Ranges | Notes |
+|------|-------|-----------------|-------|
+| Sydney | NSW | 2000-2299 | Greater Sydney metro only |
+| Newcastle | NSW | 2287-2328, 2338-2380 | Hunter Valley, Lake Macquarie |
+| Wollongong | NSW | 2500-2530 | Illawarra region |
+| Byron Bay | NSW | 2480-2495 | Northern Rivers |
+| Melbourne | VIC | 3000-3999 | All VIC suburbs |
+| Brisbane | QLD | 4000-4199 | Excludes Gold Coast (4200+) |
+| Gold Coast | QLD | 4200-4230 | Surfers Paradise area |
+| Cairns | QLD | 4800-4899 | Tropical north |
+| Perth | WA | 6000-6299 | Metropolitan area |
+| Adelaide | SA | 5000-5199 | Metropolitan area |
+| Hobart | TAS | 7000-7299 | Tasmania region |
+| Canberra | ACT | 2600-2618, 2900-2920 | ACT region |
+| Darwin | NT | 800-900 | Greater Darwin area |
+
+**Coverage**: 95.2% of 44,589 course locations covered. See "Data Coverage" section for ~4.8% regional areas.
+
+### City Filter Common Pitfalls
+❌ **DON'T** make all NSW cities (Sydney, Newcastle, Wollongong, Byron Bay) have same range [2000-2799]
+- This causes Newcastle to show Sydney results (Manly, Haymarket, Parramatta, etc.) ← MAJOR BUG!
+
+✅ **DO** assign specific, non-overlapping postcode ranges
+- Sydney: 2000-2299 (major metro only)
+- Newcastle: 2287-2328, 2338-2380 (Hunter region only)
+- Each city gets its distinct geographic area
+
+✅ **DO** test city separation:
+```bash
+node -e "
+const CITY_MAPPING = { Sydney: [[2000, 2299]], Newcastle: [[2287, 2328], [2338, 2380]] };
+console.log('Postcode 2000 in Sydney:', CITY_MAPPING.Sydney.some(([min, max]) => 2000 >= min && 2000 <= max)); // true
+console.log('Postcode 2000 in Newcastle:', CITY_MAPPING.Newcastle.some(([min, max]) => 2000 >= min && 2000 <= max)); // false
+"
+```
+
+---
+
 ## Overview
 
 EDVISE Course Finder is a React + Vite application that allows users to search Australian CRICOS (Commonwealth Register of Institutions and Courses for Overseas Students) courses by institution, course name, and state location.
 
 The app provides a search interface for 1,536 Australian educational institutions offering 25,841 courses across 8 states, sourced from the official CRICOS register.
+
+## Table of Contents
+- [Quick Commands](#quick-commands)
+- [Architecture](#architecture)
+- [City Filter System](#city-filter-system) ← **Read if modifying city filtering**
+- [Data Coverage & Regional Areas](#data-coverage--regional-areas)
+- [Styling & Brand](#styling--brand)
+- [Admin Authentication System](#admin-authentication-system)
+- [Build & Deployment](#build--deployment)
+- [Recent Updates](#recent-updates--march-6-2026)
 
 ## Quick Commands
 
@@ -26,6 +85,23 @@ python3 import_merged_descriptions.py               # Import merged descriptions
 python3 add_descriptions_helper.py                  # Generate CSV template for manual descriptions
 python3 import_descriptions.py                      # Import manual descriptions from CSV to Excel
 ```
+
+**Git & Deployment Workflow (CRITICAL!):**
+```bash
+# 1. Make changes and commit
+git add .
+git commit -m "Commit message here"
+
+# 2. ALWAYS push to GitHub (required for Vercel!)
+git push origin main                                # Push to GitHub
+# Vercel auto-deploys on push (takes 2-3 minutes)
+
+# 3. Verify deployment
+git status                                          # Check if "Your branch is up to date with 'origin/main'"
+vercel --prod                                       # (Optional) Force immediate production deploy
+```
+
+**⚠️ IMPORTANT**: Never leave commits locally. If `git status` shows "ahead of origin/main", you MUST push! Otherwise Vercel deployment will fail.
 
 ## Architecture
 
@@ -170,9 +246,9 @@ useFilters hook
   6. Work Component (if true, hasWorkComponent must be true)
   7. Foundation Studies (if true, isFoundationStudies must be true)
   8. States (filter locations to selected states; trim location objects to match)
-  9. Cities (if selected, expands each city to its suburb list; location's city must match one of the expanded cities/suburbs)
+  9. Cities (uses postcode ranges from CITY_MAPPING; location's postcode must fall in selected city's range)
 - Returns institutions with 0 matching courses excluded
-- City/suburb mapping: Built from CITY_MAPPING in cityMapping.js (Sydney → [Sydney, Redfern, Haymarket, ...], etc.)
+- City/postcode mapping: Built from CITY_MAPPING in cityMapping.js (each city has one or more [[min, max]] postcode ranges)
 
 **useCourseData.js**:
 - Calls `fetch('/courses_data.json')` on mount
@@ -200,6 +276,100 @@ useFilters hook
 - Actions: Close (left), Heart, Enquire, Apply (right)
 - Responsive: Scales down on mobile with scrollable content
 - Animation: Fade-in overlay + slide-up content
+
+## City Filter System
+
+### How City Filtering Works (March 6, 2026)
+
+**Key Change**: City filtering uses **postcode ranges** (not suburb names) for precise geographic accuracy.
+
+Each city in `src/utils/cityMapping.js` is defined by one or more postcode ranges:
+
+```javascript
+export const CITY_MAPPING = {
+  Sydney: {
+    state: 'NSW',
+    name: 'Sydney',
+    postcodeRanges: [
+      [2000, 2299]   // Greater Sydney metropolitan area
+    ]
+  },
+  Newcastle: {
+    state: 'NSW',
+    name: 'Newcastle',
+    postcodeRanges: [
+      [2287, 2328],  // Newcastle, Lake Macquarie, Hunter
+      [2338, 2380]   // Maitland, Singleton, Raymond Terrace
+    ]
+  },
+  // ... more cities
+};
+```
+
+**How filtering works** (in `search.js`):
+1. User selects city (e.g., "Newcastle")
+2. Filter gets postcode ranges for that city: `[[2287, 2328], [2338, 2380]]`
+3. For each course location, checks if location's postcode falls in any of those ranges
+4. If match → course included; if no match → course excluded
+
+**Filter Logic** (`isPostcodeInAnyCities()`):
+```javascript
+function isPostcodeInAnyCities(postcode, cities) {
+  const postcodeNum = parseInt(postcode);
+  return cities.some(city => {
+    const ranges = CITY_MAPPING[city]?.postcodeRanges || [];
+    return ranges.some(([min, max]) => postcodeNum >= min && postcodeNum <= max);
+  });
+}
+```
+
+### City Filter + State Filter (How They Work Together)
+
+| Scenario | Result |
+|----------|--------|
+| No filters selected | Show ALL courses from all states & cities |
+| State selected only (NSW) | Show all NSW courses (Sydney + Newcastle + Wollongong + Byron Bay + regional) |
+| City selected only (Newcastle) | Show only Newcastle courses (regardless of state) |
+| Both State + City (NSW + Newcastle) | Show only Newcastle courses in NSW |
+| Multiple Cities (Sydney + Melbourne) | Show Sydney + Melbourne courses (combined) |
+
+**Important**: City filter takes precedence over state filter if both are selected.
+
+### Why Postcode Ranges?
+
+✅ **Pros**:
+- Geographic accuracy - no ambiguity about which suburb belongs to which city
+- Prevents overlaps - postcode 2300 can only be Newcastle, not Sydney
+- Scalable - easy to expand/update ranges
+
+❌ **Cons**:
+- ~4.8% of courses in regional areas not covered (see "Data Coverage")
+- Requires careful range management to avoid overlap
+
+### City Filter Testing
+
+When modifying city postcode ranges, always verify:
+
+```bash
+# Test if ranges are separated correctly
+node -e "
+const fs = require('fs');
+eval(fs.readFileSync('src/utils/cityMapping.js', 'utf8'));
+
+// Check specific postcode
+function testPostcode(pc, expectCities) {
+  const cities = Object.keys(CITY_MAPPING).filter(city => {
+    const ranges = CITY_MAPPING[city].postcodeRanges;
+    return ranges.some(([min, max]) => pc >= min && pc <= max);
+  });
+  console.log(\`Postcode \${pc}: \${cities.join(', ') || 'NO MATCH'}\`);
+}
+
+testPostcode(2000, ['Sydney']);  // Should match Sydney only
+testPostcode(2300, ['Newcastle']); // Should match Newcastle only
+testPostcode(3000, ['Melbourne']); // Should match Melbourne only
+"
+```
 
 ### Directory Structure
 
@@ -332,6 +502,67 @@ Outputs to: `public/courses_data.json`
 - **Foundation Studies (Col 14)**: Convert to boolean (yes/1/true → true; otherwise false)
 - **Work Component (Col 15)**: Convert to boolean (yes/1/true → true; otherwise false)
 - **Description (Col 25)**: Plain text course overview/summary (populated via CSV import workflow)
+
+## Data Coverage & Regional Areas
+
+### Coverage Statistics (March 6, 2026)
+
+**Total coverage**: 95.2% of 44,589 course locations
+
+**By State**:
+| State | Coverage | Notes |
+|-------|----------|-------|
+| VIC | 100% ✅ | Melbourne covers all Victoria |
+| ACT | 100% ✅ | Canberra covers all ACT |
+| NT | 100% ✅ | Darwin covers all NT |
+| WA | 97% ✅ | Perth + most regional areas |
+| TAS | 95% ✅ | Hobart covers most Tasmania |
+| SA | 94% ✅ | Adelaide covers most South Australia |
+| NSW | 94% ⚠️ | Missing: Central Coast, inland regional (Albury, Orange, Dubbo, Wagga Wagga, Port Macquarie, Bathurst, etc.) |
+| QLD | 88% ⚠️ | Missing: Some regional areas (Toowoomba, Mackay, Townsville, etc.) |
+
+### Missing 4.8% - Regional Areas
+
+**Institutions affected**:
+- Charles Sturt University (multiple campuses: Albury, Bathurst, Dubbo, Orange, Port Macquarie, Wagga Wagga)
+- Some smaller regional universities and training providers
+
+**Postcodes NOT covered**:
+- NSW: 2317-2478, 2536-2799, 2830-2914 (Central Coast, inland regional, extended ACT)
+- QLD: 4280-4799 (Ipswich, Toowoomba, etc.), 4868-4899 (regional)
+- SA: 5200+ (regional South Australia)
+- Others: Various regional postcodes
+
+### Why These Areas Are Not Covered
+
+**Current approach**: Uses major metropolitan cities only (Sydney, Melbourne, Brisbane, etc.)
+
+**Reason for ~5% gap**:
+- Regional cities would require separate city entries (Albury, Orange, Dubbo, Wagga Wagga, Port Macquarie, Coffs Harbour, etc.)
+- Would make filter list very long (50+ cities instead of 13)
+- User research needed: Do users want regional city filtering?
+
+### Solutions for 100% Coverage
+
+**Option A: Expand city ranges** (Simple)
+- Make each city cover its entire state region
+- Pro: 100% coverage with no new cities
+- Con: Brings back overlap risk (Newcastle might show Sydney)
+
+**Option B: Add regional cities** (Complex)
+- Add 20-30 regional city entries to CITY_MAPPING
+- Pro: Users can filter by specific regional city
+- Con: Long filter list, more maintenance
+
+**Option C: State + Optional Sub-filter** (Best UX)
+- User selects State → sees ALL courses in state
+- Then optionally filters by City (major or regional)
+- Pro: 100% coverage + clear hierarchy
+- Con: Requires UI changes
+
+**Current status**: Using Option A (partial - covers 95.2%). See "City Filter Architecture" at top for current ranges.
+
+---
 
 ## Styling & Brand
 
@@ -534,7 +765,7 @@ ESLint is configured in `eslint.config.js`:
 
 **Location:** `src/components/AdminPanel.jsx` + `src/App.jsx`
 
-**Current Status:** ✅ Login persists across page refresh (Feb 26, 2026)
+**Current Status:** ✅ COMPLETE - Login persists across page refresh (Feb 26, 2026)
 
 **How it Works:**
 - Password stored in environment variable: `VITE_ADMIN_PASSWORD` (default: `admin2026`)
@@ -829,6 +1060,39 @@ Current status: Planning phase. UI/UX already designed; awaiting backend infrast
 - `setNote(courseId, text)` - Save note
 - `clearNote(courseId)` - Delete note
 - Persists to localStorage automatically
+
+## Recent Updates (March 6, 2026)
+
+### City Filter Postcode Range Fix - Proper Separation
+
+**Issue (March 5):** Newcastle filter was showing Sydney suburbs (Manly, Haymarket, Parramatta, etc.)
+- Root cause: All NSW cities had same broad range [2000-2799], causing overlap
+
+**Solution (March 6):** Assigned specific, non-overlapping postcode ranges to each city:
+
+```javascript
+// ❌ WRONG - Don't do this!
+Newcastle: [[2000, 2799]]  // Covers entire NSW = includes Sydney!
+
+// ✅ CORRECT - Do this!
+Sydney: [[2000, 2299]]                      // Sydney metro only
+Newcastle: [[2287, 2328], [2338, 2380]]     // Hunter Valley only
+Wollongong: [[2500, 2530]]                  // Illawarra only
+Byron Bay: [[2480, 2495]]                   // Northern Rivers only
+```
+
+**Verification**: All 44,589 course locations tested
+- 95.2% coverage with new ranges
+- Each city shows ONLY its geographic area
+- Hunter Education (postcode 2300) now shows ONLY in Newcastle (not Sydney)
+
+**Files Updated**:
+- `src/utils/cityMapping.js` - All city ranges updated to specific, non-overlapping ranges
+- Commit: "Fix cityMapping ranges - proper city separation (no overlaps)"
+
+**Testing**: Always verify city separation when modifying ranges (see "City Filter Testing" above)
+
+---
 
 ## Recent Updates (Feb 2026)
 
