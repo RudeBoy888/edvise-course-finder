@@ -120,6 +120,8 @@ function App() {
         <SearchBar
           searchTerm={filters.searchTerm}
           onSearchChange={filters.setSearchTerm}
+          searchMode={filters.searchMode}
+          onSearchModeChange={filters.setSearchMode}
         >
           <LocationSearch
             locationQuery={filters.locationQuery}

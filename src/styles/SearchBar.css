@@ -33,6 +33,31 @@
   background-color: #ffffff;
 }
 
+.search-mode-toggle {
+  display: flex;
+  border: 2px solid #e8ddd4;
+  border-radius: 8px;
+  overflow: hidden;
+  align-self: center;
+}
+
+.toggle-btn {
+  padding: 10px 14px;
+  font-size: 13px;
+  border: none;
+  background: #fefbf7;
+  cursor: pointer;
+  color: #666;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.toggle-btn.active {
+  background: #C7613C;
+  color: white;
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .search-bar {
     flex-direction: column;

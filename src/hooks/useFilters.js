@@ -21,6 +21,9 @@ export function useFilters(allInstitutions) {
   const [locationQuery, setLocationQueryState] = useState('');
   const [locationRadius, setLocationRadiusState] = useState(0);
 
+  // Search mode state
+  const [searchMode, setSearchMode] = useState('every'); // 'every' = AND, 'some' = OR
+
   // Pagination and sorting state
   const [sortBy, setSortBy] = useState('name'); // 'name', 'courseCount'
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,6 +53,7 @@ export function useFilters(allInstitutions) {
 
     const results = filterCourses(allInstitutions, {
       searchTerm: debouncedSearchTerm,
+      searchMode,
       selectedStates,
       selectedCities,
       selectedLevels,
@@ -70,6 +74,7 @@ export function useFilters(allInstitutions) {
   }, [
     allInstitutions,
     debouncedSearchTerm,
+    searchMode,
     selectedStates,
     selectedCities,
     selectedLevels,
@@ -329,6 +334,8 @@ export function useFilters(allInstitutions) {
     // Search term
     searchTerm,
     setSearchTerm: setSearchTermState,
+    searchMode,
+    setSearchMode,
 
     // Filter state and setters
     selectedStates,

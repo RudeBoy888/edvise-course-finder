@@ -35,6 +35,7 @@ function findLocalityCenter(query) {
 export function filterCourses(institutions, filters) {
   const {
     searchTerm = "",
+    searchMode = "every",
     selectedStates = [],
     selectedCities = [],
     selectedLevels = [],
@@ -65,10 +66,9 @@ export function filterCourses(institutions, filters) {
         const searchWords = term.split(/\s+/).filter(word => word.length > 0);
 
         filteredCourses = filteredCourses.filter((course) => {
-          // Show course if ANY search word matches course name
-          return searchWords.some(word => {
-            return course.courseName.toLowerCase().includes(word);
-          });
+          return searchWords[searchMode](word =>
+            course.courseName.toLowerCase().includes(word)
+          );
         });
       }
 
