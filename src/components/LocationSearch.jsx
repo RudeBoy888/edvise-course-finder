@@ -1,5 +1,7 @@
 import '../styles/LocationSearch.css';
 
+const RADIUS_OPTIONS = [5, 10, 15, 25];
+
 export function LocationSearch({ locationQuery, onLocationChange, locationRadius, onRadiusChange }) {
   return (
     <div className="location-search">
@@ -22,19 +24,20 @@ export function LocationSearch({ locationQuery, onLocationChange, locationRadius
           </button>
         )}
       </div>
+
       {locationQuery && (
-        <select
-          value={locationRadius}
-          onChange={e => onRadiusChange(Number(e.target.value))}
-          className="radius-select"
-          aria-label="Search radius"
-        >
-          <option value={0}>Any distance</option>
-          <option value={5}>Within 5 km</option>
-          <option value={10}>Within 10 km</option>
-          <option value={15}>Within 15 km</option>
-          <option value={25}>Within 25 km</option>
-        </select>
+        <div className="radius-pills">
+          {RADIUS_OPTIONS.map(km => (
+            <button
+              key={km}
+              className={`radius-pill${locationRadius === km ? ' radius-pill--active' : ''}`}
+              onClick={() => onRadiusChange(locationRadius === km ? 0 : km)}
+              aria-pressed={locationRadius === km}
+            >
+              {km} km
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );

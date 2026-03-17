@@ -1,5 +1,6 @@
 .location-search {
   display: flex;
+  align-items: center;
   gap: 8px;
   flex: 1;
   min-width: 200px;
@@ -36,25 +37,46 @@
   color: #C7613C;
 }
 
-.radius-select {
-  padding: 14px 12px;
-  font-size: 14px;
-  border: 2px solid #e8ddd4;
-  border-radius: 8px;
-  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
-  background-color: #fefbf7;
-  color: #2c2c2c;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  min-width: 140px;
+/* Radius pill buttons */
+.radius-pills {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
-.radius-select:focus {
-  outline: none;
+.radius-pill {
+  padding: 7px 13px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  border: 2px solid #e8ddd4;
+  border-radius: 20px;
+  background: #fefbf7;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.radius-pill:hover {
   border-color: #C7613C;
-  box-shadow: 0 0 0 4px rgba(199, 97, 60, 0.1);
-  background-color: #ffffff;
+  color: #C7613C;
+  background: rgba(199, 97, 60, 0.06);
+}
+
+.radius-pill--active {
+  background: #C7613C;
+  border-color: #C7613C;
+  color: white;
+  box-shadow: 0 2px 8px rgba(199, 97, 60, 0.35);
+}
+
+.radius-pill--active:hover {
+  background: #A84B2A;
+  border-color: #A84B2A;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -62,6 +84,7 @@
     flex-direction: column;
     gap: 8px;
     width: 100%;
+    align-items: flex-start;
   }
 
   .location-input-wrapper {
@@ -69,8 +92,12 @@
     min-width: unset;
   }
 
-  .radius-select {
-    width: 100%;
-    padding: 12px 16px;
+  .radius-pills {
+    gap: 6px;
+  }
+
+  .radius-pill {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }

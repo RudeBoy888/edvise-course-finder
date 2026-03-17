@@ -1,6 +1,7 @@
 import React from 'react';
 import { SearchBar } from './components/SearchBar';
 import { LocationSearch } from './components/LocationSearch';
+import { RadiusMap } from './components/RadiusMap';
 import { FilterPanel } from './components/FilterPanel';
 import { FilterModal } from './components/FilterModal';
 import { ResultBar } from './components/ResultBar';
@@ -127,6 +128,11 @@ function App() {
             onRadiusChange={filters.setLocationRadius}
           />
         </SearchBar>
+
+        <RadiusMap
+          locationQuery={filters.locationQuery}
+          locationRadius={filters.locationRadius}
+        />
 
         {error && (
           <div className="error-message">
