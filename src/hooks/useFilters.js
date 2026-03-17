@@ -145,6 +145,12 @@ export function useFilters(allInstitutions) {
         const priceB = b.tuitionFee || b.totalCost || 0;
         return priceA - priceB;
       });
+    } else if (sortBy === 'price_desc') {
+      sorted.sort((a, b) => {
+        const priceA = a.tuitionFee || a.totalCost || 0;
+        const priceB = b.tuitionFee || b.totalCost || 0;
+        return priceB - priceA;
+      });
     }
 
     return sorted;
