@@ -127,6 +127,12 @@ export function useFilters(allInstitutions) {
 
     if (sortBy === 'name') {
       sorted.sort((a, b) => a.courseName.localeCompare(b.courseName));
+    } else if (sortBy === 'duration') {
+      sorted.sort((a, b) => {
+        const dA = a.durationWeeks ?? Infinity;
+        const dB = b.durationWeeks ?? Infinity;
+        return dA - dB;
+      });
     } else if (sortBy === 'price') {
       sorted.sort((a, b) => {
         const priceA = a.tuitionFee || a.totalCost || 0;

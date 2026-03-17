@@ -35,6 +35,7 @@ export function ResultBar({
           >
             <option value="name">Name (A-Z)</option>
             <option value="price">Price (Low-High)</option>
+            <option value="duration">Duration (Short → Long)</option>
           </select>
         </div>
 
