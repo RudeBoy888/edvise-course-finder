@@ -353,6 +353,7 @@ export function useFilters(allInstitutions) {
     setItemsPerPage,
 
     // Derived data
+    filteredInstitutions,
     paginatedCourses,
     totalInstitutions,
     totalCourses,

@@ -48,3 +48,79 @@
     height: 220px;
   }
 }
+
+/* Course marker - orange circle with count */
+.course-marker {
+  width: 32px;
+  height: 32px;
+  background: #C7613C;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: 'Helvetica', sans-serif;
+  border: 2.5px solid white;
+  box-shadow: 0 2px 8px rgba(199, 97, 60, 0.45);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.course-marker:hover {
+  transform: scale(1.15);
+  background: #A84B2A;
+}
+
+/* Popup */
+.leaflet-popup.course-popup .leaflet-popup-content-wrapper {
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  padding: 0;
+  min-width: 200px;
+  max-width: 260px;
+}
+
+.leaflet-popup.course-popup .leaflet-popup-content {
+  margin: 10px 12px;
+}
+
+.popup-school-name {
+  font-weight: 700;
+  font-size: 13px;
+  color: #2c2c2c;
+}
+
+.popup-location {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.popup-course-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 0;
+}
+
+.popup-course-name {
+  font-size: 11px;
+  color: #444;
+  flex: 1;
+}
+
+.popup-course-price {
+  font-size: 11px;
+  color: #C7613C;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.popup-more {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+  font-style: italic;
+}
