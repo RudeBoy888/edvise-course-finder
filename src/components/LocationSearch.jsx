@@ -8,7 +8,7 @@ export function LocationSearch({ locationQuery, onLocationChange, locationRadius
       <div className="location-input-wrapper">
         <input
           type="text"
-          placeholder="Location (e.g. North Sydney)"
+          placeholder="Location"
           value={locationQuery}
           onChange={e => onLocationChange(e.target.value)}
           className="search-input location-input"
