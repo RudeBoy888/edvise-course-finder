@@ -133,6 +133,12 @@ export function useFilters(allInstitutions) {
         const dB = b.durationWeeks ?? Infinity;
         return dA - dB;
       });
+    } else if (sortBy === 'duration_desc') {
+      sorted.sort((a, b) => {
+        const dA = a.durationWeeks ?? -Infinity;
+        const dB = b.durationWeeks ?? -Infinity;
+        return dB - dA;
+      });
     } else if (sortBy === 'price') {
       sorted.sort((a, b) => {
         const priceA = a.tuitionFee || a.totalCost || 0;
