@@ -5,6 +5,32 @@
 
 import { CITY_MAPPING, isPostcodeInAnyCities } from './cityMapping';
 import { getRegionalCategory } from './regionalClassification';
+import AU_POSTCODES from '../data/au_postcodes.json';
+
+// ── Location search helpers ─────────────────────────────────────────────────
+
+function haversineDistance(lat1, lng1, lat2, lng2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function findLocalityCenter(query) {
+  const q = query.trim().toUpperCase();
+  const matches = Object.values(AU_POSTCODES).filter(e =>
+    e.locality.toUpperCase().includes(q)
+  );
+  if (!matches.length) return null;
+  return {
+    lat: matches.reduce((s, e) => s + e.lat, 0) / matches.length,
+    lng: matches.reduce((s, e) => s + e.lng, 0) / matches.length
+  };
+}
 
 export function filterCourses(institutions, filters) {
   const {
@@ -20,7 +46,9 @@ export function filterCourses(institutions, filters) {
     includeFeeNotSpecified = true,
     workComponent = false,
     foundationStudies = false,
-    selectedCategories = []
+    selectedCategories = [],
+    locationQuery = "",
+    locationRadius = 0
   } = filters;
 
   // Use selected cities directly (postcode filtering will be done later)
@@ -224,6 +252,65 @@ export function filterCourses(institutions, filters) {
         });
 
         // Remove courses with no locations in selected regional categories
+        filteredCourses = filteredCourses.filter(
+          (course) => Object.keys(course.locations).length > 0
+        );
+      }
+
+      if (filteredCourses.length === 0) {
+        return null;
+      }
+
+      // 10. Location query filter (suburb/locality text + optional radius)
+      if (locationQuery.trim()) {
+        const queryUpper = locationQuery.trim().toUpperCase();
+
+        if (locationRadius > 0) {
+          // Radius mode: find GPS centre of the query locality, then Haversine
+          const center = findLocalityCenter(queryUpper);
+
+          filteredCourses = filteredCourses.map((course) => {
+            const filteredLocations = {};
+
+            Object.entries(course.locations).forEach(([state, locs]) => {
+              const matching = locs.filter((loc) => {
+                const pc = String(loc.postcode || '').trim().padStart(4, '0');
+                const entry = AU_POSTCODES[pc];
+
+                if (center && entry) {
+                  // GPS distance check
+                  return haversineDistance(center.lat, center.lng, entry.lat, entry.lng) <= locationRadius;
+                }
+                // Fallback: text match on city field
+                return (loc.city || '').toUpperCase().includes(queryUpper);
+              });
+
+              if (matching.length > 0) {
+                filteredLocations[state] = matching;
+              }
+            });
+
+            return { ...course, locations: filteredLocations };
+          });
+        } else {
+          // Text-only mode: match city field
+          filteredCourses = filteredCourses.map((course) => {
+            const filteredLocations = {};
+
+            Object.entries(course.locations).forEach(([state, locs]) => {
+              const matching = locs.filter((loc) =>
+                (loc.city || '').toUpperCase().includes(queryUpper)
+              );
+
+              if (matching.length > 0) {
+                filteredLocations[state] = matching;
+              }
+            });
+
+            return { ...course, locations: filteredLocations };
+          });
+        }
+
         filteredCourses = filteredCourses.filter(
           (course) => Object.keys(course.locations).length > 0
         );

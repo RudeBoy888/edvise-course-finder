@@ -1,5 +1,6 @@
 import React from 'react';
 import { SearchBar } from './components/SearchBar';
+import { LocationSearch } from './components/LocationSearch';
 import { FilterPanel } from './components/FilterPanel';
 import { FilterModal } from './components/FilterModal';
 import { ResultBar } from './components/ResultBar';
@@ -118,7 +119,14 @@ function App() {
         <SearchBar
           searchTerm={filters.searchTerm}
           onSearchChange={filters.setSearchTerm}
-        />
+        >
+          <LocationSearch
+            locationQuery={filters.locationQuery}
+            onLocationChange={filters.setLocationQuery}
+            locationRadius={filters.locationRadius}
+            onRadiusChange={filters.setLocationRadius}
+          />
+        </SearchBar>
 
         {error && (
           <div className="error-message">

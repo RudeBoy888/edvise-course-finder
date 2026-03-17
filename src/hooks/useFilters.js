@@ -18,6 +18,8 @@ export function useFilters(allInstitutions) {
   const [workComponent, setWorkComponent] = useState(false);
   const [foundationStudies, setFoundationStudies] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [locationQuery, setLocationQueryState] = useState('');
+  const [locationRadius, setLocationRadiusState] = useState(0);
 
   // Pagination and sorting state
   const [sortBy, setSortBy] = useState('name'); // 'name', 'courseCount'
@@ -59,7 +61,9 @@ export function useFilters(allInstitutions) {
       includeFeeNotSpecified,
       workComponent,
       foundationStudies,
-      selectedCategories
+      selectedCategories,
+      locationQuery,
+      locationRadius
     });
 
     return results;
@@ -77,7 +81,9 @@ export function useFilters(allInstitutions) {
     includeFeeNotSpecified,
     workComponent,
     foundationStudies,
-    selectedCategories
+    selectedCategories,
+    locationQuery,
+    locationRadius
   ]);
 
   // Reset to page 1 when filters change (but not pagination/sort changes)
@@ -96,7 +102,9 @@ export function useFilters(allInstitutions) {
     includeFeeNotSpecified,
     workComponent,
     foundationStudies,
-    selectedCategories
+    selectedCategories,
+    locationQuery,
+    locationRadius
   ]);
 
   // Flatten courses from filtered institutions (each course with institution context)
@@ -156,6 +164,7 @@ export function useFilters(allInstitutions) {
     if (workComponent) count++;
     if (foundationStudies) count++;
     if (selectedCategories.length > 0) count++;
+    if (locationQuery.trim()) count++;
     return count;
   }, [
     debouncedSearchTerm,
@@ -169,8 +178,21 @@ export function useFilters(allInstitutions) {
     includeFeeNotSpecified,
     workComponent,
     foundationStudies,
-    selectedCategories
+    selectedCategories,
+    locationQuery
   ]);
+
+  // Location handler - reset radius when query cleared
+  const handleLocationQueryChange = useCallback((query) => {
+    setLocationQueryState(query);
+    if (!query) setLocationRadiusState(0);
+    setCurrentPage(1);
+  }, []);
+
+  const handleLocationRadiusChange = useCallback((radius) => {
+    setLocationRadiusState(radius);
+    setCurrentPage(1);
+  }, []);
 
   // Clear all filters
   const clearAllFilters = useCallback(() => {
@@ -187,6 +209,8 @@ export function useFilters(allInstitutions) {
     setWorkComponent(false);
     setFoundationStudies(false);
     setSelectedCategories([]);
+    setLocationQueryState('');
+    setLocationRadiusState(0);
     setSortBy('name');
     setCurrentPage(1);
   }, []);
@@ -313,6 +337,12 @@ export function useFilters(allInstitutions) {
     setFoundationStudies: handleFoundationStudiesChange,
     selectedCategories,
     setSelectedCategories: handleSelectedCategoriesChange,
+
+    // Location search
+    locationQuery,
+    setLocationQuery: handleLocationQueryChange,
+    locationRadius,
+    setLocationRadius: handleLocationRadiusChange,
 
     // Pagination and sorting state
     sortBy,
