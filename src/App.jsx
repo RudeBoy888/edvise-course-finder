@@ -134,6 +134,7 @@ function App() {
         <RadiusMap
           locationQuery={filters.locationQuery}
           locationRadius={filters.locationRadius}
+          locationCenter={filters.locationCenter}
           filteredInstitutions={filters.filteredInstitutions}
         />
 

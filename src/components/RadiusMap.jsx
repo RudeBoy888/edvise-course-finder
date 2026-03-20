@@ -86,10 +86,10 @@ function MapFitter({ center, radiusMeters, markers }) {
   return null;
 }
 
-export function RadiusMap({ locationQuery, locationRadius, filteredInstitutions = [] }) {
+export function RadiusMap({ locationQuery, locationRadius, locationCenter, filteredInstitutions = [] }) {
   if (!locationQuery || !locationRadius) return null;
 
-  const center = findLocalityCenter(locationQuery);
+  const center = locationCenter;
   if (!center) return null;
 
   const radiusMeters = locationRadius * 1000;

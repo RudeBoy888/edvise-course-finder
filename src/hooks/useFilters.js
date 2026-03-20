@@ -20,6 +20,7 @@ export function useFilters(allInstitutions) {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [locationQuery, setLocationQueryState] = useState('');
   const [locationRadius, setLocationRadiusState] = useState(0);
+  const [locationCenter, setLocationCenter] = useState(null); // Geocoded {lat, lng}
 
   // Search mode state
   const [searchMode, setSearchMode] = useState('every'); // 'every' = AND, 'some' = OR
@@ -45,6 +46,31 @@ export function useFilters(allInstitutions) {
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
+  // Geocode locationQuery via Nominatim (debounced via locationQuery which already changes on input)
+  useEffect(() => {
+    const q = locationQuery.trim();
+    if (!q) { setLocationCenter(null); return; }
+
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => {
+      fetch(
+        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q + ', Australia')}&format=json&limit=1&countrycodes=au`,
+        { signal: ctrl.signal, headers: { 'User-Agent': 'EDVISE-CourseFinder/1.0' } }
+      )
+        .then(r => r.json())
+        .then(data => {
+          if (data[0]) {
+            setLocationCenter({ lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) });
+          } else {
+            setLocationCenter(null);
+          }
+        })
+        .catch(() => {}); // AbortError is expected on cleanup
+    }, 500);
+
+    return () => { clearTimeout(timer); ctrl.abort(); };
+  }, [locationQuery]);
+
   // Apply filters (debounced search, not debounced other filters)
   const filteredInstitutions = useMemo(() => {
     if (!allInstitutions || allInstitutions.length === 0) {
@@ -67,7 +93,8 @@ export function useFilters(allInstitutions) {
       foundationStudies,
       selectedCategories,
       locationQuery,
-      locationRadius
+      locationRadius,
+      locationCenter
     });
 
     return results;
@@ -88,7 +115,8 @@ export function useFilters(allInstitutions) {
     foundationStudies,
     selectedCategories,
     locationQuery,
-    locationRadius
+    locationRadius,
+    locationCenter
   ]);
 
   // Reset to page 1 when filters change (but not pagination/sort changes)
@@ -208,7 +236,7 @@ export function useFilters(allInstitutions) {
   // Location handler - reset radius when query cleared
   const handleLocationQueryChange = useCallback((query) => {
     setLocationQueryState(query);
-    if (!query) setLocationRadiusState(0);
+    if (!query) { setLocationRadiusState(0); setLocationCenter(null); }
     setCurrentPage(1);
   }, []);
 
@@ -368,6 +396,7 @@ export function useFilters(allInstitutions) {
     setLocationQuery: handleLocationQueryChange,
     locationRadius,
     setLocationRadius: handleLocationRadiusChange,
+    locationCenter,
 
     // Pagination and sorting state
     sortBy,

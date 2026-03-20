@@ -49,7 +49,8 @@ export function filterCourses(institutions, filters) {
     foundationStudies = false,
     selectedCategories = [],
     locationQuery = "",
-    locationRadius = 0
+    locationRadius = 0,
+    locationCenter = null
   } = filters;
 
   // Use selected cities directly (postcode filtering will be done later)
@@ -266,8 +267,8 @@ export function filterCourses(institutions, filters) {
         const queryUpper = locationQuery.trim().toUpperCase();
 
         if (locationRadius > 0) {
-          // Radius mode: find GPS centre of the query locality, then Haversine
-          const center = findLocalityCenter(queryUpper);
+          // Radius mode: use pre-geocoded center (Nominatim), skip if still loading
+          const center = locationCenter;
 
           filteredCourses = filteredCourses.map((course) => {
             const filteredLocations = {};
