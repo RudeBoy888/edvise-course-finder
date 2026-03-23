@@ -66,6 +66,7 @@ Best regards,
 }
 
 export function OfferModal({ isOpen, onClose, selectedCourses, onClearSelection }) {
+  const [activeTab, setActiveTab] = useState('new');
   const [clientName, setClientName] = useState('');
   const [clientEmail, setClientEmail] = useState('');
   const [clientPhone, setClientPhone] = useState('');
@@ -113,16 +114,10 @@ export function OfferModal({ isOpen, onClose, selectedCourses, onClearSelection 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedOffers));
     setOffers(updatedOffers);
 
-    // Show confirmation
+    // Switch to saved tab to show the result
+    setActiveTab('saved');
     setShowSaved(true);
     setTimeout(() => setShowSaved(false), 3000);
-
-    // Clear form
-    setClientName('');
-    setClientEmail('');
-    setClientPhone('');
-    setEmailTemplate('');
-    onClearSelection();
   }, [clientName, clientEmail, clientPhone, selectedCourses, emailTemplate, offers, onClearSelection]);
 
   const handleCopyEmail = useCallback(() => {
@@ -149,14 +144,18 @@ export function OfferModal({ isOpen, onClose, selectedCourses, onClearSelection 
 
         {/* Tabs */}
         <div className="offer-tabs">
-          <button className="offer-tab active">New Offer</button>
-          <button className="offer-tab" disabled={offers.length === 0}>
-            Saved Offers ({offers.length})
-          </button>
+          <button
+            className={`offer-tab ${activeTab === 'new' ? 'active' : ''}`}
+            onClick={() => setActiveTab('new')}
+          >New Offer</button>
+          <button
+            className={`offer-tab ${activeTab === 'saved' ? 'active' : ''}`}
+            onClick={() => setActiveTab('saved')}
+          >Saved Offers ({offers.length})</button>
         </div>
 
         {/* New Offer Form */}
-        <div className="offer-modal-body">
+        <div className="offer-modal-body" style={{ display: activeTab === 'new' ? 'block' : 'none' }}>
           {/* Client Information Section */}
           <div className="offer-section">
             <h3>Client Information</h3>
@@ -253,9 +252,12 @@ export function OfferModal({ isOpen, onClose, selectedCourses, onClearSelection 
           )}
         </div>
 
-        {/* Saved Offers Section (hidden initially) */}
-        {offers.length > 0 && (
-          <div className="offer-saved-section" style={{ display: 'none' }}>
+        {/* Saved Offers Section */}
+        {activeTab === 'saved' && (
+          <div className="offer-saved-section">
+            {offers.length === 0 && (
+              <p style={{ padding: '24px', color: '#999', textAlign: 'center' }}>No saved offers yet.</p>
+            )}
             <div className="offer-saved-list">
               {offers.map((offer) => (
                 <div key={offer.id} className="offer-saved-item">
