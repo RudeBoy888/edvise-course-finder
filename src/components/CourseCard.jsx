@@ -132,6 +132,9 @@ export function CourseCard({ course, institution, onCardClick, isSelected, onTog
 
           <div className="institution-info">
             <p className="institution-name">{institution.name}</p>
+            {institution.registeredName && (
+              <p className="institution-registered-name">{institution.registeredName}</p>
+            )}
             <div className="location-and-regional">
               {allCities.length > 0 && (
                 <p className="location-info">

@@ -225,7 +225,7 @@ def load_course_locations(ws):
     return course_locations
 
 def main():
-    excel_path = Path("/Users/rudybobek/Desktop/cricos_new.xlsx")
+    excel_path = Path("/Users/rudybobek/edvise-course-finder/cricos_data_current.xlsx")
     output_path = Path("/Users/rudybobek/edvise-course-finder/public/courses_data.json")
 
     if not excel_path.exists():
@@ -371,6 +371,8 @@ def main():
                 "allStates": sorted(list(all_states_set)),
                 "courses": deduplicated_courses
             }
+            if "registeredName" in institution_data:
+                institution_obj["registeredName"] = institution_data["registeredName"]
             output.append(institution_obj)
 
     print(f"Built output with {len(output)} institutions")
