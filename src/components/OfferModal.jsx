@@ -41,7 +41,7 @@ Enrolment Fee: — | Material Fee: ${nonTuition}`;
     })
     .join('\n\n');
 
-  return `Hi,
+  return `Hi${clientName ? ` ${clientName}` : ''},
 
 Thank you for sharing your interests and letting us know what kind of programs you're looking to enrol in. Based on your preferences and preferred location, we have prepared a selection of suitable study options for you.
 
