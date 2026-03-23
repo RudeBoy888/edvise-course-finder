@@ -7,42 +7,61 @@ const STORAGE_KEY = 'edvise_offers';
 function generateEmailTemplate(clientName, courses) {
   const coursesList = courses
     .map((item) => {
-      const price = item.course.tuitionFee || item.course.totalCost || 'TBA';
-      const priceStr = typeof price === 'number' ? `$${price.toLocaleString()}` : price;
-      return `• ${item.course.courseName} - ${item.institution.name}\n  Price: ${priceStr} AUD`;
+      const { course, institution } = item;
+
+      // Get first city from locations
+      const firstState = Object.values(course.locations || {})[0] || [];
+      const city = firstState[0]?.city || '';
+
+      // Duration
+      const duration = course.durationWeeks ? `${course.durationWeeks} weeks` : '—';
+
+      // Tuition fee
+      const tuition = typeof course.tuitionFee === 'number'
+        ? `AUD $${course.tuitionFee.toLocaleString()}`
+        : '—';
+
+      // Fee per term (13 weeks ≈ 3 months)
+      let feePerTerm = '—';
+      if (typeof course.tuitionFee === 'number' && course.durationWeeks) {
+        const terms = course.durationWeeks / 13;
+        const perTerm = Math.round(course.tuitionFee / terms);
+        feePerTerm = `AUD $${perTerm.toLocaleString()}`;
+      }
+
+      // Non-tuition fee (enrolment + material bundled in source data)
+      const nonTuition = typeof course.nonTuitionFee === 'number' && course.nonTuitionFee > 0
+        ? `AUD $${course.nonTuitionFee.toLocaleString()}`
+        : '—';
+
+      return `${course.courseName}
+${institution.name}${city ? ` | ${city}` : ''}
+Duration: ${duration} | Tuition Fee: ${tuition} | Fee per term: ${feePerTerm}
+Enrolment Fee: — | Material Fee: ${nonTuition}`;
     })
     .join('\n\n');
 
-  const totalPrice = courses.reduce((sum, item) => {
-    const price = item.course.tuitionFee || item.course.totalCost || 0;
-    return sum + (typeof price === 'number' ? price : 0);
-  }, 0);
+  return `Hi,
 
-  return `Dear ${clientName || '[Client Name]'},
+Thank you for sharing your interests and letting us know what kind of programs you're looking to enrol in. Based on your preferences and preferred location, we have prepared a selection of suitable study options for you.
 
-I hope this email finds you well. I've prepared a personalized course offer tailored to your educational goals.
-
-Below is a selection of courses that match your interests and qualifications:
+Below are some example programs that align with your profile:
 
 ${coursesList}
 
-Total Estimated Cost: $${totalPrice.toLocaleString()} AUD
+The tuition fees are structured per term (approximately every 3 months). To obtain the CoE (Confirmation of Enrolment), which is required for your student visa application, you only need to pay the first term (3 months) along with the enrolment and material fees. The remaining tuition can be paid progressively before each new term begins.
 
-Each course includes:
-- Official CRICOS accreditation
-- Flexible scheduling options
-- Career support and guidance
-- International student services
+Please also keep in mind the additional costs related to your visa application:
 
-Next Steps:
-1. Please review the courses and let me know if you'd like more information
-2. I can help with the application process
-3. We offer visa and accommodation assistance
+Visa Application Fee: approx. AUD $2,000
+OSHC (health insurance): approx. AUD $700 per year
+(This must be paid upfront for the full duration of your visa. The exact amount will be calculated once the offer letter is issued.)
 
-Feel free to reach out if you have any questions or would like to discuss payment plans.
+Please let us know if any of these options match your expectations, or if you would like us to explore other programs for you. We are here to help you find the best possible pathway for your studies in Australia.
+
+We look forward to your feedback.
 
 Best regards,
-EDVISE Education Agency
 `;
 }
 
