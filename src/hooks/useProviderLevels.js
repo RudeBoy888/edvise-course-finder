@@ -36,5 +36,13 @@ export function useProviderLevels() {
     return 'unknown';
   }, [countryLevels, providerLevels]);
 
-  return { providerLevels, countryLevels, checkCompatibility };
+  const getProviderLevel = useCallback((providerCode) => {
+    return providerLevels[providerCode]?.level ?? null;
+  }, [providerLevels]);
+
+  const getCountryLevel = useCallback((countryCode) => {
+    return countryLevels[countryCode]?.level ?? null;
+  }, [countryLevels]);
+
+  return { providerLevels, countryLevels, checkCompatibility, getProviderLevel, getCountryLevel };
 }

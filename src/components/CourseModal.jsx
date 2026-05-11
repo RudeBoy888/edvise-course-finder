@@ -30,7 +30,7 @@ function getLogoColor(institutionName) {
   return colors[Math.abs(hash) % colors.length];
 }
 
-export function CourseModal({ course, institution, isOpen, onClose, passportCountry, checkCompatibility }) {
+export function CourseModal({ course, institution, isOpen, onClose, passportCountry, checkCompatibility, getProviderLevel, getCountryLevel }) {
   if (!isOpen) return null;
 
   const [logoError, setLogoError] = React.useState(false);
@@ -149,7 +149,11 @@ export function CourseModal({ course, institution, isOpen, onClose, passportCoun
             <div className="modal-section modal-section--visa">
               <h3 className="section-label">Visa Documents Check</h3>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                <EvidenceLevelBadge compatibility={checkCompatibility(passportCountry, institution.providerCode)} />
+                <EvidenceLevelBadge
+                  compatibility={checkCompatibility(passportCountry, institution.providerCode)}
+                  providerLevel={getProviderLevel ? getProviderLevel(institution.providerCode) : null}
+                  countryLevel={getCountryLevel ? getCountryLevel(passportCountry) : null}
+                />
                 {checkCompatibility(passportCountry, institution.providerCode) === 'streamlined' && (
                   <span style={{ fontSize: '13px', color: '#155724' }}>
                     No additional financial or English evidence required for your passport country.
@@ -166,7 +170,12 @@ export function CourseModal({ course, institution, isOpen, onClose, passportCoun
                   </span>
                 )}
               </div>
-              <p style={{ fontSize: '11px', color: '#aaa', marginTop: '8px', fontStyle: 'italic' }}>
+              {getProviderLevel && getCountryLevel && (
+                <p style={{ fontSize: '11px', color: '#aaa', marginTop: '6px', fontFamily: 'monospace' }}>
+                  School: L{getProviderLevel(institution.providerCode) ?? '?'} &nbsp;·&nbsp; Country: L{getCountryLevel(passportCountry) ?? '?'}
+                </p>
+              )}
+              <p style={{ fontSize: '11px', color: '#aaa', marginTop: '4px', fontStyle: 'italic' }}>
                 Based on the{' '}
                 <a href="https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool" target="_blank" rel="noopener noreferrer" style={{ color: '#C7613C' }}>
                   Document Checklist Tool

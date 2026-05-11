@@ -12,6 +12,7 @@ import { OfferModal } from './components/OfferModal';
 import { CompareDrawer } from './components/CompareDrawer';
 import { WishlistDrawer } from './components/WishlistDrawer';
 import { AdminPanel } from './components/AdminPanel';
+import { AgentLogin } from './components/AgentLogin';
 import { useCourseData } from './hooks/useCourseData';
 import { useFilters } from './hooks/useFilters';
 import { useProviderLevels } from './hooks/useProviderLevels';
@@ -21,8 +22,20 @@ import edviseLogo from './assets/edvise-logo.png';
 import './App.css';
 
 function App() {
+  const [agentAuthed, setAgentAuthed] = React.useState(
+    () => localStorage.getItem('edvise_agent_auth') === 'true'
+  );
+
+  if (!agentAuthed) {
+    return <AgentLogin onSuccess={() => setAgentAuthed(true)} />;
+  }
+
+  return <AppContent />;
+}
+
+function AppContent() {
   const { data, loading, error } = useCourseData();
-  const { countryLevels, checkCompatibility } = useProviderLevels();
+  const { countryLevels, providerLevels, checkCompatibility, getProviderLevel, getCountryLevel } = useProviderLevels();
   const filters = useFilters(data, { checkCompatibility });
   const { wishlist, toggleWishlist, isInWishlist, clearWishlist } = useWishlist();
   const { notes, getNote, setNote, clearNote } = useCompareNotes();
@@ -35,15 +48,12 @@ function App() {
   const [isCompareDrawerOpen, setIsCompareDrawerOpen] = React.useState(false);
   const [isWishlistDrawerOpen, setIsWishlistDrawerOpen] = React.useState(false);
 
-  // Persist admin authentication to localStorage
   React.useEffect(() => {
-    const savedAuthState = localStorage.getItem('edvise_admin_authenticated');
-    if (savedAuthState === 'true') {
+    if (localStorage.getItem('edvise_admin_authenticated') === 'true') {
       setIsAdminAuthenticated(true);
     }
   }, []);
 
-  // Save admin authentication state when it changes
   React.useEffect(() => {
     localStorage.setItem('edvise_admin_authenticated', isAdminAuthenticated.toString());
   }, [isAdminAuthenticated]);
@@ -464,6 +474,8 @@ function App() {
           onClose={handleCloseModal}
           passportCountry={filters.passportCountry}
           checkCompatibility={checkCompatibility}
+          getProviderLevel={getProviderLevel}
+          getCountryLevel={getCountryLevel}
         />
       )}
 
