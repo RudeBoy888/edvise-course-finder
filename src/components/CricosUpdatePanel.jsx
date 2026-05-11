@@ -514,13 +514,15 @@ function AssessmentLevelsUpdate({ githubToken }) {
 
 export function CricosUpdatePanel() {
   const [activeTab, setActiveTab] = useState('cricos');
-  const [githubToken, setGithubToken] = useState(() => localStorage.getItem(STORAGE_KEY) || '');
+  const [githubToken, setGithubToken] = useState(() =>
+    import.meta.env.VITE_GITHUB_TOKEN || localStorage.getItem(STORAGE_KEY) || ''
+  );
 
   const handleTokenSaved = (token) => setGithubToken(token);
 
   const handleForgetToken = () => {
     localStorage.removeItem(STORAGE_KEY);
-    setGithubToken('');
+    setGithubToken(import.meta.env.VITE_GITHUB_TOKEN || '');
   };
 
   if (!githubToken) return <TokenSetup onSaved={handleTokenSaved} />;
