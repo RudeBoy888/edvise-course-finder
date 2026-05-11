@@ -14,6 +14,7 @@ import { WishlistDrawer } from './components/WishlistDrawer';
 import { AdminPanel } from './components/AdminPanel';
 import { useCourseData } from './hooks/useCourseData';
 import { useFilters } from './hooks/useFilters';
+import { useProviderLevels } from './hooks/useProviderLevels';
 import { useWishlist } from './hooks/useWishlist';
 import { useCompareNotes } from './hooks/useCompareNotes';
 import edviseLogo from './assets/edvise-logo.png';
@@ -21,7 +22,8 @@ import './App.css';
 
 function App() {
   const { data, loading, error } = useCourseData();
-  const filters = useFilters(data);
+  const { countryLevels, checkCompatibility } = useProviderLevels();
+  const filters = useFilters(data, { checkCompatibility });
   const { wishlist, toggleWishlist, isInWishlist, clearWishlist } = useWishlist();
   const { notes, getNote, setNote, clearNote } = useCompareNotes();
   const [selectedCourse, setSelectedCourse] = React.useState(null);
@@ -180,6 +182,11 @@ function App() {
               setSelectedCategories={filters.setSelectedCategories}
               activeFilterCount={filters.activeFilterCount}
               clearAllFilters={filters.clearAllFilters}
+              countryLevels={countryLevels}
+              passportCountry={filters.passportCountry}
+              setPassportCountry={filters.setPassportCountry}
+              onlyStreamlined={filters.onlyStreamlined}
+              setOnlyStreamlined={filters.setOnlyStreamlined}
             />
 
             {/* Mobile: FilterModal bottom sheet */}
@@ -216,6 +223,11 @@ function App() {
                 activeFilterCount={filters.activeFilterCount}
                 clearAllFilters={filters.clearAllFilters}
                 isMobileModal={true}
+                countryLevels={countryLevels}
+                passportCountry={filters.passportCountry}
+                setPassportCountry={filters.setPassportCountry}
+                onlyStreamlined={filters.onlyStreamlined}
+                setOnlyStreamlined={filters.setOnlyStreamlined}
               />
             </FilterModal>
 
@@ -412,6 +424,8 @@ function App() {
                         isAdmin={isAdminAuthenticated}
                         isInWishlist={isInWishlist(course, course.institution)}
                         onToggleWishlist={toggleWishlist}
+                        passportCountry={filters.passportCountry}
+                        checkCompatibility={checkCompatibility}
                       />
                     ))}
                   </div>
@@ -448,6 +462,8 @@ function App() {
           institution={selectedInstitution}
           isOpen={true}
           onClose={handleCloseModal}
+          passportCountry={filters.passportCountry}
+          checkCompatibility={checkCompatibility}
         />
       )}
 

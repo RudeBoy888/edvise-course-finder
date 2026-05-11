@@ -256,6 +256,101 @@
   text-decoration: underline;
 }
 
+/* Visa Risk Filter */
+.filter-section--visa-risk {
+  background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+  border: 1px solid #b8d9f0;
+  border-bottom: 1px solid #b8d9f0;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+}
+
+.filter-section--visa-risk .filter-title {
+  color: #1a6fa8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-section--visa-risk .filter-title::before {
+  content: '🛂';
+  font-size: 14px;
+}
+
+.filter-visa-risk {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-country-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.filter-country-select {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 13px;
+  border: 2px solid #b8d9f0;
+  border-radius: 6px;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-country-select:hover {
+  border-color: #1a6fa8;
+}
+
+.filter-country-select:focus {
+  outline: none;
+  border-color: #1a6fa8;
+  box-shadow: 0 0 0 3px rgba(26, 111, 168, 0.12);
+  background-color: #ffffff;
+}
+
+.filter-visa-disclaimer {
+  font-size: 11px;
+  color: #7a9ab5;
+  margin: 2px 0 0 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.filter-visa-disclaimer a {
+  color: #1a6fa8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.filter-visa-disclaimer a:hover {
+  text-decoration: underline;
+}
+
+/* Legend badges under dropdown */
+.filter-visa-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.filter-visa-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #555;
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .filter-sidebar {

@@ -45,7 +45,13 @@ export function FilterPanel({
   setSelectedCategories,
   activeFilterCount,
   clearAllFilters,
-  isMobileModal = false
+  isMobileModal = false,
+  // Visa risk / passport country
+  countryLevels = {},
+  passportCountry = '',
+  setPassportCountry,
+  onlyStreamlined = false,
+  setOnlyStreamlined,
 }) {
 
   // Extract unique course levels from data
@@ -126,6 +132,72 @@ export function FilterPanel({
           )}
         </div>
       )}
+
+      {/* Visa Risk Filter */}
+      <div className="filter-section filter-section--visa-risk">
+        <h3 className="filter-title">Visa Risk Check</h3>
+        <div className="filter-visa-risk">
+          <label className="filter-country-label" htmlFor="passport-country-select">
+            Passport country
+          </label>
+          <select
+            id="passport-country-select"
+            className="filter-country-select"
+            value={passportCountry}
+            onChange={e => setPassportCountry && setPassportCountry(e.target.value)}
+          >
+            <option value="">— Select country —</option>
+            {Object.entries(countryLevels)
+              .filter(([, v]) => v.countryName)
+              .sort((a, b) => a[1].countryName.localeCompare(b[1].countryName))
+              .map(([code, info]) => (
+                <option key={code} value={code}>{info.countryName}</option>
+              ))}
+          </select>
+
+          {passportCountry ? (
+            <>
+              <div className="filter-visa-legend">
+                <div className="filter-visa-legend-row">
+                  <span style={{ background: '#d4edda', border: '1px solid #b8dfc5', borderRadius: '3px', padding: '1px 6px', fontSize: '11px', fontWeight: '700', color: '#155724' }}>✓ Streamlined</span>
+                  <span>No extra docs needed</span>
+                </div>
+                <div className="filter-visa-legend-row">
+                  <span style={{ background: '#fff3cd', border: '1px solid #f0d060', borderRadius: '3px', padding: '1px 6px', fontSize: '11px', fontWeight: '700', color: '#856404' }}>! Extra docs required</span>
+                  <span>Financial + English evidence</span>
+                </div>
+              </div>
+              <label className="checkbox-label" style={{ marginTop: '6px' }}>
+                <input
+                  type="checkbox"
+                  checked={onlyStreamlined}
+                  onChange={e => setOnlyStreamlined && setOnlyStreamlined(e.target.checked)}
+                />
+                <span>Show only streamlined schools</span>
+              </label>
+            </>
+          ) : (
+            <div className="filter-visa-legend">
+              <div className="filter-visa-legend-row">
+                <span style={{ background: '#d4edda', border: '1px solid #b8dfc5', borderRadius: '3px', padding: '1px 6px', fontSize: '11px', fontWeight: '700', color: '#155724' }}>✓ Streamlined</span>
+                <span>No extra docs</span>
+              </div>
+              <div className="filter-visa-legend-row">
+                <span style={{ background: '#fff3cd', border: '1px solid #f0d060', borderRadius: '3px', padding: '1px 6px', fontSize: '11px', fontWeight: '700', color: '#856404' }}>! Extra docs</span>
+                <span>Financial + English evidence</span>
+              </div>
+            </div>
+          )}
+
+          <p className="filter-visa-disclaimer">
+            Based on{' '}
+            <a href="https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool" target="_blank" rel="noopener noreferrer">
+              Document Checklist Tool
+            </a>
+            . Verify before lodgement.
+          </p>
+        </div>
+      </div>
 
       {/* Location Filter */}
       <div className="filter-section">

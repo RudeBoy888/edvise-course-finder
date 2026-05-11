@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/CourseCard.css';
 import { getRegionalCategory, getRegionalCategoryBadge } from '../utils/regionalClassification';
+import { EvidenceLevelBadge } from './EvidenceLevelBadge';
 
 // Helper function to generate placeholder logo with initials
 function getLogoPlaceholder(institutionName) {
@@ -30,15 +31,12 @@ function getLogoColor(institutionName) {
   return colors[Math.abs(hash) % colors.length];
 }
 
-export function CourseCard({ course, institution, onCardClick, isSelected, onToggleSelect, isAdmin = false, isInWishlist = false, onToggleWishlist }) {
+export function CourseCard({ course, institution, onCardClick, isSelected, onToggleSelect, isAdmin = false, isInWishlist = false, onToggleWishlist, passportCountry, checkCompatibility }) {
+  const compatibility = (passportCountry && checkCompatibility)
+    ? checkCompatibility(passportCountry, institution.providerCode)
+    : null;
   const [logoError, setLogoError] = React.useState(false);
 
-  // Debug logging
-  React.useEffect(() => {
-    if (institution?.logoUrl && institution?.name?.includes('National')) {
-      console.log(`CourseCard: ${institution.name} - logoUrl: ${institution.logoUrl}, logoError: ${logoError}`);
-    }
-  }, [institution, logoError]);
 
   const openWebsite = (url) => {
     if (url) {
@@ -97,8 +95,14 @@ export function CourseCard({ course, institution, onCardClick, isSelected, onTog
     return deliveryMethods.length > 0 ? deliveryMethods[0] : null;
   };
 
+  const cardBorderStyle = compatibility === 'streamlined'
+    ? { borderLeft: '4px solid #28a745' }
+    : compatibility === 'regular'
+    ? { borderLeft: '4px solid #ffc107' }
+    : {};
+
   return (
-    <div className="course-card" onClick={() => onCardClick && onCardClick(course, institution)}>
+    <div className="course-card" style={cardBorderStyle} onClick={() => onCardClick && onCardClick(course, institution)}>
       <div className="card-container">
         {/* Left: Logo (Real or Placeholder) */}
         <div className="logo-placeholder" style={logoError || !institution.logoUrl ? { backgroundColor: logoColor } : {}}>
@@ -153,6 +157,11 @@ export function CourseCard({ course, institution, onCardClick, isSelected, onTog
                 </span>
               )}
             </div>
+            {passportCountry && (
+              <div style={{ marginTop: '6px' }}>
+                <EvidenceLevelBadge compatibility={compatibility} />
+              </div>
+            )}
           </div>
         </div>
 

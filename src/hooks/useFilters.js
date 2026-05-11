@@ -3,7 +3,7 @@ import { filterCourses } from '../utils/search';
 
 const DEBOUNCE_DELAY = 300;
 
-export function useFilters(allInstitutions) {
+export function useFilters(allInstitutions, { checkCompatibility } = {}) {
   // Search and filter state
   const [searchTerm, setSearchTermState] = useState('');
   const [selectedStates, setSelectedStates] = useState([]);
@@ -18,6 +18,8 @@ export function useFilters(allInstitutions) {
   const [workComponent, setWorkComponent] = useState(false);
   const [foundationStudies, setFoundationStudies] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [passportCountry, setPassportCountryState] = useState('');
+  const [onlyStreamlined, setOnlyStreamlinedState] = useState(false);
   const [locationQuery, setLocationQueryState] = useState('');
   const [locationRadius, setLocationRadiusState] = useState(0);
   const [locationCenter, setLocationCenter] = useState(null); // Geocoded {lat, lng}
@@ -97,6 +99,12 @@ export function useFilters(allInstitutions) {
       locationCenter
     });
 
+    if (onlyStreamlined && passportCountry && checkCompatibility) {
+      return results.filter(inst =>
+        checkCompatibility(passportCountry, inst.providerCode) === 'streamlined'
+      );
+    }
+
     return results;
   }, [
     allInstitutions,
@@ -116,7 +124,10 @@ export function useFilters(allInstitutions) {
     selectedCategories,
     locationQuery,
     locationRadius,
-    locationCenter
+    locationCenter,
+    onlyStreamlined,
+    passportCountry,
+    checkCompatibility
   ]);
 
   // Reset to page 1 when filters change (but not pagination/sort changes)
@@ -216,6 +227,8 @@ export function useFilters(allInstitutions) {
     if (foundationStudies) count++;
     if (selectedCategories.length > 0) count++;
     if (locationQuery.trim()) count++;
+    if (passportCountry) count++;
+    if (onlyStreamlined) count++;
     return count;
   }, [
     debouncedSearchTerm,
@@ -230,7 +243,9 @@ export function useFilters(allInstitutions) {
     workComponent,
     foundationStudies,
     selectedCategories,
-    locationQuery
+    locationQuery,
+    passportCountry,
+    onlyStreamlined
   ]);
 
   // Location handler - reset radius when query cleared
@@ -260,6 +275,8 @@ export function useFilters(allInstitutions) {
     setWorkComponent(false);
     setFoundationStudies(false);
     setSelectedCategories([]);
+    setPassportCountryState('');
+    setOnlyStreamlinedState(false);
     setLocationQueryState('');
     setLocationRadiusState(0);
     setSortBy('name');
@@ -327,6 +344,16 @@ export function useFilters(allInstitutions) {
     setCurrentPage(1);
   }, []);
 
+  const handlePassportCountryChange = useCallback((code) => {
+    setPassportCountryState(code);
+    setCurrentPage(1);
+  }, []);
+
+  const handleOnlyStreamlinedChange = useCallback((checked) => {
+    setOnlyStreamlinedState(checked);
+    setCurrentPage(1);
+  }, []);
+
   // Offer/selection handlers
   const toggleCourseSelection = useCallback((course, institution) => {
     const courseId = `${institution.providerCode}-${course.courseCode}`;
@@ -390,6 +417,12 @@ export function useFilters(allInstitutions) {
     setFoundationStudies: handleFoundationStudiesChange,
     selectedCategories,
     setSelectedCategories: handleSelectedCategoriesChange,
+
+    // Passport country / visa risk filter
+    passportCountry,
+    setPassportCountry: handlePassportCountryChange,
+    onlyStreamlined,
+    setOnlyStreamlined: handleOnlyStreamlinedChange,
 
     // Location search
     locationQuery,

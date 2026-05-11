@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/CourseModal.css';
+import { EvidenceLevelBadge } from './EvidenceLevelBadge';
 
 // Helper function to generate placeholder logo with initials
 function getLogoPlaceholder(institutionName) {
@@ -29,7 +30,7 @@ function getLogoColor(institutionName) {
   return colors[Math.abs(hash) % colors.length];
 }
 
-export function CourseModal({ course, institution, isOpen, onClose }) {
+export function CourseModal({ course, institution, isOpen, onClose, passportCountry, checkCompatibility }) {
   if (!isOpen) return null;
 
   const [logoError, setLogoError] = React.useState(false);
@@ -140,6 +141,38 @@ export function CourseModal({ course, institution, isOpen, onClose }) {
               <div className="course-description">
                 {course.description}
               </div>
+            </div>
+          )}
+
+          {/* Visa Risk Check — shown only when passport country is selected */}
+          {passportCountry && checkCompatibility && (
+            <div className="modal-section modal-section--visa">
+              <h3 className="section-label">Visa Documents Check</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                <EvidenceLevelBadge compatibility={checkCompatibility(passportCountry, institution.providerCode)} />
+                {checkCompatibility(passportCountry, institution.providerCode) === 'streamlined' && (
+                  <span style={{ fontSize: '13px', color: '#155724' }}>
+                    No additional financial or English evidence required for your passport country.
+                  </span>
+                )}
+                {checkCompatibility(passportCountry, institution.providerCode) === 'regular' && (
+                  <span style={{ fontSize: '13px', color: '#856404' }}>
+                    Evidence of financial capacity and English language ability required.
+                  </span>
+                )}
+                {checkCompatibility(passportCountry, institution.providerCode) === 'unknown' && (
+                  <span style={{ fontSize: '13px', color: '#999' }}>
+                    Visa compatibility not yet checked for this institution.
+                  </span>
+                )}
+              </div>
+              <p style={{ fontSize: '11px', color: '#aaa', marginTop: '8px', fontStyle: 'italic' }}>
+                Based on the{' '}
+                <a href="https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool" target="_blank" rel="noopener noreferrer" style={{ color: '#C7613C' }}>
+                  Document Checklist Tool
+                </a>
+                . Always verify at immi.homeaffairs.gov.au before lodgement.
+              </p>
             </div>
           )}
 
