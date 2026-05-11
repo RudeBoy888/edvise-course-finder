@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/AdminPanel.css';
 import { OfferModal } from './OfferModal';
+import { CricosUpdatePanel } from './CricosUpdatePanel';
 
 export function AdminPanel({ isOpen, setIsOpen, isAuthenticated: propsIsAuthenticated, onAuthChange, selectedCourses, onClearSelection }) {
   const [localIsAuthenticated, setLocalIsAuthenticated] = useState(false);
@@ -199,6 +200,12 @@ export function AdminPanel({ isOpen, setIsOpen, isAuthenticated: propsIsAuthenti
               >
                 📧 Send Report
               </button>
+              <button
+                className={`admin-tab ${activeTab === 'update' ? 'active' : ''}`}
+                onClick={() => setActiveTab('update')}
+              >
+                🔄 Update Data
+              </button>
             </div>
 
             {/* Tab Content */}
@@ -370,6 +377,14 @@ export function AdminPanel({ isOpen, setIsOpen, isAuthenticated: propsIsAuthenti
                       </div>
                     )}
                   </form>
+                </div>
+              )}
+
+              {/* Update Data Tab */}
+              {activeTab === 'update' && (
+                <div className="admin-section">
+                  <h3>🔄 Update CRICOS Data</h3>
+                  <CricosUpdatePanel />
                 </div>
               )}
             </div>

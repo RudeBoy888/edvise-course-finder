@@ -1,0 +1,502 @@
+.cup-root {
+  padding: 4px 0;
+}
+
+.cup-token-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f0faf4;
+  border: 1px solid #b8e4c9;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.cup-token-connected {
+  color: #1a7a3a;
+  font-weight: 600;
+}
+.cup-token-connected::before {
+  content: '● ';
+  color: #28a745;
+}
+
+.cup-inner-tabs {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e8ddd4;
+}
+
+.cup-inner-tab {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  color: #888;
+  transition: all 0.2s;
+}
+
+.cup-inner-tab.active {
+  color: #C7613C;
+  border-bottom-color: #C7613C;
+}
+
+.cup-inner-tab:hover {
+  color: #C7613C;
+}
+
+/* Description */
+.cup-description {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.cup-description code {
+  background: #f5f0eb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #C7613C;
+}
+
+/* Drop zone */
+.cup-dropzone {
+  border: 2px dashed #d0c4bb;
+  border-radius: 8px;
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #fdf9f6;
+}
+
+.cup-dropzone:hover,
+.cup-dropzone.dragging {
+  border-color: #C7613C;
+  background: #fef5f0;
+}
+
+.cup-dropzone.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cup-dropzone-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #C7613C;
+}
+
+.cup-dropzone-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 4px;
+}
+
+.cup-dropzone-hint {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Stats row */
+.cup-stats-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.cup-stat {
+  flex: 1;
+  min-width: 100px;
+  background: white;
+  border: 1px solid #e8ddd4;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.cup-stat-value {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cup-stat-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Expandable list */
+.cup-expandable {
+  margin-bottom: 10px;
+  border: 1px solid #e8ddd4;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cup-expandable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #fdf9f6;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c2c2c;
+  user-select: none;
+}
+
+.cup-expandable-header:hover {
+  background: #faf0e8;
+}
+
+.cup-arrow {
+  font-size: 11px;
+  color: #C7613C;
+}
+
+.cup-expandable-body {
+  padding: 8px 14px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.cup-list-item {
+  font-size: 13px;
+  color: #444;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0ebe5;
+  line-height: 1.5;
+}
+
+.cup-list-item:last-child {
+  border-bottom: none;
+}
+
+.cup-changes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.cup-change-tag {
+  font-size: 11px;
+  background: #fff3cd;
+  color: #856404;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Review actions */
+.cup-review-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e8ddd4;
+}
+
+/* Buttons */
+.cup-btn {
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cup-btn.primary {
+  background: linear-gradient(135deg, #C7613C 0%, #A84B2A 100%);
+  color: white;
+}
+
+.cup-btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(199, 97, 60, 0.3);
+}
+
+.cup-btn.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cup-btn.secondary {
+  background: #f5f0eb;
+  color: #666;
+}
+
+.cup-btn.secondary:hover {
+  background: #ede5dc;
+}
+
+.cup-btn-xs {
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #d0c4bb;
+  border-radius: 4px;
+  cursor: pointer;
+  background: white;
+  color: #666;
+}
+
+.cup-btn-xs.danger {
+  border-color: #f5c6cb;
+  color: #dc3545;
+  background: #fff5f5;
+}
+
+.cup-btn-xs.danger:hover {
+  background: #dc3545;
+  color: white;
+}
+
+/* Status messages */
+.cup-status {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+.cup-status.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.cup-status.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Center states */
+.cup-center {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.cup-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e8ddd4;
+  border-top-color: #C7613C;
+  border-radius: 50%;
+  animation: cup-spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes cup-spin {
+  to { transform: rotate(360deg); }
+}
+
+.cup-success-icon {
+  width: 56px;
+  height: 56px;
+  background: #28a745;
+  color: white;
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.cup-done-stats {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 16px 0 24px;
+}
+
+.cup-done-stats span {
+  background: #f5f0eb;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #C7613C;
+}
+
+/* Token setup */
+.cup-token-setup {
+  padding: 8px 0;
+}
+
+.cup-token-setup h3 {
+  font-size: 16px;
+  color: #2c2c2c;
+  margin: 0 0 8px;
+}
+
+.cup-token-setup p {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+.cup-token-steps {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.9;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.cup-token-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cup-token-input {
+  flex: 1;
+  padding: 9px 12px;
+  font-size: 13px;
+  border: 2px solid #e8ddd4;
+  border-radius: 6px;
+  font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.cup-token-input:focus {
+  outline: none;
+  border-color: #C7613C;
+  box-shadow: 0 0 0 3px rgba(199, 97, 60, 0.1);
+}
+
+.cup-token-note {
+  font-size: 11px;
+  color: #aaa;
+  margin: 6px 0 0;
+  font-style: italic;
+}
+
+/* Review header */
+.cup-review h3 {
+  font-size: 15px;
+  color: #2c2c2c;
+  margin: 0 0 16px;
+}
+
+/* Levels layout */
+.cup-levels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .cup-levels-grid { grid-template-columns: 1fr; }
+}
+
+.cup-levels-zone h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.cup-file-loaded {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0faf4;
+  border: 1px solid #b8e4c9;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #1a7a3a;
+}
+
+.cup-file-icon {
+  background: #28a745;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.cup-file-loaded span:nth-child(2) {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cup-mini-diff {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.cup-mini-stat {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.cup-mini-stat.green { background: #d4edda; color: #155724; }
+.cup-mini-stat.yellow { background: #fff3cd; color: #856404; }
+.cup-mini-stat.red { background: #f8d7da; color: #721c24; }
+
+.cup-levels-detail {
+  margin-bottom: 16px;
+}
+
+.cup-levels-detail h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 16px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.cup-level-change {
+  margin-left: 8px;
+  font-size: 12px;
+  background: #fff3cd;
+  color: #856404;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* Show more */
+.cup-show-more {
+  background: none;
+  border: none;
+  color: #C7613C;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px 0;
+  font-weight: 600;
+}
