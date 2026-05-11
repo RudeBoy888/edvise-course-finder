@@ -71,8 +71,8 @@ export function AdminPanel({ isOpen, setIsOpen, isAuthenticated: propsIsAuthenti
 
   const handlePasswordSubmit = (e) => {
     e.preventDefault();
-    const correctPassword = (import.meta.env.VITE_ADMIN_PASSWORD || 'admin2026').trim();
-    if (password.trim() === correctPassword) {
+    const correctPassword = (import.meta.env.VITE_ADMIN_PASSWORD || '').trim();
+    if (correctPassword && password.trim() === correctPassword) {
       setLocalIsAuthenticated(true);
       if (onAuthChange) onAuthChange(true);
       setPassword('');
