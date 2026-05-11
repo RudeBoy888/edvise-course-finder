@@ -16,9 +16,12 @@ export function AdminPanel({ isOpen, setIsOpen, isAuthenticated: propsIsAuthenti
   // Sync with parent authentication state
   const isAuthenticated = propsIsAuthenticated !== undefined ? propsIsAuthenticated : localIsAuthenticated;
 
-  // Load report from window context (would come from backend)
   useEffect(() => {
     loadReportData();
+    fetch('/update_history.json')
+      .then(r => r.ok ? r.json() : [])
+      .then(data => setUpdateHistory(Array.isArray(data) ? data : []))
+      .catch(() => {});
   }, []);
 
   const loadReportData = () => {
@@ -301,29 +304,48 @@ export function AdminPanel({ isOpen, setIsOpen, isAuthenticated: propsIsAuthenti
               {activeTab === 'history' && (
                 <div className="admin-section">
                   <h3>Update History</h3>
-
-                  <div className="admin-history-list">
-                    {updateHistory.map((item, idx) => (
-                      <div key={idx} className="history-item">
-                        <div className="history-date">
-                          <strong>{formatDate(item.date)}</strong>
-                          <span className="history-time">{item.time}</span>
+                  {updateHistory.length === 0 ? (
+                    <p style={{ color: '#999', fontSize: '14px' }}>No updates recorded yet. History will appear here after your first update.</p>
+                  ) : (
+                    <div className="admin-history-list">
+                      {updateHistory.map((item, idx) => (
+                        <div key={idx} className="history-item">
+                          <div className="history-date">
+                            <strong>{formatDate(item.date)}</strong>
+                            <span className="history-time">{item.time}</span>
+                            <span className="history-type-badge" style={{
+                              background: item.type === 'cricos' ? '#fef5f0' : '#f0f7ff',
+                              color: item.type === 'cricos' ? '#C7613C' : '#1a6fa8',
+                              fontSize: '11px', fontWeight: '600',
+                              padding: '2px 7px', borderRadius: '10px', marginLeft: '6px'
+                            }}>
+                              {item.type === 'cricos' ? 'CRICOS Data' : 'Assessment Levels'}
+                            </span>
+                          </div>
+                          <div className="history-stats">
+                            {item.type === 'cricos' ? (<>
+                              <span className="badge">🏫 {item.totalInstitutions} institutions</span>
+                              <span className="badge">📚 {item.totalCourses?.toLocaleString()} courses</span>
+                              <span className="badge" style={{ color: '#28a745' }}>+{item.addedCourses} added</span>
+                              {item.removedCourses > 0 && <span className="badge" style={{ color: '#dc3545' }}>-{item.removedCourses} removed</span>}
+                              {item.modifiedCourses > 0 && <span className="badge" style={{ color: '#856404' }}>{item.modifiedCourses} modified</span>}
+                            </>) : (<>
+                              {item.providerChanges > 0 && <span className="badge">🏫 {item.providerChanges} school level changes</span>}
+                              {item.countryChanges > 0 && <span className="badge">🌍 {item.countryChanges} country level changes</span>}
+                              {item.providerAdded > 0 && <span className="badge" style={{ color: '#28a745' }}>+{item.providerAdded} new schools</span>}
+                              {item.countryAdded > 0 && <span className="badge" style={{ color: '#28a745' }}>+{item.countryAdded} new countries</span>}
+                              {(item.providerChanges + item.countryChanges + item.providerAdded + item.countryAdded) === 0 && (
+                                <span className="badge">No changes detected</span>
+                              )}
+                            </>)}
+                          </div>
+                          <div className="history-status">
+                            <span className="status-badge success">✅ Deployed</span>
+                          </div>
                         </div>
-                        <div className="history-stats">
-                          <span className="badge">📊 {item.institutions} institutions</span>
-                          <span className="badge">📚 {item.courses.toLocaleString()} courses</span>
-                          <span className="badge">⚡ {item.changes} changes</span>
-                        </div>
-                        <div className="history-status">
-                          {item.status === 'success' ? (
-                            <span className="status-badge success">✅ Success</span>
-                          ) : (
-                            <span className="status-badge error">❌ Failed</span>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
 

@@ -49,3 +49,30 @@ export async function validateToken(token) {
   if (!res.ok) throw new Error('Invalid token or no access');
   return await res.json();
 }
+
+export async function appendHistory(token, entry) {
+  const path = 'public/update_history.json';
+  let currentHistory = [];
+  let sha = null;
+
+  try {
+    const data = await apiRequest(token, 'GET', path);
+    sha = data.sha;
+    // History file is small — GitHub returns content inline
+    const decoded = atob(data.content.replace(/\n/g, ''));
+    currentHistory = JSON.parse(new TextDecoder().decode(
+      Uint8Array.from(decoded, c => c.charCodeAt(0))
+    ));
+  } catch {
+    // File doesn't exist yet — start fresh
+  }
+
+  const updated = [{ ...entry, id: new Date().toISOString() }, ...currentHistory].slice(0, 100);
+  const content = toBase64(JSON.stringify(updated, null, 2));
+
+  await apiRequest(token, 'PUT', path, {
+    message: `Update history: ${entry.type} update ${entry.date}`,
+    content,
+    ...(sha ? { sha } : {}),
+  });
+}

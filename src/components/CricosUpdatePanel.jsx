@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { parseExcelToCricosData } from '../utils/excelParser';
 import { compareCricosData, compareLevels } from '../utils/cricosComparator';
-import { commitFile, validateToken } from '../utils/githubPublisher';
+import { commitFile, validateToken, appendHistory } from '../utils/githubPublisher';
 import '../styles/CricosUpdatePanel.css';
 
 const STORAGE_KEY = 'edvise_github_token';
@@ -153,6 +153,7 @@ function CricosDataUpdate({ githubToken }) {
       const json = JSON.stringify(newData, null, 2);
       setPublishMsg('Uploading to GitHub...');
       const date = new Date().toISOString().split('T')[0];
+      const time = new Date().toTimeString().slice(0, 5);
       const stats = diff.stats;
       await commitFile(
         githubToken,
@@ -160,6 +161,19 @@ function CricosDataUpdate({ githubToken }) {
         json,
         `Update CRICOS data ${date} — ${stats.institutionsNew} institutions, ${stats.coursesNew} courses`
       );
+      setPublishMsg('Saving history...');
+      await appendHistory(githubToken, {
+        type: 'cricos',
+        date,
+        time,
+        totalInstitutions: stats.institutionsNew,
+        totalCourses: stats.coursesNew,
+        addedCourses: diff.addedCourses.length,
+        removedCourses: diff.removedCourses.length,
+        modifiedCourses: diff.modifiedCourses.length,
+        addedInstitutions: diff.addedInstitutions.length,
+        removedInstitutions: diff.removedInstitutions.length,
+      });
       setPublishMsg('');
       setStep('done');
     } catch (e) {
@@ -358,6 +372,7 @@ function AssessmentLevelsUpdate({ githubToken }) {
   const handlePublish = async () => {
     setStep('publishing');
     const date = new Date().toISOString().split('T')[0];
+    const time = new Date().toTimeString().slice(0, 5);
     try {
       if (providerNew) {
         await commitFile(
@@ -375,6 +390,17 @@ function AssessmentLevelsUpdate({ githubToken }) {
           `Update country assessment levels ${date}`
         );
       }
+      await appendHistory(githubToken, {
+        type: 'levels',
+        date,
+        time,
+        providerChanges: providerDiff?.changes.length ?? 0,
+        providerAdded: providerDiff?.added.length ?? 0,
+        providerRemoved: providerDiff?.removed.length ?? 0,
+        countryChanges: countryDiff?.changes.length ?? 0,
+        countryAdded: countryDiff?.added.length ?? 0,
+        countryRemoved: countryDiff?.removed.length ?? 0,
+      });
       setStep('done');
     } catch (e) {
       setError(e.message);
