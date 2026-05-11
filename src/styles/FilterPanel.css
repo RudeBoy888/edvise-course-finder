@@ -293,28 +293,89 @@
   letter-spacing: 0.4px;
 }
 
-.filter-country-select {
+.country-autocomplete {
+  position: relative;
   width: 100%;
-  padding: 9px 12px;
+}
+
+.country-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.country-input {
+  width: 100%;
+  padding: 9px 32px 9px 12px;
   font-size: 13px;
   border: 2px solid #e8ddd4;
   border-radius: 6px;
   font-family: 'Helvetica', 'Helvetica Neue', Arial, sans-serif;
   color: #2c2c2c;
   background-color: #ffffff;
-  cursor: pointer;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
-.filter-country-select:hover {
-  border-color: #C7613C;
-}
+.country-input:hover { border-color: #C7613C; }
 
-.filter-country-select:focus {
+.country-input:focus {
   outline: none;
   border-color: #C7613C;
   box-shadow: 0 0 0 3px rgba(199, 97, 60, 0.12);
-  background-color: #ffffff;
+}
+
+.country-clear-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 12px;
+  padding: 2px 4px;
+  line-height: 1;
+}
+
+.country-clear-btn:hover { color: #C7613C; }
+
+.country-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 2px solid #C7613C;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  box-shadow: 0 4px 16px rgba(199, 97, 60, 0.15);
+}
+
+.country-option {
+  padding: 7px 12px;
+  font-size: 13px;
+  color: #2c2c2c;
+  cursor: pointer;
+}
+
+.country-option:hover { background: #fef5f0; color: #C7613C; }
+
+.country-option.selected {
+  background: #fef5f0;
+  font-weight: 600;
+  color: #C7613C;
+}
+
+.country-no-results {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
 }
 
 .filter-visa-disclaimer {

@@ -1,7 +1,95 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useRef, useEffect } from 'react';
 import '../styles/FilterPanel.css';
 import { getAllCities } from '../utils/cityMapping';
 import { getRegionalCategoryBadge } from '../utils/regionalClassification';
+
+function CountryAutocomplete({ countryLevels, value, onChange }) {
+  const [inputValue, setInputValue] = useState('');
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  const countries = useMemo(() =>
+    Object.entries(countryLevels)
+      .filter(([, v]) => v.countryName)
+      .map(([code, info]) => ({ code, name: info.countryName }))
+      .sort((a, b) => a.name.localeCompare(b.name)),
+    [countryLevels]
+  );
+
+  const filtered = useMemo(() => {
+    if (!inputValue.trim()) return countries;
+    const q = inputValue.toLowerCase();
+    return countries.filter(c => c.name.toLowerCase().includes(q));
+  }, [inputValue, countries]);
+
+  // Sync display value when external value changes
+  useEffect(() => {
+    if (!value) { setInputValue(''); return; }
+    const found = countries.find(c => c.code === value);
+    if (found) setInputValue(found.name);
+  }, [value, countries]);
+
+  // Close on outside click
+  useEffect(() => {
+    const handler = (e) => {
+      if (containerRef.current && !containerRef.current.contains(e.target)) {
+        setOpen(false);
+        // If input doesn't match a valid country, clear selection
+        const match = countries.find(c => c.name.toLowerCase() === inputValue.toLowerCase());
+        if (!match) { setInputValue(''); onChange(''); }
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [inputValue, countries, onChange]);
+
+  const handleSelect = (country) => {
+    setInputValue(country.name);
+    onChange(country.code);
+    setOpen(false);
+  };
+
+  const handleClear = () => {
+    setInputValue('');
+    onChange('');
+    setOpen(false);
+  };
+
+  return (
+    <div className="country-autocomplete" ref={containerRef}>
+      <div className="country-input-wrap">
+        <input
+          type="text"
+          className="country-input"
+          placeholder="Search country..."
+          value={inputValue}
+          onChange={e => { setInputValue(e.target.value); setOpen(true); }}
+          onFocus={() => setOpen(true)}
+          autoComplete="off"
+        />
+        {(inputValue || value) && (
+          <button className="country-clear-btn" onClick={handleClear} tabIndex={-1}>✕</button>
+        )}
+      </div>
+      {open && filtered.length > 0 && (
+        <ul className="country-dropdown">
+          {filtered.slice(0, 60).map(c => (
+            <li
+              key={c.code}
+              className={`country-option ${c.code === value ? 'selected' : ''}`}
+              onMouseDown={() => handleSelect(c)}
+            >
+              {c.name}
+            </li>
+          ))}
+        </ul>
+      )}
+      {open && filtered.length === 0 && (
+        <div className="country-dropdown country-no-results">No countries found</div>
+      )}
+    </div>
+  );
+}
 
 const AUSTRALIAN_STATES = ['ACT', 'NSW', 'NT', 'QLD', 'SA', 'TAS', 'VIC', 'WA'];
 const AUSTRALIAN_CITIES = getAllCities();
@@ -137,23 +225,12 @@ export function FilterPanel({
       <div className="filter-section filter-section--visa-risk">
         <h3 className="filter-title">Visa Risk Check</h3>
         <div className="filter-visa-risk">
-          <label className="filter-country-label" htmlFor="passport-country-select">
-            Passport country
-          </label>
-          <select
-            id="passport-country-select"
-            className="filter-country-select"
+          <label className="filter-country-label">Passport country</label>
+          <CountryAutocomplete
+            countryLevels={countryLevels}
             value={passportCountry}
-            onChange={e => setPassportCountry && setPassportCountry(e.target.value)}
-          >
-            <option value="">— Select country —</option>
-            {Object.entries(countryLevels)
-              .filter(([, v]) => v.countryName)
-              .sort((a, b) => a[1].countryName.localeCompare(b[1].countryName))
-              .map(([code, info]) => (
-                <option key={code} value={code}>{info.countryName}</option>
-              ))}
-          </select>
+            onChange={v => setPassportCountry && setPassportCountry(v)}
+          />
 
           <div className="filter-visa-legend">
             <div className="filter-visa-legend-row">
