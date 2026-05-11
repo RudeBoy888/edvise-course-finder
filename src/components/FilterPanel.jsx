@@ -155,38 +155,26 @@ export function FilterPanel({
               ))}
           </select>
 
-          {passportCountry ? (
-            <>
-              <div className="filter-visa-legend">
-                <div className="filter-visa-legend-row">
-                  <span style={{ background: '#d4edda', border: '1px solid #b8dfc5', borderRadius: '3px', padding: '1px 6px', fontSize: '11px', fontWeight: '700', color: '#155724' }}>✓ Streamlined</span>
-                  <span>No extra docs needed</span>
-                </div>
-                <div className="filter-visa-legend-row">
-                  <span style={{ background: '#fff3cd', border: '1px solid #f0d060', borderRadius: '3px', padding: '1px 6px', fontSize: '11px', fontWeight: '700', color: '#856404' }}>! Extra docs required</span>
-                  <span>Financial + English evidence</span>
-                </div>
-              </div>
-              <label className="checkbox-label" style={{ marginTop: '6px' }}>
-                <input
-                  type="checkbox"
-                  checked={onlyStreamlined}
-                  onChange={e => setOnlyStreamlined && setOnlyStreamlined(e.target.checked)}
-                />
-                <span>Show only streamlined schools</span>
-              </label>
-            </>
-          ) : (
-            <div className="filter-visa-legend">
-              <div className="filter-visa-legend-row">
-                <span style={{ background: '#d4edda', border: '1px solid #b8dfc5', borderRadius: '3px', padding: '1px 6px', fontSize: '11px', fontWeight: '700', color: '#155724' }}>✓ Streamlined</span>
-                <span>No extra docs</span>
-              </div>
-              <div className="filter-visa-legend-row">
-                <span style={{ background: '#fff3cd', border: '1px solid #f0d060', borderRadius: '3px', padding: '1px 6px', fontSize: '11px', fontWeight: '700', color: '#856404' }}>! Extra docs</span>
-                <span>Financial + English evidence</span>
-              </div>
+          <div className="filter-visa-legend">
+            <div className="filter-visa-legend-row">
+              <span className="filter-visa-badge filter-visa-badge--green">✓ Streamlined</span>
+              <span>No extra docs needed</span>
             </div>
+            <div className="filter-visa-legend-row">
+              <span className="filter-visa-badge filter-visa-badge--yellow">! Extra docs required</span>
+              <span>Financial + English evidence</span>
+            </div>
+          </div>
+
+          {passportCountry && (
+            <label className="checkbox-label" style={{ marginTop: '6px' }}>
+              <input
+                type="checkbox"
+                checked={onlyStreamlined}
+                onChange={e => setOnlyStreamlined && setOnlyStreamlined(e.target.checked)}
+              />
+              <span>Show only streamlined schools</span>
+            </label>
           )}
 
           <p className="filter-visa-disclaimer">
