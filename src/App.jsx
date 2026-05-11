@@ -26,14 +26,20 @@ function App() {
     () => localStorage.getItem('edvise_agent_auth') === 'true'
   );
 
+  const handleAgentLogout = () => {
+    localStorage.removeItem('edvise_agent_auth');
+    localStorage.removeItem('edvise_admin_authenticated');
+    setAgentAuthed(false);
+  };
+
   if (!agentAuthed) {
     return <AgentLogin onSuccess={() => setAgentAuthed(true)} />;
   }
 
-  return <AppContent />;
+  return <AppContent onAgentLogout={handleAgentLogout} />;
 }
 
-function AppContent() {
+function AppContent({ onAgentLogout }) {
   const { data, loading, error } = useCourseData();
   const { countryLevels, providerLevels, checkCompatibility, getProviderLevel, getCountryLevel } = useProviderLevels();
   const filters = useFilters(data, { checkCompatibility });
@@ -87,8 +93,8 @@ function AppContent() {
           <div className="header-text-box">
             <h1>EDVISE Course Finder</h1>
           </div>
-          {isAdminAuthenticated && (
-            <div className="header-admin-info">
+          <div className="header-admin-info">
+            {isAdminAuthenticated ? (
               <div className="admin-menu-container">
                 <button
                   className="admin-menu-trigger"
@@ -111,19 +117,23 @@ function AppContent() {
                     <div className="admin-menu-divider"></div>
                     <button
                       className="admin-menu-item logout"
-                      onClick={() => {
-                        setIsAdminAuthenticated(false);
-                        setIsAdminPanelOpen(false);
-                        setIsAdminMenuOpen(false);
-                      }}
+                      onClick={onAgentLogout}
                     >
                       🚪 Logout
                     </button>
                   </div>
                 )}
               </div>
-            </div>
-          )}
+            ) : (
+              <button
+                onClick={onAgentLogout}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#aaa', fontSize: '12px', padding: '4px 8px' }}
+                title="Logout"
+              >
+                Logout
+              </button>
+            )}
+          </div>
         </div>
         <p className="subtitle">Find Australian courses by CRICOS institutions</p>
       </header>

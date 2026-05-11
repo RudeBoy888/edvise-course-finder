@@ -9,8 +9,8 @@ export function AgentLogin({ onSuccess }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const correct = import.meta.env.VITE_AGENT_PASSWORD;
-    if (password === correct) {
+    const correct = (import.meta.env.VITE_AGENT_PASSWORD || '').trim();
+    if (password.trim() === correct) {
       localStorage.setItem('edvise_agent_auth', 'true');
       onSuccess();
     } else {
