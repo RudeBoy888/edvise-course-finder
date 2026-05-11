@@ -158,11 +158,11 @@ export function FilterPanel({
           <div className="filter-visa-legend">
             <div className="filter-visa-legend-row">
               <span className="filter-visa-badge filter-visa-badge--green">✓ Streamlined</span>
-              <span>No extra docs needed</span>
+              <span>No extra docs</span>
             </div>
             <div className="filter-visa-legend-row">
-              <span className="filter-visa-badge filter-visa-badge--yellow">! Extra docs required</span>
-              <span>Financial + English evidence</span>
+              <span className="filter-visa-badge filter-visa-badge--yellow">! Extra docs</span>
+              <span>Financial + English</span>
             </div>
           </div>
 
