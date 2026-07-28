@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "type": "cricos",
+    "date": "2026-07-28",
+    "time": "09:43",
+    "totalInstitutions": 1539,
+    "totalCourses": 25402,
+    "addedCourses": 1000,
+    "removedCourses": 436,
+    "modifiedCourses": 3491,
+    "addedInstitutions": 57,
+    "removedInstitutions": 54,
+    "id": "2026-07-28T09:43:16.187698Z"
+  }
+]

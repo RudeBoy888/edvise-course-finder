@@ -40,6 +40,35 @@ def load_logo_mapping():
     except FileNotFoundError:
         return {}
 
+def load_existing_data(json_path):
+    """Load current courses_data.json to preserve logos and descriptions on re-import.
+
+    Returns:
+        logo_by_provider: { providerCode: { 'logoUrl': str, 'domain': str } }
+        desc_by_course:   { (providerCode, courseCode): description_str }
+    """
+    logo_by_provider = {}
+    desc_by_course = {}
+    if not json_path.exists():
+        return logo_by_provider, desc_by_course
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        for inst in data:
+            code = inst.get('providerCode')
+            if code:
+                logo_by_provider[code] = {
+                    'logoUrl': inst.get('logoUrl', ''),
+                    'domain': inst.get('domain', ''),
+                }
+            for course in inst.get('courses', []):
+                desc = (course.get('description') or '').strip()
+                if desc:
+                    desc_by_course[(code, course.get('courseCode'))] = desc
+    except Exception as e:
+        print(f"  Warning: could not read existing JSON for preservation: {e}")
+    return logo_by_provider, desc_by_course
+
 def get_logo_url(domain, logo_mapping):
     """Get logo URL for a domain.
 
@@ -58,10 +87,17 @@ def get_logo_url(domain, logo_mapping):
     # No mapping - will use placeholder
     return ""
 
-def load_institutions(ws, logo_mapping):
+def load_institutions(ws, logo_mapping, existing_logo_by_provider=None):
     """Load institutions from Institutions sheet.
     Returns dict: { providerCode: { name, website, domain, logoUrl } }
+
+    Preservation priority for logoUrl/domain:
+      1. Existing courses_data.json entry (previously enriched data)
+      2. Local logo_mapping.json lookup by extracted domain
+      3. Empty (placeholder will show)
     """
+    if existing_logo_by_provider is None:
+        existing_logo_by_provider = {}
     institutions = {}
     for row_idx in range(4, ws.max_row + 1):
         provider_code = ws.cell(row=row_idx, column=1).value
@@ -76,9 +112,16 @@ def load_institutions(ws, logo_mapping):
         name = trading_name.strip() if trading_name and trading_name.strip() else institution_name
         registered_name = institution_name.strip() if institution_name and institution_name.strip() else None
 
-        # Extract domain and get logo URL (from mapping or empty)
-        domain = extract_domain(website)
-        logo_url = get_logo_url(domain, logo_mapping)
+        provider_key = str(provider_code).strip()
+        existing = existing_logo_by_provider.get(provider_key, {})
+
+        # Extract domain (prefer existing enriched value if present)
+        excel_domain = extract_domain(website)
+        domain = existing.get('domain') or excel_domain
+
+        # Logo: prefer already-enriched logo, else mapping lookup by domain
+        existing_logo = existing.get('logoUrl') or ''
+        logo_url = existing_logo if existing_logo else get_logo_url(domain, logo_mapping)
 
         institution_data = {
             "name": name,
@@ -131,12 +174,19 @@ def load_locations(ws):
 
     return locations
 
-def load_courses(ws):
+def load_courses(ws, existing_desc_by_course=None):
     """Load courses from Courses sheet.
     Filters out expired courses (Expired == "No").
     Returns list of { providerCode, courseCode, courseName, durationWeeks, tuitionFee, nonTuitionFee, totalCost, courseLevel, fieldOfEducation, isFoundationStudies, hasWorkComponent, description }
+
+    Description preservation: if new Excel has no description in col 25, fall back to
+    existing description from courses_data.json (keyed by providerCode+courseCode).
+    Some CRICOS Excel exports omit the description column entirely.
     """
+    if existing_desc_by_course is None:
+        existing_desc_by_course = {}
     courses = []
+    max_col = ws.max_column
     for row_idx in range(4, ws.max_row + 1):
         expired = ws.cell(row=row_idx, column=24).value
 
@@ -155,10 +205,17 @@ def load_courses(ws):
         course_level = ws.cell(row=row_idx, column=13).value
         foundation_studies = ws.cell(row=row_idx, column=14).value
         work_component = ws.cell(row=row_idx, column=15).value
-        description = ws.cell(row=row_idx, column=25).value  # New: Description column
+        description = ws.cell(row=row_idx, column=25).value if max_col >= 25 else None
 
         if not provider_code or not course_code:
             continue
+
+        # Fallback to preserved description if new Excel doesn't provide one
+        new_desc_str = str(description).strip() if description else ""
+        if not new_desc_str:
+            new_desc_str = existing_desc_by_course.get(
+                (str(provider_code).strip(), str(course_code).strip()), ""
+            )
 
         # Extract fieldOfEducation: strip "NN - " prefix if present
         field_str = ""
@@ -186,7 +243,7 @@ def load_courses(ws):
             "fieldOfEducation": field_str,
             "isFoundationStudies": is_foundation,
             "hasWorkComponent": has_work,
-            "description": str(description).strip() if description else ""
+            "description": new_desc_str
         })
 
     return courses
@@ -236,6 +293,11 @@ def main():
     logo_mapping = load_logo_mapping()
     print(f"  Found {len(logo_mapping)} local logos")
 
+    print("Loading existing data for preservation...")
+    existing_logo_by_provider, existing_desc_by_course = load_existing_data(output_path)
+    print(f"  Preserving logos for {len(existing_logo_by_provider)} providers")
+    print(f"  Preserving descriptions for {len(existing_desc_by_course)} courses")
+
     print("Loading workbook...")
     try:
         wb = openpyxl.load_workbook(excel_path, data_only=True, keep_vba=False)
@@ -246,7 +308,7 @@ def main():
         wb = openpyxl.load_workbook(excel_path, data_only=True, keep_vba=False)
 
     print("Loading institutions...")
-    institutions = load_institutions(wb['Institutions'], logo_mapping)
+    institutions = load_institutions(wb['Institutions'], logo_mapping, existing_logo_by_provider)
     print(f"  Loaded {len(institutions)} institutions")
 
     print("Loading locations...")
@@ -254,7 +316,7 @@ def main():
     print(f"  Loaded {len(locations)} locations")
 
     print("Loading courses...")
-    courses_list = load_courses(wb['Courses'])
+    courses_list = load_courses(wb['Courses'], existing_desc_by_course)
     print(f"  Loaded {len(courses_list)} active courses")
 
     print("Loading course locations...")
