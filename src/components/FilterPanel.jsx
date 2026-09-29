@@ -35,13 +35,19 @@ function CountryAutocomplete({ countryLevels, value, onChange }) {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
         setOpen(false);
         // If input doesn't match a valid country, clear selection
+        // Only act on half-typed input — otherwise every click on the page would
+        // call onChange('') and reset pagination to page 1
+        if (!inputValue) return;
         const match = countries.find(c => c.name.toLowerCase() === inputValue.toLowerCase());
-        if (!match) { setInputValue(''); onChange(''); }
+        if (!match) {
+          setInputValue('');
+          if (value) onChange('');
+        }
       }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, [inputValue, countries, onChange]);
+  }, [inputValue, value, countries, onChange]);
 
   const handleSelect = (country) => {
     setInputValue(country.name);
